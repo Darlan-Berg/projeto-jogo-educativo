@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://sh086iq1x73d"]
+
+[ext_resource type="PackedScene" uid="uid://bp2q18f20tlrp" path="res://cenas/mundo.tscn" id="1_81bgd"]
+[ext_resource type="Texture2D" uid="uid://bueqbylrpataj" path="res://assets/icone_vida.png" id="2_wa4io"]
+
+[node name="mundo" instance=ExtResource("1_81bgd")]
+
+[node name="icone_player" parent="HUD/control/container/container_vida" index="0"]
+texture = ExtResource("2_wa4io")
