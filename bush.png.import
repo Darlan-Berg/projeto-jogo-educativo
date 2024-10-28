@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babllmwnshxx2"
-path="res://.godot/imported/Throw Sword 02.png-54a8402240afaaacabed5689137490db.ctex"
+uid="uid://cxjyan2xhw7lb"
+path="res://.godot/imported/bush.png-2e26c4033a962045fd33552ab7e2846f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/20-Throw Sword/Throw Sword 02.png"
-dest_files=["res://.godot/imported/Throw Sword 02.png-54a8402240afaaacabed5689137490db.ctex"]
+source_file="res://bush.png"
+dest_files=["res://.godot/imported/bush.png-2e26c4033a962045fd33552ab7e2846f.ctex"]
 
 [params]
 

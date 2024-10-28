@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://caarqbiv1dd4t"]
+[gd_scene load_steps=9 format=3 uid="uid://caarqbiv1dd4t"]
 
 [ext_resource type="Script" path="res://scripts/cobra.gd" id="1_32igo"]
 [ext_resource type="Texture2D" uid="uid://b8t8ouj26b50n" path="res://assets/Cobra Sprite Sheet.png" id="1_rg3pi"]
+[ext_resource type="PackedScene" uid="uid://c0owlna6jrqmg" path="res://cenas/hitbox.tscn" id="3_vww14"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f2765"]
-radius = 4.0
-height = 12.0
+radius = 5.0
+height = 18.0
 
 [sub_resource type="Animation" id="Animation_qehnu"]
 length = 0.8
@@ -93,14 +94,18 @@ _data = {
 "rastejar": SubResource("Animation_mv0fa")
 }
 
-[node name="cobra" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddxtk"]
+size = Vector2(14, 3)
+
+[node name="cobra" type="CharacterBody2D" groups=["inimigos"]]
 position = Vector2(779, 395)
 collision_layer = 4
-collision_mask = 6
+collision_mask = 7
 script = ExtResource("1_32igo")
 
-[node name="colisor" type="CollisionShape2D" parent="."]
+[node name="colisor" type="CollisionShape2D" parent="." groups=["inimigos"]]
 position = Vector2(-1, 9)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_f2765")
 
 [node name="animacao" type="AnimationPlayer" parent="."]
@@ -110,6 +115,8 @@ libraries = {
 autoplay = "rastejar"
 
 [node name="textura" type="Sprite2D" parent="."]
+light_mask = 4
+position = Vector2(2, -2)
 texture = ExtResource("1_rg3pi")
 hframes = 8
 vframes = 5
@@ -117,5 +124,12 @@ frame = 8
 
 [node name="detec_paredes" type="RayCast2D" parent="."]
 position = Vector2(-3, 7)
-target_position = Vector2(-6, 0)
+target_position = Vector2(-12, 0)
 collision_mask = 5
+collide_with_areas = true
+
+[node name="hitbox" parent="." instance=ExtResource("3_vww14")]
+
+[node name="colisor" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_ddxtk")

@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -300.0
 var jumpCount = 0
 
 @onready var animador := $anim as AnimatedSprite2D
+@onready var remote := $remote as RemoteTransform2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -40,4 +41,12 @@ func _physics_process(delta: float) -> void:
 			animador.play("idle")
 
 	move_and_slide()
+	
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("inimigos"):
+		queue_free()
+		
+#func seguir_camera(camera):
+#	var caminho_camera = camera.get_path()
+#	remote.remote_path = caminho_camera
 	

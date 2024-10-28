@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Jogo Educativo"
+config/name="Jogo Educativo (Atual)"
 run/main_scene="res://cenas/mundo.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
@@ -36,6 +36,8 @@ obstaculo=""
 2d_physics/layer_2="jogador"
 2d_physics/layer_3="inimigos"
 2d_physics/layer_4="coletaveis"
+2d_physics/layer_5="hitbox"
+2d_physics/layer_6="hurt"
 
 [rendering]
 
