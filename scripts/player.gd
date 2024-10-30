@@ -7,6 +7,7 @@ var jumpCount = 0
 
 @onready var animador := $anim as AnimatedSprite2D
 @onready var remote := $remote as RemoteTransform2D
+@onready var som_pulo: AudioStreamPlayer2D = $som_pulo
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -23,9 +24,11 @@ func _physics_process(delta: float) -> void:
 	if jumpCount < 1:
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			som_pulo.play()
 		if Input.is_action_just_pressed("ui_accept") and not is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			jumpCount +=1
+			som_pulo.play()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

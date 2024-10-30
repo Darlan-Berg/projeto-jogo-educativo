@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://uqni08hg33ul"]
+
+[ext_resource type="Texture2D" uid="uid://yofnk3o1cten" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="1_qd5m3"]
+[ext_resource type="Script" path="res://scripts/seringueira.gd" id="1_ytp4n"]
+[ext_resource type="Texture2D" uid="uid://jk087mip0cg8" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/1.png" id="2_vxegn"]
+[ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="4_7i002"]
+[ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="5_hbswd"]
+[ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/2.png" id="6_xnw43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf3in"]
+size = Vector2(60, 13)
+
+[node name="seringueira" type="Area2D"]
+position = Vector2(17, -37)
+collision_mask = 2
+script = ExtResource("1_ytp4n")
+
+[node name="colisor" type="CollisionShape2D" parent="."]
+position = Vector2(55, 88)
+shape = SubResource("RectangleShape2D_xf3in")
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="container_botoes" type="MarginContainer" parent="control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes"]
+visible = false
+layout_mode = 2
+
+[node name="baixo" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("2_vxegn")
+
+[node name="direita" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_7i002")
+
+[node name="esquerda" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("5_hbswd")
+
+[node name="cima" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("6_xnw43")
+
+[node name="baixo2" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("2_vxegn")
+
+[node name="botao_iniciar" type="Button" parent="control/container_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "INICIAR"
+icon = ExtResource("1_qd5m3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
