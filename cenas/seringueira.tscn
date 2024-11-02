@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://uqni08hg33ul"]
+[gd_scene load_steps=9 format=3 uid="uid://uqni08hg33ul"]
 
 [ext_resource type="Texture2D" uid="uid://yofnk3o1cten" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="1_qd5m3"]
 [ext_resource type="Script" path="res://scripts/seringueira.gd" id="1_ytp4n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="4_7i002"]
 [ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="5_hbswd"]
 [ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/2.png" id="6_xnw43"]
+[ext_resource type="AudioStream" uid="uid://bgd5bjjqrfsf3" path="res://assets/Musica e Efeitos Sonoros/coin-recieved-230517.mp3" id="7_8r4jx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf3in"]
 size = Vector2(60, 13)
@@ -68,8 +69,18 @@ icon = ExtResource("2_vxegn")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+action_mode = 0
 text = "INICIAR"
 icon = ExtResource("1_qd5m3")
 
+[node name="teste" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8r4jx")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/baixo" to="." method="_on_baixo_pressed"]
+[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/direita" to="." method="_on_direita_pressed"]
+[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/esquerda" to="." method="_on_esquerda_pressed"]
+[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/cima" to="." method="_on_cima_pressed"]
+[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/baixo2" to="." method="_on_baixo_2_pressed"]
+[connection signal="pressed" from="control/container_botoes/botao_iniciar" to="." method="_on_botao_iniciar_pressed"]

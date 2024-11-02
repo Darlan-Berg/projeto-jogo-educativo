@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgd5bjjqrfsf3"
+path="res://.godot/imported/coin-recieved-230517.mp3-ccb36f3cb79c5fe0fbd2a4b7ad6dd145.mp3str"
+
+[deps]
+
+source_file="res://assets/Musica e Efeitos Sonoros/coin-recieved-230517.mp3"
+dest_files=["res://.godot/imported/coin-recieved-230517.mp3-ccb36f3cb79c5fe0fbd2a4b7ad6dd145.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

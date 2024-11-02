@@ -13,6 +13,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	if detec_paredes.is_colliding():
+		
 		direction *= -1
 		detec_paredes.scale.x *= -1
 		

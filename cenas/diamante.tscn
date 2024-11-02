@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dv38bg45pnvbx" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/02.png" id="6_4tqll"]
 [ext_resource type="Texture2D" uid="uid://bamha5tghfyej" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/03.png" id="7_hlu06"]
 [ext_resource type="Texture2D" uid="uid://cjb28hsk0w5v8" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/04.png" id="8_iclfv"]
-[ext_resource type="AudioStream" uid="uid://bgd5bjjqrfsf3" path="res://assets/coin-recieved-230517.mp3" id="10_t486n"]
+[ext_resource type="AudioStream" uid="uid://bgd5bjjqrfsf3" path="res://assets/Musica e Efeitos Sonoros/coin-recieved-230517.mp3" id="10_t486n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_moihk"]
 animations = [{
@@ -63,8 +63,9 @@ autoplay = "idle"
 [node name="colisor" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c50g7")
 
-[node name="som_coletado" type="AudioStreamPlayer2D" parent="."]
+[node name="som_coletado" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_t486n")
+volume_db = -14.274
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

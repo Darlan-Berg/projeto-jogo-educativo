@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://sh086iq1x73d"]
+[gd_scene load_steps=2 format=3 uid="uid://sh086iq1x73d"]
 
 [ext_resource type="PackedScene" uid="uid://bp2q18f20tlrp" path="res://cenas/mundo.tscn" id="1_81bgd"]
-[ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="2_ajdtb"]
-[ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueira.tscn" id="3_fta7j"]
 
 [node name="mundo" instance=ExtResource("1_81bgd")]
 
@@ -19,11 +17,3 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="musica_de_fundo" type="AudioStreamPlayer" parent="." index="11"]
-stream = ExtResource("2_ajdtb")
-volume_db = -13.277
-autoplay = true
-
-[node name="seringueira2" parent="." index="12" instance=ExtResource("3_fta7j")]
-position = Vector2(3044, -156)

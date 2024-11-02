@@ -7,7 +7,7 @@ var jumpCount = 0
 
 @onready var animador := $anim as AnimatedSprite2D
 @onready var remote := $remote as RemoteTransform2D
-@onready var som_pulo: AudioStreamPlayer2D = $som_pulo
+@onready var som_pulo := $som_pulo as AudioStreamPlayer
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_hurtbox_body_entered(body: Node2D) -> void:
+	print("nvckbhdgjhfkghfjhfjgfhjfojh")
 	if body.is_in_group("inimigos"):
 		queue_free()
 		
