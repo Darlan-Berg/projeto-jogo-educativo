@@ -189,7 +189,7 @@ shape = SubResource("RectangleShape2D_op652")
 position = Vector2(4251.5, -126)
 zoom = Vector2(4, 4)
 limit_top = -160
-limit_bottom = 500
+limit_bottom = 700
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_vertical_offset = -1.0
@@ -219,6 +219,6 @@ debug_color = Color(0.897994, 0.304862, 0.209618, 0.42)
 
 [node name="som_pulo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0p34r")
-volume_db = -11.556
+volume_db = -30.295
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

@@ -15,6 +15,7 @@ var caiu_na_agua_2 = false
 func _physics_process(delta: float) -> void:
 	
 	#Verifica a quantidade de vida
+	'''
 	if Global.vida == 3:
 		$"../HUD/control/container/container_barra_vida/vida_3".visible = true
 		$"../HUD/control/container/container_barra_vida/vida_2".visible = false
@@ -35,6 +36,7 @@ func _physics_process(delta: float) -> void:
 		$"../HUD/control/container/container_barra_vida/vida_2".visible = false
 		$"../HUD/control/container/container_barra_vida/vida_1".visible = false
 		$"../HUD/control/container/container_barra_vida/vida_0".visible = true
+	'''
 	
 	# Add the gravity.
 	if not is_on_floor():
