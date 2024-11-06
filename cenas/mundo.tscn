@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=43 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -21,8 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://bueqbylrpataj" path="res://assets/icone_vida.png" id="17_33jgo"]
 [ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="19_6ion7"]
 [ext_resource type="PackedScene" uid="uid://0nlnis04kjd2" path="res://cenas/moving_platform.tscn" id="19_wve8b"]
+[ext_resource type="Texture2D" uid="uid://c8bfiiie2ok3s" path="res://assets/vida_3.png" id="20_k43h5"]
+[ext_resource type="Texture2D" uid="uid://d2snv1hqhwkvr" path="res://assets/vda_2.png" id="21_c1k8o"]
+[ext_resource type="Texture2D" uid="uid://bje23ykn00a5t" path="res://assets/vida_1.png" id="22_xwai3"]
+[ext_resource type="Texture2D" uid="uid://72yobfalxa16" path="res://assets/vida_0.png" id="23_pp2fm"]
 [ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="23_qv6qi"]
 [ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueira.tscn" id="24_faiik"]
+[ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ku8t"]
 tile_data = PackedInt32Array(0, 262144, 8, 65536, 262144, 9, 131072, 262144, 10, 1, 327680, 8, 65537, 327680, 9, 131073, 327680, 10, 2, 393216, 8, 65538, 393216, 9, 131074, 393216, 10)
@@ -813,6 +818,9 @@ frame_3/duration = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efp24"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brn60"]
+size = Vector2(518, 75.25)
+
 [node name="mundo" type="Node2D"]
 position = Vector2(-4562, 31)
 script = ExtResource("1_sn7h5")
@@ -888,7 +896,8 @@ texture = ExtResource("10_xuprd")
 centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
-position = Vector2(-1206, 7)
+unique_name_in_owner = true
+position = Vector2(-766, 151)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1130,7 +1139,7 @@ text = "000000"
 
 [node name="container_vida" type="HBoxContainer" parent="HUD/control/container"]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="icone_player" type="TextureRect" parent="HUD/control/container/container_vida"]
@@ -1146,6 +1155,34 @@ text = "X"
 layout_mode = 2
 theme_override_font_sizes/font_size = 17
 text = "00"
+
+[node name="container_barra_vida" type="HBoxContainer" parent="HUD/control/container"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="vida_3" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("20_k43h5")
+
+[node name="vida_2" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("21_c1k8o")
+
+[node name="vida_1" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("22_xwai3")
+
+[node name="vida_0" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("23_pp2fm")
 
 [node name="limites" type="Node2D" parent="."]
 
@@ -1238,6 +1275,13 @@ autoplay = true
 
 [node name="seringueira2" parent="." instance=ExtResource("24_faiik")]
 position = Vector2(3044, -156)
+
+[node name="agua" type="Area2D" parent="."]
+script = ExtResource("24_rdv0x")
+
+[node name="colisor" type="CollisionShape2D" parent="agua"]
+position = Vector2(3773, 104.375)
+shape = SubResource("RectangleShape2D_brn60")
 
 [connection signal="body_entered" from="seringueira" to="." method="_on_seringueira_body_entered"]
 [connection signal="body_exited" from="seringueira" to="." method="_on_seringueira_body_exited"]

@@ -4,12 +4,38 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 var jumpCount = 0
+var caiu_na_agua_1 = false
+var caiu_na_agua_2 = false
 
 @onready var animador := $anim as AnimatedSprite2D
 @onready var remote := $remote as RemoteTransform2D
 @onready var som_pulo := $som_pulo as AudioStreamPlayer
 
+
 func _physics_process(delta: float) -> void:
+	
+	#Verifica a quantidade de vida
+	if Global.vida == 3:
+		$"../HUD/control/container/container_barra_vida/vida_3".visible = true
+		$"../HUD/control/container/container_barra_vida/vida_2".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_1".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_0".visible = false
+	elif Global.vida == 2:
+		$"../HUD/control/container/container_barra_vida/vida_3".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_2".visible = true
+		$"../HUD/control/container/container_barra_vida/vida_1".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_0".visible = false
+	elif Global.vida == 1:
+		$"../HUD/control/container/container_barra_vida/vida_3".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_2".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_1".visible = true
+		$"../HUD/control/container/container_barra_vida/vida_0".visible = false
+	elif Global.vida == 0:
+		$"../HUD/control/container/container_barra_vida/vida_3".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_2".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_1".visible = false
+		$"../HUD/control/container/container_barra_vida/vida_0".visible = true
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -46,11 +72,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	print("nvckbhdgjhfkghfjhfjgfhjfojh")
+	print(body.name)
 	if body.is_in_group("inimigos"):
-		queue_free()
-		
-#func seguir_camera(camera):
-#	var caminho_camera = camera.get_path()
-#	remote.remote_path = caminho_camera
-	
+		queue_free()  

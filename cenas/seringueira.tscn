@@ -66,6 +66,7 @@ size_flags_vertical = 4
 icon = ExtResource("2_vxegn")
 
 [node name="botao_iniciar" type="Button" parent="control/container_botoes"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
