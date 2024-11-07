@@ -21,10 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://bueqbylrpataj" path="res://assets/icone_vida.png" id="17_33jgo"]
 [ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="19_6ion7"]
 [ext_resource type="PackedScene" uid="uid://0nlnis04kjd2" path="res://cenas/moving_platform.tscn" id="19_wve8b"]
-[ext_resource type="Texture2D" uid="uid://c8bfiiie2ok3s" path="res://assets/vida_3.png" id="20_k43h5"]
-[ext_resource type="Texture2D" uid="uid://d2snv1hqhwkvr" path="res://assets/vda_2.png" id="21_c1k8o"]
-[ext_resource type="Texture2D" uid="uid://bje23ykn00a5t" path="res://assets/vida_1.png" id="22_xwai3"]
-[ext_resource type="Texture2D" uid="uid://72yobfalxa16" path="res://assets/vida_0.png" id="23_pp2fm"]
+[ext_resource type="Texture2D" uid="uid://wi2fl76kqhvu" path="res://assets/1-1.png.png" id="20_ryjn0"]
+[ext_resource type="Texture2D" uid="uid://bhepppwcrxyn4" path="res://assets/1-2.png.png" id="21_45py3"]
+[ext_resource type="Texture2D" uid="uid://dg0m4dqpefyyt" path="res://assets/1-3.png.png" id="22_2bp47"]
+[ext_resource type="Texture2D" uid="uid://x4kprqs8dd2q" path="res://assets/1-4.png.png" id="23_fr20p"]
 [ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="23_qv6qi"]
 [ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueira.tscn" id="24_faiik"]
 [ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
@@ -819,7 +819,7 @@ frame_3/duration = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efp24"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brn60"]
-size = Vector2(518, 75.25)
+size = Vector2(502, 63.25)
 
 [node name="mundo" type="Node2D"]
 position = Vector2(-4562, 31)
@@ -897,7 +897,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(-766, 151)
+position = Vector2(-1202, 31)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1097,10 +1097,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 8.0
-offset_bottom = 8.0
+offset_right = -690.0
+offset_bottom = -350.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -1164,25 +1165,25 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("20_k43h5")
+texture = ExtResource("20_ryjn0")
 
 [node name="vida_2" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("21_c1k8o")
+texture = ExtResource("21_45py3")
 
 [node name="vida_1" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("22_xwai3")
+texture = ExtResource("22_2bp47")
 
 [node name="vida_0" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-texture = ExtResource("23_pp2fm")
+texture = ExtResource("23_fr20p")
 
 [node name="limites" type="Node2D" parent="."]
 
@@ -1280,8 +1281,18 @@ position = Vector2(3044, -156)
 script = ExtResource("24_rdv0x")
 
 [node name="colisor" type="CollisionShape2D" parent="agua"]
-position = Vector2(3773, 104.375)
+position = Vector2(3770, 98.375)
+shape = SubResource("RectangleShape2D_brn60")
+
+[node name="agua2" type="Area2D" parent="."]
+script = ExtResource("24_rdv0x")
+
+[node name="colisor" type="CollisionShape2D" parent="agua2"]
+position = Vector2(6507, 242)
 shape = SubResource("RectangleShape2D_brn60")
 
 [connection signal="body_entered" from="seringueira" to="." method="_on_seringueira_body_entered"]
 [connection signal="body_exited" from="seringueira" to="." method="_on_seringueira_body_exited"]
+[connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
+[connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]
+[connection signal="area_shape_entered" from="agua2" to="jogador" method="_on_agua_2_area_shape_entered"]
