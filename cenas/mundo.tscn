@@ -897,7 +897,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(-1202, 31)
+position = Vector2(2841, -58)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1098,7 +1098,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -690.0
-offset_bottom = -350.0
+offset_bottom = -340.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)

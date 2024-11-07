@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f2765"]
 radius = 5.0
-height = 18.0
+height = 22.0
 
 [sub_resource type="Animation" id="Animation_qehnu"]
 length = 0.8
@@ -123,7 +123,7 @@ vframes = 5
 frame = 8
 
 [node name="detec_paredes" type="RayCast2D" parent="."]
-position = Vector2(-3, 7)
+position = Vector2(-1, 8)
 target_position = Vector2(-8, 0)
 collision_mask = 5
 collide_with_areas = true

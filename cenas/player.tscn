@@ -182,11 +182,11 @@ collision_mask = 29
 script = ExtResource("1_mc57l")
 
 [node name="colisor" type="CollisionShape2D" parent="."]
-position = Vector2(4251.5, -125.5)
+position = Vector2(77.5, -28.5)
 shape = SubResource("RectangleShape2D_op652")
 
 [node name="camera" type="Camera2D" parent="."]
-position = Vector2(4251.5, -126)
+position = Vector2(77.5, -29)
 zoom = Vector2(4, 4)
 limit_top = -160
 limit_bottom = 700
@@ -202,13 +202,13 @@ libraries = {
 }
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(4251.5, -126)
+position = Vector2(77.5, -29)
 sprite_frames = SubResource("SpriteFrames_04us7")
 animation = &"idle"
 frame_progress = 0.932012
 
 [node name="hurtbox" type="Area2D" parent="."]
-position = Vector2(4440, -13)
+position = Vector2(266, 84)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(-188.5, -114.5)
@@ -220,5 +220,15 @@ debug_color = Color(0.897994, 0.304862, 0.209618, 0.42)
 [node name="som_pulo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0p34r")
 volume_db = -30.295
+
+[node name="ray_direita" type="RayCast2D" parent="."]
+position = Vector2(84, -21)
+target_position = Vector2(6, 0)
+collision_mask = 4
+
+[node name="ray_esquerda" type="RayCast2D" parent="."]
+position = Vector2(71, -21)
+target_position = Vector2(-6, 0)
+collision_mask = 4
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
