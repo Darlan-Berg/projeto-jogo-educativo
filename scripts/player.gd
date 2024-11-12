@@ -12,15 +12,19 @@ var knockback_vector:= Vector2.ZERO
 @onready var som_pulo := $som_pulo as AudioStreamPlayer
 @onready var ray_direita: RayCast2D = $ray_direita
 @onready var ray_esquerda: RayCast2D = $ray_esquerda
+@onready var som_dano: AudioStreamPlayer = $som_dano
+
 
 func _physics_process(delta: float) -> void:
 	
 	if ray_direita.is_colliding():
 		Global.vida -= 1
 		tomar_dano(Vector2(-200, -200))
+		som_dano.play()
 	if ray_esquerda.is_colliding():
 		Global.vida -= 1
 		tomar_dano(Vector2(200, -200))
+		som_dano.play()
 		
 	
 	#Verifica a quantidade de vida
@@ -98,7 +102,7 @@ func _on_agua_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
 	
 	if forca_knockback != Vector2.ZERO: 
-		knockback_vector = forca_knockback 
+		knockback_vector = forca_knockback    
 
 		var knockback_tween := get_tree().create_tween() 
 		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duracao)

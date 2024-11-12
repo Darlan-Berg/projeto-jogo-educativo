@@ -4,7 +4,7 @@ extends Area2D
 @onready var container_botoes = $control/container_botoes/container_sequencia_botoes as HBoxContainer
 var current_index = 0  # Índice da sequência, começa no primeiro botão
 var timer = 5.0  # Tempo limite para a sequência (5 segundos)
-var sequencia_botoes = ["baixo", "direita", "esquerda", "cima", "baixo2"]
+var sequencia_botoes = ["baixo", "direita", "esquerda", "cima", "baixo"]
 var esta_na_area = false
 @onready var teste: AudioStreamPlayer = $teste
 
@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 		teste.play()
 		botao_iniciar.visible =false
 		container_botoes.visible = true
+		iniciar_minigame()
 
 func _on_body_entered(body: Node2D) -> void:
 	botao_iniciar.visible = true
@@ -28,4 +29,13 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _on_botao_iniciar_pressed() -> void:
 	print("hdufgfduvdbuvbdvufv dfv vdf f vd vfb fjdbgfdbfgdgdbbfu")
+	
+func iniciar_minigame():
+	while true:
+		if Input.is_action_just_pressed("ui_text_completion_accept"):
+			teste.play()
+			break
+			
+			
+		
 	

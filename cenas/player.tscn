@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://gbbqgh66pej4"]
+[gd_scene load_steps=31 format=3 uid="uid://gbbqgh66pej4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_mc57l"]
 [ext_resource type="Texture2D" uid="uid://bt6jbsfq0e7uc" path="res://assets/jungle tileset/player/idle (2).png" id="2_vi0rg"]
 [ext_resource type="Texture2D" uid="uid://csy8efnvvsam5" path="res://assets/jungle tileset/player/jump-landing.png" id="3_4tom6"]
 [ext_resource type="Texture2D" uid="uid://b2yd4isu8c2l3" path="res://run(1).png" id="4_ckjtj"]
 [ext_resource type="AudioStream" uid="uid://dhsfmobwpfpts" path="res://assets/Musica e Efeitos Sonoros/jump_10.wav" id="5_0p34r"]
+[ext_resource type="AudioStream" uid="uid://siyov1d34cqf" path="res://assets/Musica e Efeitos Sonoros/som_dano.mp3" id="6_wp1ie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_op652"]
 size = Vector2(15, 33)
@@ -219,7 +220,11 @@ debug_color = Color(0.897994, 0.304862, 0.209618, 0.42)
 
 [node name="som_pulo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_0p34r")
-volume_db = -30.295
+volume_db = -13.43
+
+[node name="som_dano" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wp1ie")
+volume_db = -5.014
 
 [node name="ray_direita" type="RayCast2D" parent="."]
 position = Vector2(84, -21)
