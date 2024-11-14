@@ -29,6 +29,10 @@ window/size/viewport_height=1080
 obstaculo=""
 inimigos=""
 
+[gui]
+
+theme/custom="res://assets/joystix.tres"
+
 [input]
 
 ui_accept={
