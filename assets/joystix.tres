@@ -1,7 +1,15 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cvu616kig33uq"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cvu616kig33uq"]
 
 [ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="1_r2x26"]
+[ext_resource type="Texture2D" uid="uid://dqt8a4atfntxq" path="res://assets/moldura_vazia_256x256.png" id="2_jp4eu"]
 [ext_resource type="Texture2D" uid="uid://bgwprbpbnx8v0" path="res://assets/moldura_256x256.png" id="2_nmi3q"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8viih"]
+texture = ExtResource("2_jp4eu")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7anlp"]
 texture = ExtResource("2_nmi3q")
@@ -12,5 +20,7 @@ texture_margin_bottom = 16.0
 
 [resource]
 Button/fonts/font = ExtResource("1_r2x26")
+EmptyFrameBig/base_type = &"PanelContainer"
+EmptyFrameBig/styles/panel = SubResource("StyleBoxTexture_8viih")
 Label/fonts/font = ExtResource("1_r2x26")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_7anlp")

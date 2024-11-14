@@ -26,5 +26,5 @@ func advance_text():
 	else:
 		start_game_scene()  # Quando terminar, iniciar a fase do jogo
 
-func start_game_scene():                             
-	get_tree().change_scene_to_file("res://fases/fase_5.tscn")  # Troque para a cena da fase do jogo
+func start_game_scene():
+	get_tree().change_scene_to_file("res://cenas/mundo.tscn")  # Troque para a cena da fase do jogo

@@ -33,6 +33,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes"]
+visible = false
 layout_mode = 2
 
 [node name="baixo" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
