@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://uqni08hg33ul"]
+[gd_scene load_steps=10 format=3 uid="uid://uqni08hg33ul"]
 
 [ext_resource type="Texture2D" uid="uid://yofnk3o1cten" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="1_qd5m3"]
 [ext_resource type="Script" path="res://scripts/seringueira.gd" id="1_ytp4n"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="4_7i002"]
 [ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="5_hbswd"]
 [ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/2.png" id="6_xnw43"]
-[ext_resource type="AudioStream" uid="uid://bgd5bjjqrfsf3" path="res://assets/Musica e Efeitos Sonoros/coin-recieved-230517.mp3" id="7_8r4jx"]
+[ext_resource type="AudioStream" uid="uid://nev5qcu65nm2" path="res://assets/Musica e Efeitos Sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="7_bl51p"]
+[ext_resource type="AudioStream" uid="uid://d0f1nowd8ks7b" path="res://assets/Musica e Efeitos Sonoros/8-bit-kit-boop_C.wav" id="8_alh02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf3in"]
 size = Vector2(60, 13)
@@ -32,7 +33,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes"]
-visible = false
 layout_mode = 2
 
 [node name="baixo" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
@@ -67,6 +67,7 @@ icon = ExtResource("2_vxegn")
 
 [node name="botao_iniciar" type="Button" parent="control/container_botoes"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -74,8 +75,11 @@ action_mode = 0
 text = "INICIAR"
 icon = ExtResource("1_qd5m3")
 
-[node name="teste" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_8r4jx")
+[node name="som_acerto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bl51p")
+
+[node name="som_erro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_alh02")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
