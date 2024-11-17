@@ -6,6 +6,7 @@ const SPEED = 1000.0
 @onready var textura := $textura as Sprite2D
 
 var direction := -1
+var knockback_vector:= Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,3 +26,13 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * SPEED * delta
 
 	move_and_slide()
+	
+func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
+	%colisor.disabled = true
+	%colisor_hitbox.disabled = true
+	
+	if forca_knockback != Vector2.ZERO: 
+		knockback_vector = forca_knockback    
+
+		var knockback_tween := get_tree().create_tween() 
+		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duracao)

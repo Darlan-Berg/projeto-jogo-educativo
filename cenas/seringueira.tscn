@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://uqni08hg33ul"]
+[gd_scene load_steps=11 format=3 uid="uid://uqni08hg33ul"]
 
 [ext_resource type="Texture2D" uid="uid://yofnk3o1cten" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="1_qd5m3"]
 [ext_resource type="Script" path="res://scripts/seringueira.gd" id="1_ytp4n"]
 [ext_resource type="Texture2D" uid="uid://jk087mip0cg8" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/1.png" id="2_vxegn"]
 [ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="4_7i002"]
 [ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="5_hbswd"]
+[ext_resource type="Texture2D" uid="uid://bxg6ravo20esu" path="res://barra_timer_2.png" id="6_wsq6k"]
 [ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/2.png" id="6_xnw43"]
 [ext_resource type="AudioStream" uid="uid://nev5qcu65nm2" path="res://assets/Musica e Efeitos Sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="7_bl51p"]
 [ext_resource type="AudioStream" uid="uid://d0f1nowd8ks7b" path="res://assets/Musica e Efeitos Sonoros/8-bit-kit-boop_C.wav" id="8_alh02"]
@@ -32,39 +33,53 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes"]
-visible = false
+[node name="VBoxContainer" type="VBoxContainer" parent="control/container_botoes"]
 layout_mode = 2
 
-[node name="baixo" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+[node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes/VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="baixo" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("2_vxegn")
 
-[node name="direita" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+[node name="direita" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("4_7i002")
 
-[node name="esquerda" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+[node name="esquerda" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("5_hbswd")
 
-[node name="cima" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+[node name="cima" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("6_xnw43")
 
-[node name="baixo2" type="Button" parent="control/container_botoes/container_sequencia_botoes"]
+[node name="baixo2" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 icon = ExtResource("2_vxegn")
+
+[node name="barra_timer" type="TextureProgressBar" parent="control/container_botoes/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 5.0
+step = 0.01
+value = 5.0
+texture_progress = ExtResource("6_wsq6k")
 
 [node name="botao_iniciar" type="Button" parent="control/container_botoes"]
 unique_name_in_owner = true
@@ -82,11 +97,16 @@ stream = ExtResource("7_bl51p")
 [node name="som_erro" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_alh02")
 
+[node name="timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
-[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/baixo" to="." method="_on_baixo_pressed"]
-[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/direita" to="." method="_on_direita_pressed"]
-[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/esquerda" to="." method="_on_esquerda_pressed"]
-[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/cima" to="." method="_on_cima_pressed"]
-[connection signal="pressed" from="control/container_botoes/container_sequencia_botoes/baixo2" to="." method="_on_baixo_2_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/baixo" to="." method="_on_baixo_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/direita" to="." method="_on_direita_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/esquerda" to="." method="_on_esquerda_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/cima" to="." method="_on_cima_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/baixo2" to="." method="_on_baixo_2_pressed"]
 [connection signal="pressed" from="control/container_botoes/botao_iniciar" to="." method="_on_botao_iniciar_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
