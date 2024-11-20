@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://exqnm5fqqs58"]
+
+[ext_resource type="Script" path="res://scripts/seringueiras/seringueira3.gd" id="1_cwcvu"]
+[ext_resource type="Texture2D" uid="uid://jk087mip0cg8" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/1.png" id="2_g6se3"]
+[ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="3_tohw0"]
+[ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="4_8y3er"]
+[ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/2.png" id="5_xpqku"]
+[ext_resource type="Texture2D" uid="uid://bxg6ravo20esu" path="res://barra_timer_2.png" id="6_vmpau"]
+[ext_resource type="Texture2D" uid="uid://yofnk3o1cten" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="7_v0n4g"]
+[ext_resource type="AudioStream" uid="uid://nev5qcu65nm2" path="res://assets/Musica e Efeitos Sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="8_vqis6"]
+[ext_resource type="AudioStream" uid="uid://d0f1nowd8ks7b" path="res://assets/Musica e Efeitos Sonoros/8-bit-kit-boop_C.wav" id="9_3hhyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf3in"]
+size = Vector2(60, 13)
+
+[node name="seringueira3" type="Area2D"]
+position = Vector2(17, -37)
+collision_mask = 2
+script = ExtResource("1_cwcvu")
+
+[node name="colisor" type="CollisionShape2D" parent="."]
+position = Vector2(55, 88)
+shape = SubResource("RectangleShape2D_xf3in")
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="container_botoes" type="MarginContainer" parent="control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="control/container_botoes"]
+layout_mode = 2
+
+[node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes/VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="cima" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("5_xpqku")
+
+[node name="esquerda" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_8y3er")
+
+[node name="cima2" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("5_xpqku")
+
+[node name="baixo" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("2_g6se3")
+
+[node name="direita" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("3_tohw0")
+
+[node name="barra_timer" type="TextureProgressBar" parent="control/container_botoes/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 5.0
+step = 0.01
+value = 5.0
+texture_progress = ExtResource("6_vmpau")
+
+[node name="botao_iniciar" type="Button" parent="control/container_botoes"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+action_mode = 0
+text = "INICIAR"
+icon = ExtResource("7_v0n4g")
+
+[node name="som_acerto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vqis6")
+
+[node name="som_erro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_3hhyi")
+
+[node name="timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/cima" to="." method="_on_baixo_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/esquerda" to="." method="_on_direita_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/cima2" to="." method="_on_esquerda_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/baixo" to="." method="_on_cima_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/direita" to="." method="_on_baixo_2_pressed"]
+[connection signal="pressed" from="control/container_botoes/botao_iniciar" to="." method="_on_botao_iniciar_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
