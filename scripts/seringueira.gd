@@ -75,7 +75,7 @@ func verificar_sequencia(botao_pressionado):
 
 
 func _on_timer_timeout() -> void:
-	if not minigame_concluido:
+	if not minigame_concluido and esta_na_area:
 		tempo_esgotado = true
 		for botao in container_botoes.get_children():
 			botao.visible  = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=42 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://7b8x57bof5rq" path="res://cenas/diamante.tscn" id="10_f6j5i"]
 [ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://assets/jungle tileset/parallax background/plx-5.png" id="10_xuprd"]
 [ext_resource type="Texture2D" uid="uid://c4h0mvdf0jhok" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/01.png" id="13_4fhd3"]
-[ext_resource type="Script" path="res://scripts/seringueira.gd" id="13_8wohy"]
 [ext_resource type="Script" path="res://scripts/gerenciador_hud.gd" id="13_m36pt"]
 [ext_resource type="Texture2D" uid="uid://dv38bg45pnvbx" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/02.png" id="14_u3mcj"]
 [ext_resource type="Texture2D" uid="uid://bamha5tghfyej" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/03.png" id="15_8fnes"]
@@ -28,7 +27,6 @@
 [ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="23_qv6qi"]
 [ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueira.tscn" id="24_faiik"]
 [ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
-[ext_resource type="PackedScene" uid="uid://dytmqpkxeovlf" path="res://cenas/npc.tscn" id="29_a1aoi"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ku8t"]
 tile_data = PackedInt32Array(0, 262144, 8, 65536, 262144, 9, 131072, 262144, 10, 1, 327680, 8, 65537, 327680, 9, 131073, 327680, 10, 2, 393216, 8, 65538, 393216, 9, 131074, 393216, 10)
@@ -807,9 +805,6 @@ pattern_3 = SubResource("TileMapPattern_uhmeh")
 pattern_4 = SubResource("TileMapPattern_64ouw")
 pattern_5 = SubResource("TileMapPattern_roftc")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0txv"]
-size = Vector2(46, 10.5)
-
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_agoe7"]
 frames = 4
 speed_scale = 2.0
@@ -825,9 +820,6 @@ frame_3/duration = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brn60"]
 size = Vector2(502, 63.25)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7jada"]
-radius = 29.4279
 
 [node name="mundo" type="Node2D"]
 position = Vector2(-4562, 31)
@@ -1108,14 +1100,6 @@ position = Vector2(6506, 145)
 [node name="diamante6" parent="diamantes" instance=ExtResource("10_f6j5i")]
 position = Vector2(6522, 169)
 
-[node name="seringueira" type="Area2D" parent="."]
-collision_mask = 2
-script = ExtResource("13_8wohy")
-
-[node name="colisor" type="CollisionShape2D" parent="seringueira"]
-position = Vector2(4346, -7)
-shape = SubResource("RectangleShape2D_f0txv")
-
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="control" type="Control" parent="HUD"]
@@ -1132,8 +1116,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -690.0
-offset_bottom = -340.0
+offset_right = -964.0
+offset_bottom = -540.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -1312,8 +1296,14 @@ stream = ExtResource("23_qv6qi")
 volume_db = -13.277
 autoplay = true
 
-[node name="seringueira2" parent="." instance=ExtResource("24_faiik")]
+[node name="seringueira" parent="." instance=ExtResource("24_faiik")]
 position = Vector2(3044, -156)
+
+[node name="seringueira2" parent="." instance=ExtResource("24_faiik")]
+position = Vector2(4290, -95)
+
+[node name="seringueira3" parent="." instance=ExtResource("24_faiik")]
+position = Vector2(7538, 1)
 
 [node name="agua" type="Area2D" parent="."]
 script = ExtResource("24_rdv0x")
@@ -1329,17 +1319,6 @@ script = ExtResource("24_rdv0x")
 position = Vector2(6507, 242)
 shape = SubResource("RectangleShape2D_brn60")
 
-[node name="npc" type="CharacterBody2D" parent="."]
-position = Vector2(2530, -52)
-
-[node name="Actionable" parent="npc" instance=ExtResource("29_a1aoi")]
-
-[node name="colisor" type="CollisionShape2D" parent="npc/Actionable"]
-position = Vector2(4, 24)
-shape = SubResource("CircleShape2D_7jada")
-
-[connection signal="body_entered" from="seringueira" to="." method="_on_seringueira_body_entered"]
-[connection signal="body_exited" from="seringueira" to="." method="_on_seringueira_body_exited"]
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
 [connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]
 [connection signal="area_shape_entered" from="agua2" to="jogador" method="_on_agua_2_area_shape_entered"]
