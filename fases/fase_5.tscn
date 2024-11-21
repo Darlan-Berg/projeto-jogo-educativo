@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt1xpjsabocba"]
+[gd_scene load_steps=12 format=3 uid="uid://bt1xpjsabocba"]
 
-[ext_resource type="Script" path="res://scripts/fase_2.gd" id="1_qx2xq"]
 [ext_resource type="Texture2D" uid="uid://dp3mtyyqfwb4h" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_putqf"]
 [ext_resource type="Texture2D" uid="uid://0vskkd151mw4" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_nxkbe"]
 [ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://cenas/player.tscn" id="3_qerua"]
-[ext_resource type="Texture2D" uid="uid://dsx6mv6l84ngh" path="res://assets/parque chico mendes.png" id="4_y0p28"]
+[ext_resource type="Texture2D" uid="uid://cvlnixftqju34" path="res://assets/parque chico mendes/pacm-1.png" id="5_s1qe6"]
+[ext_resource type="Texture2D" uid="uid://drwrbj8c8g65o" path="res://assets/parque chico mendes/pacm-2.png" id="6_t5m67"]
+[ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="6_vqn4v"]
+[ext_resource type="Texture2D" uid="uid://c1jm2x1y88wqp" path="res://assets/parque chico mendes/pacm-3.png" id="7_7tu5g"]
+[ext_resource type="Texture2D" uid="uid://d2vib20a668lh" path="res://assets/parque chico mendes/pacm-4.png" id="8_3jkgy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q05kx"]
 texture = ExtResource("2_putqf")
@@ -93,7 +96,6 @@ sources/1 = SubResource("TileSetAtlasSource_3iawe")
 
 [node name="fase_5" type="Node2D"]
 position = Vector2(-1894, 42)
-script = ExtResource("1_qx2xq")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-137, -683)
@@ -105,13 +107,54 @@ layer_0/tile_data = PackedInt32Array(2686990, 262144, 1, 2686991, 262144, 1, 268
 position = Vector2(268, -140)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
+offset = Vector2(-4000, -500)
+transform = Transform2D(1, 0, 0, 1, -4000, -500)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(592, 0)
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(2085, -34)
 scale = Vector2(4, 4)
-texture = ExtResource("4_y0p28")
+texture = ExtResource("5_s1qe6")
 centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(2085, -34)
+scale = Vector2(4, 4)
+texture = ExtResource("6_t5m67")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(2085, -34)
+scale = Vector2(4, 4)
+texture = ExtResource("7_7tu5g")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(2085, -34)
+scale = Vector2(4, 4)
+texture = ExtResource("8_3jkgy")
+centered = false
+
+[node name="pedaco_foto" parent="." instance=ExtResource("6_vqn4v")]
+position = Vector2(543, -173)
+
+[node name="pedaco_foto2" parent="." instance=ExtResource("6_vqn4v")]
+position = Vector2(1554, 458)
+
+[node name="pedaco_foto3" parent="." instance=ExtResource("6_vqn4v")]
+position = Vector2(1203, 19)
+
+[node name="pedaco_foto4" parent="." instance=ExtResource("6_vqn4v")]
+position = Vector2(2418, -47)

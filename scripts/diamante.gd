@@ -13,3 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 	
 func _on_anim_animation_finished() -> void:
 	queue_free() # Exluir o diamante assim que a animação "coletado" for terminada
+	
