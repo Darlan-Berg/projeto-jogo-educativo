@@ -109,7 +109,7 @@ func _on_agua_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
 	
 	if forca_knockback != Vector2.ZERO: 
-		knockback_vector = forca_knockback    
+		knockback_vector = forca_knockback
 
 		var knockback_tween := get_tree().create_tween() 
 		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duracao)

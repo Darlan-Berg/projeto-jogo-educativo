@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=58 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
 [ext_resource type="PackedScene" uid="uid://exqnm5fqqs58" path="res://cenas/seringueiras/seringueira3.tscn" id="28_f2s8e"]
 [ext_resource type="PackedScene" uid="uid://chrid8wi5dd8a" path="res://cenas/seringueiras/seringueira2.tscn" id="29_rafmf"]
+[ext_resource type="Texture2D" uid="uid://dil638fxjubci" path="res://assets/jungle tileset/player/idle.png" id="30_k786a"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ku8t"]
 tile_data = PackedInt32Array(0, 262144, 8, 65536, 262144, 9, 131072, 262144, 10, 1, 327680, 8, 65537, 327680, 9, 131073, 327680, 10, 2, 393216, 8, 65538, 393216, 9, 131074, 393216, 10)
@@ -823,6 +824,98 @@ frame_3/duration = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brn60"]
 size = Vector2(502, 63.25)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3fqf"]
+atlas = ExtResource("30_k786a")
+region = Rect2(0, 0, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lue3"]
+atlas = ExtResource("30_k786a")
+region = Rect2(19, 0, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13ba3"]
+atlas = ExtResource("30_k786a")
+region = Rect2(38, 0, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sksjp"]
+atlas = ExtResource("30_k786a")
+region = Rect2(57, 0, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1bnh"]
+atlas = ExtResource("30_k786a")
+region = Rect2(76, 0, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgv70"]
+atlas = ExtResource("30_k786a")
+region = Rect2(0, 34, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvmpj"]
+atlas = ExtResource("30_k786a")
+region = Rect2(19, 34, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uejw6"]
+atlas = ExtResource("30_k786a")
+region = Rect2(38, 34, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djhrt"]
+atlas = ExtResource("30_k786a")
+region = Rect2(57, 34, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txt5a"]
+atlas = ExtResource("30_k786a")
+region = Rect2(76, 34, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cdvx"]
+atlas = ExtResource("30_k786a")
+region = Rect2(0, 68, 19, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt05u"]
+atlas = ExtResource("30_k786a")
+region = Rect2(19, 68, 19, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xvwn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3fqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lue3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13ba3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sksjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1bnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgv70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvmpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uejw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djhrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txt5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cdvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt05u")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [node name="mundo" type="Node2D"]
 position = Vector2(-4562, 31)
 script = ExtResource("1_sn7h5")
@@ -899,7 +992,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(668, -81)
+position = Vector2(4000, 50)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1127,6 +1220,7 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
+metadata/_edit_use_anchors_ = true
 
 [node name="container_diamantes" type="HBoxContainer" parent="HUD/control/container"]
 layout_mode = 2
@@ -1285,13 +1379,33 @@ position = Vector2(5861, -39)
 position = Vector2(4250, 41)
 
 [node name="moving_platform" parent="." instance=ExtResource("19_wve8b")]
-position = Vector2(5444, 197)
+position = Vector2(4989, 195)
 move_speed = 2.0
+distance = 100
+move_horizontal = false
 
 [node name="moving_platform2" parent="." instance=ExtResource("19_wve8b")]
-position = Vector2(5561, 198)
+position = Vector2(5104, 51)
+move_speed = 2.0
+distance = -100
+move_horizontal = false
+
+[node name="moving_platform3" parent="." instance=ExtResource("19_wve8b")]
+position = Vector2(5230, 50)
 move_speed = 4.0
-distance = 200
+distance = 0
+move_horizontal = false
+
+[node name="moving_platform4" parent="." instance=ExtResource("19_wve8b")]
+position = Vector2(5347, 50)
+move_speed = 4.0
+distance = 70
+
+[node name="moving_platform5" parent="." instance=ExtResource("19_wve8b")]
+position = Vector2(5555, 47)
+move_speed = 4.0
+distance = 100
+move_horizontal = false
 
 [node name="musica_de_fundo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_qv6qi")
@@ -1322,6 +1436,15 @@ position = Vector2(2834, 33)
 
 [node name="seringueira2" parent="seringueiras" instance=ExtResource("29_rafmf")]
 position = Vector2(-270, -61)
+
+[node name="npc" type="CharacterBody2D" parent="."]
+
+[node name="anim" type="AnimatedSprite2D" parent="npc"]
+position = Vector2(3047, -86)
+sprite_frames = SubResource("SpriteFrames_3xvwn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0878012
 
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
 [connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]
