@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 1000.0
+const distancia = 50
 
 @onready var detec_paredes := $detec_paredes as RayCast2D
 @onready var textura := $textura as Sprite2D
@@ -24,12 +25,16 @@ func _physics_process(delta: float) -> void:
 		textura.flip_h = true
 
 	velocity.x = direction * SPEED * delta
+	
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector 
 
 	move_and_slide()
 	
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
 	%colisor.disabled = true
 	%colisor_hitbox.disabled = true
+	self.collision_mask = 6 
 	
 	if forca_knockback != Vector2.ZERO: 
 		knockback_vector = forca_knockback    

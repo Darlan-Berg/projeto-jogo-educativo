@@ -1,5 +1,6 @@
 extends Control
 
+signal game_over
 @onready var contador_diamantes := $container/container_diamantes/contador_diamantes as Label
 @onready var contador_score := $container/container_score/contador_score as Label
 @onready var contador_vidas := $container/container_vida/contador_vidas as Label 
@@ -19,4 +20,5 @@ func _process(delta: float) -> void:
 	
 	if Global.vida == 0 and Global.quantidade_vidas > 0:
 		Global.quantidade_vidas -= 1
+		game_over.emit()
 		Global.vida = 3
