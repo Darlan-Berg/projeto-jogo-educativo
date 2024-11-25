@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=74 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -19,19 +19,31 @@
 [ext_resource type="Texture2D" uid="uid://cjb28hsk0w5v8" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/04.png" id="16_l5jeh"]
 [ext_resource type="Texture2D" uid="uid://cnnhssvohp5yd" path="res://assets/icone_vida.png" id="17_33jgo"]
 [ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="19_6ion7"]
+[ext_resource type="Texture2D" uid="uid://dx2nc188g5nqh" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/01.png" id="19_1645a"]
 [ext_resource type="PackedScene" uid="uid://0nlnis04kjd2" path="res://cenas/moving_platform.tscn" id="19_wve8b"]
 [ext_resource type="Texture2D" uid="uid://wi2fl76kqhvu" path="res://assets/barras de vida/1-1.png.png" id="20_ryjn0"]
+[ext_resource type="Texture2D" uid="uid://dln0xxkhllqsm" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/02.png" id="20_uqlkg"]
 [ext_resource type="Texture2D" uid="uid://bhepppwcrxyn4" path="res://assets/barras de vida/1-2.png.png" id="21_45py3"]
+[ext_resource type="Texture2D" uid="uid://bbxixaw662gdb" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/03.png" id="21_q6vor"]
 [ext_resource type="Texture2D" uid="uid://dg0m4dqpefyyt" path="res://assets/barras de vida/1-3.png.png" id="22_2bp47"]
+[ext_resource type="Texture2D" uid="uid://chob2u48xbnyt" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/04.png" id="22_3vmp8"]
+[ext_resource type="Texture2D" uid="uid://dfd1fg1lrl8ib" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/05.png" id="23_b6sni"]
 [ext_resource type="Texture2D" uid="uid://x4kprqs8dd2q" path="res://assets/barras de vida/1-4.png.png" id="23_fr20p"]
 [ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="23_qv6qi"]
 [ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueiras/seringueira.tscn" id="24_faiik"]
+[ext_resource type="Texture2D" uid="uid://dvacnq0ewwnj8" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/06.png" id="24_pyqaf"]
 [ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
+[ext_resource type="Texture2D" uid="uid://bxu4eao0k7m6c" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/07.png" id="25_ab3h5"]
+[ext_resource type="Texture2D" uid="uid://p3whi5d6i1pd" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/08.png" id="26_c4uc1"]
+[ext_resource type="Texture2D" uid="uid://dmttg1yb28w4c" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/09.png" id="27_tp5tl"]
+[ext_resource type="Texture2D" uid="uid://bkjik1b0ovmwn" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/10.png" id="28_daun0"]
 [ext_resource type="PackedScene" uid="uid://exqnm5fqqs58" path="res://cenas/seringueiras/seringueira3.tscn" id="28_f2s8e"]
+[ext_resource type="Texture2D" uid="uid://pow31imh53ti" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/11.png" id="29_p30yf"]
 [ext_resource type="PackedScene" uid="uid://chrid8wi5dd8a" path="res://cenas/seringueiras/seringueira2.tscn" id="29_rafmf"]
 [ext_resource type="Texture2D" uid="uid://dil638fxjubci" path="res://assets/jungle tileset/player/idle.png" id="30_k786a"]
 [ext_resource type="PackedScene" uid="uid://dytmqpkxeovlf" path="res://cenas/area_2d.tscn" id="31_mible"]
 [ext_resource type="Resource" uid="uid://bfmdo3vqkbuoa" path="res://assets/dialogos/main.dialogue" id="32_sxmdw"]
+[ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="34_62an6"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ku8t"]
 tile_data = PackedInt32Array(0, 262144, 8, 65536, 262144, 9, 131072, 262144, 10, 1, 327680, 8, 65537, 327680, 9, 131073, 327680, 10, 2, 393216, 8, 65538, 393216, 9, 131074, 393216, 10)
@@ -821,6 +833,31 @@ frame_2/duration = 1.0
 frame_3/texture = ExtResource("16_l5jeh")
 frame_3/duration = 1.0
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_7v5ky"]
+frames = 11
+speed_scale = 8.0
+frame_0/texture = ExtResource("19_1645a")
+frame_1/texture = ExtResource("20_uqlkg")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("21_q6vor")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("22_3vmp8")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("23_b6sni")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("24_pyqaf")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("25_ab3h5")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("26_c4uc1")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("27_tp5tl")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("28_daun0")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("29_p30yf")
+frame_10/duration = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efp24"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brn60"]
@@ -1277,6 +1314,28 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 17
 text = "00"
 
+[node name="container_pedacos_foto" type="HBoxContainer" parent="HUD/control/container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="pedaco1" type="TextureRect" parent="HUD/control/container/container_pedacos_foto"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_7v5ky")
+
+[node name="pedaco2" type="TextureRect" parent="HUD/control/container/container_pedacos_foto"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_7v5ky")
+
+[node name="pedaco3" type="TextureRect" parent="HUD/control/container/container_pedacos_foto"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_7v5ky")
+
+[node name="pedaco4" type="TextureRect" parent="HUD/control/container/container_pedacos_foto"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_7v5ky")
+
 [node name="container_barra_vida" type="HBoxContainer" parent="HUD/control/container"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -1457,6 +1516,9 @@ dialogue_resource = ExtResource("32_sxmdw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Actionable"]
 position = Vector2(3048, -86)
 shape = SubResource("CircleShape2D_v1s2b")
+
+[node name="pedaco_foto" parent="." instance=ExtResource("34_62an6")]
+position = Vector2(746, -28)
 
 [connection signal="game_over" from="HUD/control" to="." method="_on_game_over"]
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]

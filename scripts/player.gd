@@ -13,12 +13,6 @@ var knockback_vector:= Vector2.ZERO
 @onready var ray_direita: RayCast2D = $ray_direita
 @onready var ray_esquerda: RayCast2D = $ray_esquerda
 @onready var som_dano: AudioStreamPlayer = $som_dano
-
-@onready var vida_0: TextureRect = $"../HUD/control/container/container_barra_vida/vida_0"
-@onready var vida_1: TextureRect = $"../HUD/control/container/container_barra_vida/vida_1"
-@onready var vida_2: TextureRect = $"../HUD/control/container/container_barra_vida/vida_2"
-@onready var vida_3: TextureRect = $"../HUD/control/container/container_barra_vida/vida_3"
-
    
 func _physics_process(delta: float) -> void:
 	
@@ -30,31 +24,6 @@ func _physics_process(delta: float) -> void:
 		Global.vida -= 1
 		tomar_dano(Vector2(200, -200))
 		som_dano.play()
-	
-	if vida_0 and vida_1 and vida_2 and vida_3:
-		#Verifica a quantidade de vida
-		if Global.vida == 3:
-			vida_3.visible = true
-			vida_2.visible = false
-			vida_1.visible = false
-			vida_0.visible = false
-		elif Global.vida == 2:
-			vida_3.visible = false
-			vida_2.visible = true
-			vida_1.visible = false
-			vida_0.visible = false
-		elif Global.vida == 1:
-			vida_3.visible = false
-			vida_2.visible = false
-			vida_1.visible = true
-			vida_0.visible = false
-		elif Global.vida == 0:
-			vida_3.visible = false
-			vida_2.visible = false
-			vida_1.visible = false
-			vida_0.visible = true
-	else:
-		pass
 	
 	# Add the gravity.
 	if not is_on_floor():
