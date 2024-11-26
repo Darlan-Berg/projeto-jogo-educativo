@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhlothrokti4v"]
+
+[ext_resource type="Script" path="res://scripts/final.gd" id="1_uulx5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isiw6"]
+size = Vector2(42, 20)
+
+[node name="final" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_uulx5")
+
+[node name="colisor" type="CollisionShape2D" parent="."]
+position = Vector2(11, 0)
+shape = SubResource("RectangleShape2D_isiw6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

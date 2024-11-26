@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=76 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -41,9 +41,11 @@
 [ext_resource type="Texture2D" uid="uid://pow31imh53ti" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/11.png" id="29_p30yf"]
 [ext_resource type="PackedScene" uid="uid://chrid8wi5dd8a" path="res://cenas/seringueiras/seringueira2.tscn" id="29_rafmf"]
 [ext_resource type="Texture2D" uid="uid://dil638fxjubci" path="res://assets/jungle tileset/player/idle.png" id="30_k786a"]
-[ext_resource type="PackedScene" uid="uid://dytmqpkxeovlf" path="res://cenas/area_2d.tscn" id="31_mible"]
-[ext_resource type="Resource" uid="uid://bfmdo3vqkbuoa" path="res://assets/dialogos/main.dialogue" id="32_sxmdw"]
 [ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="34_62an6"]
+[ext_resource type="PackedScene" uid="uid://dhlothrokti4v" path="res://cenas/final.tscn" id="45_61g3f"]
+[ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="46_2dmab"]
+[ext_resource type="Script" path="res://scripts/transicao.gd" id="46_kuwje"]
+[ext_resource type="Script" path="res://scripts/color_rect.gd" id="47_8q8ln"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ku8t"]
 tile_data = PackedInt32Array(0, 262144, 8, 65536, 262144, 9, 131072, 262144, 10, 1, 327680, 8, 65537, 327680, 9, 131073, 327680, 10, 2, 393216, 8, 65538, 393216, 9, 131074, 393216, 10)
@@ -955,8 +957,12 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v1s2b"]
-radius = 21.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4rwy4"]
+shader = ExtResource("46_2dmab")
+shader_parameter/lines = 10.0
+shader_parameter/threshold = 0.0
+shader_parameter/line_color_a = Color(0, 0.572722, 0.221403, 1)
+shader_parameter/line_color_b = Color(0, 0.983832, 0.546728, 1)
 
 [node name="mundo" type="Node2D"]
 position = Vector2(-4562, 31)
@@ -1338,6 +1344,7 @@ texture = SubResource("AnimatedTexture_7v5ky")
 
 [node name="container_barra_vida" type="HBoxContainer" parent="HUD/control/container"]
 unique_name_in_owner = true
+z_index = -1
 layout_mode = 2
 
 [node name="vida_3" type="TextureRect" parent="HUD/control/container/container_barra_vida"]
@@ -1510,15 +1517,24 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.0878012
 
-[node name="Actionable" parent="npc" instance=ExtResource("31_mible")]
-dialogue_resource = ExtResource("32_sxmdw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Actionable"]
-position = Vector2(3048, -86)
-shape = SubResource("CircleShape2D_v1s2b")
-
 [node name="pedaco_foto" parent="." instance=ExtResource("34_62an6")]
 position = Vector2(746, -28)
+
+[node name="final" parent="." instance=ExtResource("45_61g3f")]
+position = Vector2(795, -20)
+next_level = "res://cenas/diamante.tscn"
+
+[node name="transicao" type="CanvasLayer" parent="."]
+script = ExtResource("46_kuwje")
+
+[node name="color_rect" type="ColorRect" parent="transicao"]
+material = SubResource("ShaderMaterial_4rwy4")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("47_8q8ln")
 
 [connection signal="game_over" from="HUD/control" to="." method="_on_game_over"]
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
