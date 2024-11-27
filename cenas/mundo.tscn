@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=78 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://chrid8wi5dd8a" path="res://cenas/seringueiras/seringueira2.tscn" id="29_rafmf"]
 [ext_resource type="Texture2D" uid="uid://dil638fxjubci" path="res://assets/jungle tileset/player/idle.png" id="30_k786a"]
 [ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="34_62an6"]
+[ext_resource type="Script" path="res://npc/npc.gd" id="41_py0er"]
 [ext_resource type="PackedScene" uid="uid://dhlothrokti4v" path="res://cenas/final.tscn" id="45_61g3f"]
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="46_2dmab"]
 [ext_resource type="Script" path="res://scripts/transicao.gd" id="46_kuwje"]
@@ -865,6 +866,13 @@ frame_10/duration = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brn60"]
 size = Vector2(502, 63.25)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4rwy4"]
+shader = ExtResource("46_2dmab")
+shader_parameter/lines = 10.0
+shader_parameter/threshold = 0.0
+shader_parameter/line_color_a = Color(0, 0.572722, 0.221403, 1)
+shader_parameter/line_color_b = Color(0, 0.983832, 0.546728, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3fqf"]
 atlas = ExtResource("30_k786a")
 region = Rect2(0, 0, 19, 34)
@@ -957,12 +965,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4rwy4"]
-shader = ExtResource("46_2dmab")
-shader_parameter/lines = 10.0
-shader_parameter/threshold = 0.0
-shader_parameter/line_color_a = Color(0, 0.572722, 0.221403, 1)
-shader_parameter/line_color_b = Color(0, 0.983832, 0.546728, 1)
+[sub_resource type="CircleShape2D" id="CircleShape2D_elrvr"]
+radius = 19.0263
 
 [node name="mundo" type="Node2D"]
 position = Vector2(-4562, 31)
@@ -1040,7 +1044,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(596, -11)
+position = Vector2(2900, -79)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1508,15 +1512,6 @@ position = Vector2(2834, 33)
 [node name="seringueira2" parent="seringueiras" instance=ExtResource("29_rafmf")]
 position = Vector2(-270, -61)
 
-[node name="npc" type="CharacterBody2D" parent="."]
-
-[node name="anim" type="AnimatedSprite2D" parent="npc"]
-position = Vector2(3047, -86)
-sprite_frames = SubResource("SpriteFrames_3xvwn")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.0878012
-
 [node name="pedaco_foto" parent="." instance=ExtResource("34_62an6")]
 position = Vector2(746, -28)
 
@@ -1536,7 +1531,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("47_8q8ln")
 
+[node name="npc" type="Node2D" parent="."]
+
+[node name="anim" type="AnimatedSprite2D" parent="npc"]
+position = Vector2(3042, -86)
+sprite_frames = SubResource("SpriteFrames_3xvwn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0878012
+
+[node name="Area2D" type="Area2D" parent="npc"]
+script = ExtResource("41_py0er")
+timeline = "timeline2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Area2D"]
+position = Vector2(3042, -86)
+shape = SubResource("CircleShape2D_elrvr")
+
+[node name="npc2" type="Node2D" parent="."]
+position = Vector2(107, 0)
+
+[node name="anim" type="AnimatedSprite2D" parent="npc2"]
+position = Vector2(3042, -86)
+sprite_frames = SubResource("SpriteFrames_3xvwn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0878012
+
+[node name="Area2D" type="Area2D" parent="npc2"]
+script = ExtResource("41_py0er")
+timeline = "timeline"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc2/Area2D"]
+position = Vector2(3042, -86)
+shape = SubResource("CircleShape2D_elrvr")
+
 [connection signal="game_over" from="HUD/control" to="." method="_on_game_over"]
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
 [connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]
 [connection signal="area_shape_entered" from="agua2" to="jogador" method="_on_agua_2_area_shape_entered"]
+[connection signal="area_shape_entered" from="npc/Area2D" to="npc/Area2D" method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="npc/Area2D" to="npc/Area2D" method="_on_area_shape_exited"]
+[connection signal="area_shape_entered" from="npc2/Area2D" to="npc2/Area2D" method="_on_area_shape_entered"]
+[connection signal="area_shape_exited" from="npc2/Area2D" to="npc2/Area2D" method="_on_area_shape_exited"]
