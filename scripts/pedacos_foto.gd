@@ -9,6 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	Global.pedacos_foto += 1
 	Global.score += 100
 	
+	
 func _on_anim_animation_finished() -> void:
 	queue_free() # Exluir o diamante assim que a animação "coletado" for terminada
 	

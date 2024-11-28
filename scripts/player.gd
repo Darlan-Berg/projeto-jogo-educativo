@@ -66,14 +66,12 @@ func _physics_process(delta: float) -> void:
 
 func _on_agua_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	Global.vida -= 1
-	position.x = -766
-	position.y = 151
+	get_tree().reload_current_scene()
 
 
 func _on_agua_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	Global.vida -= 1
-	position.x = 1970
-	position.y = 107
+	get_tree().reload_current_scene()
 	
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
 	

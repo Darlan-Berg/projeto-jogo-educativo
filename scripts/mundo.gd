@@ -1,6 +1,10 @@
 extends Node2D
 
 
+func _enter_tree():
+	if Checkpoint.ultima_posicao:
+		%jogador.global_position = Checkpoint.ultima_posicao
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -13,3 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_game_over() -> void:
 	get_tree().reload_current_scene()
+	Global.pedacos_foto = 0
+	%jogador.position.x = 602
+	%jogador.position.y = 1
+	
