@@ -163,11 +163,11 @@ position = Vector2(1203, 19)
 [node name="pedaco_foto4" parent="." instance=ExtResource("6_vqn4v")]
 position = Vector2(2418, -47)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="fim_da_fase" type="Area2D" parent="."]
 position = Vector2(3019, -51)
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fim_da_fase"]
 shape = SubResource("CircleShape2D_jsm5e")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="fim_da_fase" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://coq7vqb67j7u3"]
+
+[ext_resource type="Script" path="res://scripts/fim_fase_5.gd" id="1_aj4y2"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+visible = false
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera2D"]
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/CanvasLayer2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aj4y2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer2/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="Camera2D/CanvasLayer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 128
+
+[node name="Label" type="Label" parent="Camera2D/CanvasLayer2/PanelContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Parabéns, você concluiu a fase 5!"
+
+[node name="Control" type="Control" parent="Camera2D/CanvasLayer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/CanvasLayer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="Camera2D/CanvasLayer2/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Button" type="Button" parent="Camera2D/CanvasLayer2/PanelContainer/VBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "clique \"espaço\"
+para prosseguir"
