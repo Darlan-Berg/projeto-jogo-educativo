@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=3 uid="uid://el0q87r2f12"]
+
+[ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="1_e08x6"]
+[ext_resource type="Theme" uid="uid://cvu616kig33uq" path="res://assets/joystix.tres" id="2_apoi1"]
+
+[sub_resource type="GDScript" id="GDScript_obb3c"]
+resource_name = "cena2"
+script/source = "extends PanelContainer
+
+@onready var elementos_ui = $\".\" as PanelContainer
+var qtd_itens_coletados = Global.pedacos_foto
+
+func _ready():
+	var label1: Label = elementos_ui.get_node(\"VBoxContainer/MarginContainer/Label\")
+	if qtd_itens_coletados == 4:
+		label1.text = \"Parabéns, você coletou todos os colecionáveis da fase!\"
+	else:
+		label1.text = \"Infelizmente você não encontrou todos os itens colecionáveis, mais sorte da próxima.\"
+	
+	var label2: Label = elementos_ui.get_node(\"VBoxContainer/MarginContainer2/Label\")
+	label2.text = (\"Encontrados %d/4\" % qtd_itens_coletados)
+	
+	var label3: Label = elementos_ui.get_node(\"VBoxContainer/MarginContainer3/Label\")
+	if qtd_itens_coletados == 4:
+		label3.text = \"Siga para próxima tela para desbloquear sua recompensa:\"
+	else:
+		label3.text = \"Prossiga para voltar à tela inicial.\"
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\") and qtd_itens_coletados == 4:
+		get_tree().change_scene_to_file(\"res://cenas/final da fase 5/cena3.tscn\")
+	
+	elif Input.is_action_just_pressed(\"ui_accept\") and qtd_itens_coletados != 4:
+		get_tree().change_scene_to_file(\"res://cenas/tela_inicial.tscn\")
+"
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_obb3c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e08x6")
+theme_override_font_sizes/font_size = 32
+text = "Os textos estarão escritos assim"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e08x6")
+theme_override_font_sizes/font_size = 32
+text = "Encontrados /4"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_e08x6")
+theme_override_font_sizes/font_size = 32
+text = "Siga para próxima tela para desbloquear sua recompensa:"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_apoi1")
+text = "clique \"espaço\"
+para prosseguir"

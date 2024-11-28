@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://mkqt7jrtg5kb"]
+
+[ext_resource type="Texture2D" uid="uid://cdg74ni4hx4qx" path="res://assets/chico_mendes.jpg" id="1_nvghk"]
+[ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="1_td635"]
+[ext_resource type="Theme" uid="uid://cvu616kig33uq" path="res://assets/joystix.tres" id="2_7gy6l"]
+
+[sub_resource type="GDScript" id="GDScript_kxggu"]
+resource_name = "cena3"
+script/source = "extends PanelContainer
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		get_tree().change_scene_to_file(\"res://cenas/tela_inicial.tscn\")
+"
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_kxggu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_nvghk")
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_td635")
+theme_override_font_sizes/font_size = 32
+text = "Chico Mendes, seringueiro e líder sindical, foi um dos maiores defensores da Amazônia e das comunidades que dela dependem. Ele lutou pela preservação da floresta, destacando sua importância para o equilíbrio ambiental global e os direitos dos povos tradicionais. Fundador do movimento de \"reservas extrativistas\", Mendes promoveu o uso sustentável dos recursos naturais, conciliando conservação e desenvolvimento humano. Seu ativismo o tornou um símbolo internacional da luta ambiental, inspirando políticas públicas voltadas à proteção da biodiversidade. Apesar de sua morte trágica em 1988, seu legado vive como um marco na conscientização ambiental e na defesa da justiça social no Brasil."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("2_7gy6l")
+text = "clique \"espaço\"
+para prosseguir"
