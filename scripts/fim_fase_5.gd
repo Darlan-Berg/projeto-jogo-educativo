@@ -2,7 +2,7 @@
 extends PanelContainer
 
 @onready var elementos_ui = $"." as PanelContainer
-var qtd_itens_coletados = 3 #Global.pedacos_foto #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+var qtd_itens_coletados = Global.pedacos_foto
 var num_cena = 0
 
 
