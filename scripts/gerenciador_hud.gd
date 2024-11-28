@@ -1,6 +1,7 @@
 extends Control
 
 signal game_over
+
 @onready var contador_diamantes := $container/container_diamantes/contador_diamantes as Label
 @onready var contador_score := $container/container_score/contador_score as Label
 @onready var contador_vidas := $container/container_vida/contador_vidas as Label
@@ -71,7 +72,7 @@ func _process(delta: float) -> void:
 			pedaco_2.visible = true
 			pedaco_3.visible = true
 			pedaco_4.visible = false
-		if Global.pedacos_foto == 2:
+		if Global.pedacos_foto == 4:
 			pedaco_1.visible = true
 			pedaco_2.visible = true
 			pedaco_3.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=79 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dv38bg45pnvbx" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/02.png" id="14_u3mcj"]
 [ext_resource type="Texture2D" uid="uid://bamha5tghfyej" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/03.png" id="15_8fnes"]
 [ext_resource type="Texture2D" uid="uid://cjb28hsk0w5v8" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/04.png" id="16_l5jeh"]
-[ext_resource type="Texture2D" uid="uid://cnnhssvohp5yd" path="res://assets/icone_vida.png" id="17_33jgo"]
+[ext_resource type="Texture2D" uid="uid://bvjvit5n7eyjy" path="res://idle (chico-mendes-jovem)-1.png.png" id="18_xcofl"]
 [ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="19_6ion7"]
 [ext_resource type="Texture2D" uid="uid://dx2nc188g5nqh" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/01.png" id="19_1645a"]
 [ext_resource type="PackedScene" uid="uid://0nlnis04kjd2" path="res://cenas/moving_platform.tscn" id="19_wve8b"]
@@ -47,6 +47,7 @@
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="46_2dmab"]
 [ext_resource type="Script" path="res://scripts/transicao.gd" id="46_kuwje"]
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="47_8q8ln"]
+[ext_resource type="PackedScene" uid="uid://bsshadx22kabl" path="res://cenas/checkpoint.tscn" id="48_2r8if"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5ku8t"]
 tile_data = PackedInt32Array(0, 262144, 8, 65536, 262144, 9, 131072, 262144, 10, 1, 327680, 8, 65537, 327680, 9, 131073, 327680, 10, 2, 393216, 8, 65538, 393216, 9, 131074, 393216, 10)
@@ -1044,7 +1045,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(2900, -79)
+position = Vector2(602, 1)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1157,18 +1158,6 @@ position = Vector2(6053, 17)
 [node name="Area2D48" parent="diamantes" instance=ExtResource("10_f6j5i")]
 position = Vector2(6029, 17)
 
-[node name="Area2D37" parent="diamantes" instance=ExtResource("10_f6j5i")]
-position = Vector2(6693, 73)
-
-[node name="Area2D38" parent="diamantes" instance=ExtResource("10_f6j5i")]
-position = Vector2(6669, 73)
-
-[node name="Area2D39" parent="diamantes" instance=ExtResource("10_f6j5i")]
-position = Vector2(6741, 73)
-
-[node name="Area2D40" parent="diamantes" instance=ExtResource("10_f6j5i")]
-position = Vector2(6717, 73)
-
 [node name="Area2D41" parent="diamantes" instance=ExtResource("10_f6j5i")]
 position = Vector2(7309, 73)
 
@@ -1248,6 +1237,7 @@ position = Vector2(6361, 40)
 position = Vector2(6377, 59)
 
 [node name="HUD" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="control" type="Control" parent="HUD"]
 layout_mode = 3
@@ -1272,7 +1262,6 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
-metadata/_edit_use_anchors_ = true
 
 [node name="container_diamantes" type="HBoxContainer" parent="HUD/control/container"]
 layout_mode = 2
@@ -1312,7 +1301,7 @@ size_flags_vertical = 8
 
 [node name="icone_player" type="TextureRect" parent="HUD/control/container/container_vida"]
 layout_mode = 2
-texture = ExtResource("17_33jgo")
+texture = ExtResource("18_xcofl")
 
 [node name="X" type="Label" parent="HUD/control/container/container_vida"]
 layout_mode = 2
@@ -1513,11 +1502,20 @@ position = Vector2(2834, 33)
 position = Vector2(-270, -61)
 
 [node name="pedaco_foto" parent="." instance=ExtResource("34_62an6")]
-position = Vector2(746, -28)
+position = Vector2(1338, -119)
+
+[node name="pedaco_foto4" parent="." instance=ExtResource("34_62an6")]
+position = Vector2(2186, -119)
+
+[node name="pedaco_foto2" parent="." instance=ExtResource("34_62an6")]
+position = Vector2(3250, -23)
+
+[node name="pedaco_foto3" parent="." instance=ExtResource("34_62an6")]
+position = Vector2(6706, 73)
 
 [node name="final" parent="." instance=ExtResource("45_61g3f")]
-position = Vector2(795, -20)
-next_level = "res://cenas/diamante.tscn"
+position = Vector2(7546, 89)
+next_level = "res://cenas/tela_inicial.tscn"
 
 [node name="transicao" type="CanvasLayer" parent="."]
 script = ExtResource("46_kuwje")
@@ -1549,22 +1547,27 @@ position = Vector2(3042, -86)
 shape = SubResource("CircleShape2D_elrvr")
 
 [node name="npc2" type="Node2D" parent="."]
-position = Vector2(107, 0)
 
 [node name="anim" type="AnimatedSprite2D" parent="npc2"]
-position = Vector2(3042, -86)
+position = Vector2(731.5, -22)
 sprite_frames = SubResource("SpriteFrames_3xvwn")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.0878012
 
 [node name="Area2D" type="Area2D" parent="npc2"]
+position = Vector2(731.5, -22)
 script = ExtResource("41_py0er")
 timeline = "timeline"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="npc2/Area2D"]
-position = Vector2(3042, -86)
 shape = SubResource("CircleShape2D_elrvr")
+
+[node name="checkpoint" parent="." instance=ExtResource("48_2r8if")]
+position = Vector2(3402, 41)
+
+[node name="checkpoint2" parent="." instance=ExtResource("48_2r8if")]
+position = Vector2(6018, 9)
 
 [connection signal="game_over" from="HUD/control" to="." method="_on_game_over"]
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]

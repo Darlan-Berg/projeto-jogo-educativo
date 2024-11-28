@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jogo Educativo (Atual)"
-run/main_scene="res://cenas/mundo.tscn"
+run/main_scene="res://cenas/tela_inicial.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://scripts/scripts_globais/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+Checkpoint="*res://scripts/checkpoint.gd"
 
 [dialogic]
 
