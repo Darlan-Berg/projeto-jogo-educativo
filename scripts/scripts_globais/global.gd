@@ -1,5 +1,6 @@
 extends Node
 
+var game_over = false
 var diamantes := 0
 var score := 0
 var vida := 3

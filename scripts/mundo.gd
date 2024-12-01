@@ -12,12 +12,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Global.game_over:
+		Global.game_over = false
+		get_tree().reload_current_scene()
+		Global.pedacos_foto = 0
+		%jogador.position.x = 602
+		%jogador.position.y = 1
 
 
-func _on_game_over() -> void:
-	get_tree().reload_current_scene()
-	Global.pedacos_foto = 0
-	%jogador.position.x = 602
-	%jogador.position.y = 1
 	

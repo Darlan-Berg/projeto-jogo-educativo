@@ -86,5 +86,5 @@ func _process(delta: float) -> void:
 	
 	if Global.vida == 0 and Global.quantidade_vidas > 0:
 		Global.quantidade_vidas -= 1
-		game_over.emit()
+		Global.game_over = true
 		Global.vida = 3
