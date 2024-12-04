@@ -995,7 +995,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(1079, -117)
+position = Vector2(2996, -407)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1339,7 +1339,7 @@ position = Vector2(6706, 73)
 
 [node name="final" parent="." instance=ExtResource("45_61g3f")]
 position = Vector2(7546, 89)
-next_level = "res://cenas/tela_inicial.tscn"
+next_level = "res://cenas/final da fase 5/cena1.tscn"
 
 [node name="transicao" type="CanvasLayer" parent="."]
 script = ExtResource("46_kuwje")
@@ -1355,9 +1355,7 @@ script = ExtResource("47_8q8ln")
 
 [node name="npc" parent="." instance=ExtResource("26_a8fwu")]
 position = Vector2(3037, -86)
-
-[node name="npc2" parent="." instance=ExtResource("26_a8fwu")]
-position = Vector2(711, -22)
+timeline = "timeline2"
 
 [node name="checkpoint" parent="." instance=ExtResource("48_2r8if")]
 position = Vector2(3402, 41)
@@ -1393,6 +1391,10 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_mv22w")
 autoplay = "default"
 frame_progress = 0.673077
+
+[node name="npc2" parent="." instance=ExtResource("26_a8fwu")]
+position = Vector2(668, -29)
+timeline = "timeline"
 
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
 [connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]

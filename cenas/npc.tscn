@@ -100,7 +100,6 @@ radius = 19.0263
 
 [node name="npc" type="Area2D"]
 script = ExtResource("2_b68qg")
-timeline = "timeline2"
 
 [node name="anim2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rihwl")
