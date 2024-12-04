@@ -995,7 +995,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(2996, -407)
+position = Vector2(1307, -182)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1339,7 +1339,7 @@ position = Vector2(6706, 73)
 
 [node name="final" parent="." instance=ExtResource("45_61g3f")]
 position = Vector2(7546, 89)
-next_level = "res://cenas/final da fase 5/cena1.tscn"
+next_level = "res://cenas/final da fase 1/cena1.tscn"
 
 [node name="transicao" type="CanvasLayer" parent="."]
 script = ExtResource("46_kuwje")
@@ -1354,7 +1354,7 @@ grow_vertical = 2
 script = ExtResource("47_8q8ln")
 
 [node name="npc" parent="." instance=ExtResource("26_a8fwu")]
-position = Vector2(3037, -86)
+position = Vector2(3043, -86)
 timeline = "timeline2"
 
 [node name="checkpoint" parent="." instance=ExtResource("48_2r8if")]

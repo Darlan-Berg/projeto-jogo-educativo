@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://en3ayhmpih6c"]
+
+[ext_resource type="Theme" uid="uid://cvu616kig33uq" path="res://assets/joystix.tres" id="1_1kbfw"]
+[ext_resource type="Texture2D" uid="uid://cdg74ni4hx4qx" path="res://assets/chico_mendes.jpg" id="2_d34cm"]
+[ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="3_krq8h"]
+
+[sub_resource type="GDScript" id="GDScript_kxggu"]
+resource_name = "cena3"
+script/source = "extends PanelContainer
+
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		get_tree().change_scene_to_file(\"res://cenas/tela_inicial.tscn\")
+"
+
+[node name="PanelContainer" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1kbfw")
+script = SubResource("GDScript_kxggu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_d34cm")
+stretch_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_krq8h")
+theme_override_font_sizes/font_size = 32
+text = "fihegiehrhgehrhgheigrhigrghii"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("1_1kbfw")
+text = "clique \"espaço\"
+para prosseguir"

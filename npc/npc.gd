@@ -10,8 +10,9 @@ func _physics_process(delta: float) -> void:
 		fim_dialogo = true
 
 func _on_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	esta_na_area = true
-		
+	esta_na_area = true # Replace with function body.
+
+
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	esta_na_area = false
-	fim_dialogo = false
+	fim_dialogo = false # Replace with function body.
