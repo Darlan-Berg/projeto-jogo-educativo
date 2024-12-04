@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://en3ayhmpih6c"]
 
 [ext_resource type="Theme" uid="uid://cvu616kig33uq" path="res://assets/joystix.tres" id="1_1kbfw"]
-[ext_resource type="Texture2D" uid="uid://cdg74ni4hx4qx" path="res://assets/chico_mendes.jpg" id="2_d34cm"]
+[ext_resource type="Texture2D" uid="uid://ccsvbqh7p2cyn" path="res://assets/seringueiros.jpg" id="2_ehthu"]
 [ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="3_krq8h"]
 
 [sub_resource type="GDScript" id="GDScript_kxggu"]
@@ -15,9 +15,12 @@ func _process(delta: float) -> void:
 "
 
 [node name="PanelContainer" type="PanelContainer"]
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = -0.149
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 1.149
+offset_top = 160.92
+offset_bottom = -160.92
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1kbfw")
@@ -34,7 +37,7 @@ theme_override_constants/margin_right = 64
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("2_d34cm")
+texture = ExtResource("2_ehthu")
 stretch_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
@@ -47,8 +50,8 @@ theme_override_constants/margin_right = 128
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_krq8h")
 theme_override_font_sizes/font_size = 32
-text = "fihegiehrhgehrhgheigrhigrghii"
-horizontal_alignment = 1
+text = "Na década de 1940 e 1950, os seringueiros da Amazônia viveram uma exploração brutal, marcada por condições de trabalho desumanas e uma economia desigual. Durante o ciclo da borracha, muitos seringueiros foram forçados a trabalhar nas selvas, em regime de \"seringal\", sob o domínio de patrões que praticavam um sistema de endividamento que os mantinha presos ao ciclo da miséria. As condições eram precárias: jornadas exaustivas, alimentação escassa e habitação insalubre. Além disso, a violência e o autoritarismo dos seringalistas eram comuns, e os trabalhadores eram frequentemente coagidos a viver longe de seus direitos. O regime de \"barracão\" garantiu que o seringueiro ficasse refém de uma dívida constante, perpetuando sua exploração e impedindo qualquer chance de ascensão ou liberdade."
+horizontal_alignment = 3
 autowrap_mode = 3
 
 [node name="Control" type="Control" parent="VBoxContainer"]
