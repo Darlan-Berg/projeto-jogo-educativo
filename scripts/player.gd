@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		Global.vida -= 1
 		tomar_dano(Vector2(-200, -200))
 		som_dano.play()
-	if ray_esquerda.is_colliding():
+	elif ray_esquerda.is_colliding():
 		Global.vida -= 1
 		tomar_dano(Vector2(200, -200))
 		som_dano.play()
@@ -68,10 +68,12 @@ func _on_agua_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: 
 	Global.vida -= 1
 	get_tree().reload_current_scene()
 
-
 func _on_agua_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	Global.vida -= 1
 	get_tree().reload_current_scene()
+
+func _on_espinhos_body_entered(body: Node2D) -> void:
+	tomar_dano(Vector2(0, -1000))
 	
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
 	
