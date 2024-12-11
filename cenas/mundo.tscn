@@ -1181,7 +1181,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(791, -70)
+position = Vector2(4611, -37)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]

@@ -73,6 +73,7 @@ func _on_agua_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index
 	get_tree().reload_current_scene()
 
 func _on_espinhos_body_entered(body: Node2D) -> void:
+	Global.vida -= 1
 	tomar_dano(Vector2(0, -1000))
 	
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
