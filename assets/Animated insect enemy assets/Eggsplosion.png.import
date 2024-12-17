@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqt8a4atfntxq"
-path="res://.godot/imported/moldura_vazia_256x256.png-361265b307362e0153f6d593c4480d9e.ctex"
+uid="uid://csa07fucvrfx6"
+path="res://.godot/imported/Eggsplosion.png-b0918830fd8288312b43c7fd34e13448.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/moldura_vazia_256x256.png"
-dest_files=["res://.godot/imported/moldura_vazia_256x256.png-361265b307362e0153f6d593c4480d9e.ctex"]
+source_file="res://assets/Animated insect enemy assets/Eggsplosion.png"
+dest_files=["res://.godot/imported/Eggsplosion.png-b0918830fd8288312b43c7fd34e13448.ctex"]
 
 [params]
 

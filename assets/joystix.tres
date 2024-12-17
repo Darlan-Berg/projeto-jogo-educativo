@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://cvu616kig33uq"]
 
 [ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="1_r2x26"]
-[ext_resource type="Texture2D" uid="uid://dqt8a4atfntxq" path="res://assets/moldura_vazia_256x256.png" id="2_jp4eu"]
-[ext_resource type="Texture2D" uid="uid://bgwprbpbnx8v0" path="res://assets/moldura_256x256.png" id="2_nmi3q"]
+[ext_resource type="Texture2D" uid="uid://dqt8a4atfntxq" path="res://assets/molduras/moldura_vazia_256x256.png" id="2_jp4eu"]
+[ext_resource type="Texture2D" uid="uid://bgwprbpbnx8v0" path="res://assets/molduras/moldura_256x256.png" id="2_nmi3q"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8viih"]
 texture = ExtResource("2_jp4eu")

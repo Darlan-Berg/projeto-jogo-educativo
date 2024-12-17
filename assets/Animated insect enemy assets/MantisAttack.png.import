@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsx6mv6l84ngh"
-path="res://.godot/imported/parque chico mendes.png-0b34b796d5351d025ebd00b15878b923.ctex"
+uid="uid://dhlrsst2f8b32"
+path="res://.godot/imported/MantisAttack.png-7215675798e43dc811e24afb7f519ca0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/parque chico mendes.png"
-dest_files=["res://.godot/imported/parque chico mendes.png-0b34b796d5351d025ebd00b15878b923.ctex"]
+source_file="res://assets/Animated insect enemy assets/MantisAttack.png"
+dest_files=["res://.godot/imported/MantisAttack.png-7215675798e43dc811e24afb7f519ca0.ctex"]
 
 [params]
 

@@ -1,0 +1,158 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsufqngh4ejch"]
+
+[ext_resource type="Texture2D" uid="uid://cm1a0vleqd4mn" path="res://assets/Animated insect enemy assets/BeetleMove.png" id="1_2knw2"]
+[ext_resource type="Script" path="res://scripts/besouro.gd" id="1_xvawh"]
+[ext_resource type="PackedScene" uid="uid://c0owlna6jrqmg" path="res://cenas/hitbox.tscn" id="3_d6mso"]
+
+[sub_resource type="Animation" id="Animation_vtkku"]
+resource_name = "voando"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_2knw2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textura:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11, 9]
+}
+
+[sub_resource type="Animation" id="Animation_vn8ir"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textura:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_2knw2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textura:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textura:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textura:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xy1rd"]
+_data = {
+"RESET": SubResource("Animation_vn8ir"),
+"voando": SubResource("Animation_vtkku")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmcbt"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h5pq"]
+size = Vector2(12.5, 2)
+
+[node name="besouro" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_xvawh")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xy1rd")
+}
+autoplay = "voando"
+
+[node name="colisor" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, 2)
+rotation = -1.56929
+shape = SubResource("CapsuleShape2D_hmcbt")
+
+[node name="textura" type="Sprite2D" parent="."]
+texture = ExtResource("1_2knw2")
+hframes = 4
+vframes = 4
+
+[node name="raycast" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+target_position = Vector2(8, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="hitbox" parent="." instance=ExtResource("3_d6mso")]
+position = Vector2(0, -2)
+
+[node name="colisor_hitbox" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_7h5pq")
