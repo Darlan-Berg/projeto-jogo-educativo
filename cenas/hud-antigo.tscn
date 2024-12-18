@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://7rmlai54133i"]
+[gd_scene load_steps=24 format=3 uid="uid://dye5yk6abiado"]
 
 [ext_resource type="Script" path="res://scripts/gerenciador_hud.gd" id="1_lmjui"]
 [ext_resource type="Texture2D" uid="uid://c4h0mvdf0jhok" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/01.png" id="2_xmydi"]
 [ext_resource type="Texture2D" uid="uid://dv38bg45pnvbx" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/02.png" id="3_eamuf"]
 [ext_resource type="Texture2D" uid="uid://bamha5tghfyej" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/03.png" id="4_3tqr2"]
 [ext_resource type="Texture2D" uid="uid://cjb28hsk0w5v8" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Blue Diamond/04.png" id="5_jyicc"]
-[ext_resource type="Texture2D" uid="uid://danlyhy1ihsc8" path="res://assets/latex.png" id="6_h60p2"]
 [ext_resource type="Texture2D" uid="uid://bvjvit5n7eyjy" path="res://idle (chico-mendes-jovem)-1.png.png" id="6_s2adn"]
 [ext_resource type="Texture2D" uid="uid://dx2nc188g5nqh" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/01.png" id="7_8pqou"]
 [ext_resource type="Texture2D" uid="uid://dln0xxkhllqsm" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/02.png" id="8_53lso"]
@@ -17,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bxu4eao0k7m6c" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/07.png" id="14_vju6u"]
 [ext_resource type="Texture2D" uid="uid://p3whi5d6i1pd" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/08.png" id="15_14c6w"]
 [ext_resource type="Texture2D" uid="uid://dmttg1yb28w4c" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/09.png" id="16_pa8ae"]
-[ext_resource type="Texture2D" uid="uid://ccsvbqh7p2cyn" path="res://assets/seringueiros.jpg" id="17_gf7fo"]
 [ext_resource type="Texture2D" uid="uid://bkjik1b0ovmwn" path="res://assets/Treasure Hunters/Pirate Treasure/Sprites/Big Map/Idle/10.png" id="17_v5qsl"]
 [ext_resource type="Texture2D" uid="uid://wi2fl76kqhvu" path="res://assets/barras de vida/1-1.png.png" id="18_4n522"]
 [ext_resource type="Texture2D" uid="uid://bhepppwcrxyn4" path="res://assets/barras de vida/1-2.png.png" id="19_732h3"]
@@ -117,34 +115,6 @@ text = "SCORE"
 layout_mode = 2
 theme_override_font_sizes/font_size = 17
 text = "000000"
-
-[node name="container_latex" type="HBoxContainer" parent="control/container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-alignment = 1
-
-[node name="latex" type="TextureRect" parent="control/container/container_latex"]
-layout_mode = 2
-texture = ExtResource("6_h60p2")
-
-[node name="latex2" type="TextureRect" parent="control/container/container_latex"]
-layout_mode = 2
-texture = ExtResource("6_h60p2")
-
-[node name="latex3" type="TextureRect" parent="control/container/container_latex"]
-layout_mode = 2
-texture = ExtResource("6_h60p2")
-
-[node name="container_foto" type="HBoxContainer" parent="control/container"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-alignment = 1
-
-[node name="foto" type="TextureRect" parent="control/container/container_foto"]
-layout_mode = 2
-texture = ExtResource("17_gf7fo")
 
 [node name="container_vida" type="HBoxContainer" parent="control/container"]
 layout_mode = 2

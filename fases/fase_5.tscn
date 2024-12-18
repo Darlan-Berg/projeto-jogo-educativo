@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/fase_5.gd" id="1_cdfhq"]
 [ext_resource type="Texture2D" uid="uid://dp3mtyyqfwb4h" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_putqf"]
 [ext_resource type="Texture2D" uid="uid://0vskkd151mw4" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_nxkbe"]
-[ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://cenas/player.tscn" id="3_qerua"]
+[ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://atores/player.tscn" id="3_qerua"]
 [ext_resource type="Texture2D" uid="uid://t0pjox5cawhx" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="5_sehmj"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="6_1bbj1"]
 [ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="6_vqn4v"]
@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://d2vib20a668lh" path="res://assets/parque chico mendes/pacm-4.png" id="8_3jkgy"]
 [ext_resource type="Texture2D" uid="uid://c33reuq1l1f72" path="res://assets/placa.png" id="8_44r2t"]
 [ext_resource type="PackedScene" uid="uid://dhlothrokti4v" path="res://cenas/final.tscn" id="10_eb75v"]
-[ext_resource type="Script" path="res://scripts/transicao.gd" id="11_qoqil"]
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="12_0o527"]
+[ext_resource type="Script" uid="uid://bohpqq5yt328j" path="res://cenas/tela_inicial.tscn" id="12_iqgbk"]
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="13_tdisc"]
 [ext_resource type="PackedScene" uid="uid://7rmlai54133i" path="res://cenas/hud.tscn" id="15_y30r2"]
 [ext_resource type="PackedScene" uid="uid://dsufqngh4ejch" path="res://atores/besouro.tscn" id="16_3ug3y"]
@@ -650,7 +650,7 @@ position = Vector2(5946, -227)
 next_level = "res://cenas/final da fase 5/cena1.tscn"
 
 [node name="transicao" type="CanvasLayer" parent="."]
-script = ExtResource("11_qoqil")
+script = ExtResource("12_iqgbk")
 
 [node name="color_rect" type="ColorRect" parent="transicao"]
 material = SubResource("ShaderMaterial_usbyq")
@@ -671,7 +671,7 @@ shape = SubResource("RectangleShape2D_dlwum")
 
 [node name="HUD" parent="." instance=ExtResource("15_y30r2")]
 
-[node name="besouro" parent="." instance=ExtResource("16_3ug3y")]
+[node name="besouro" parent="." groups=["inimigos"] instance=ExtResource("16_3ug3y")]
 position = Vector2(3344, -48)
 
 [node name="Area2D" type="Area2D" parent="."]

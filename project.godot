@@ -28,6 +28,7 @@ directories/dch_directory={
 "seringueiro": "res://npc/seringueiro.dch"
 }
 directories/dtl_directory={
+"foto": "res://foto.dtl",
 "placa1": "res://placa1.dtl",
 "timeline": "res://timeline.dtl",
 "timeline2": "res://timeline2.dtl"

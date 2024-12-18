@@ -63,6 +63,7 @@ func verificar_sequencia(botao_pressionado):
 					minigame_ativo = false
 					minigame_concluido = true
 					barra_timer.visible = false
+					Global.latex += 1
 			else:
 				print("Indice out of range!")
 		else:

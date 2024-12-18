@@ -6,6 +6,7 @@ var jumpCount = 0
 var caiu_na_agua_1 = false
 var caiu_na_agua_2 = false
 var knockback_vector:= Vector2.ZERO
+var direc_jogador = 1
 
 @onready var animador := $anim as AnimatedSprite2D
 @onready var remote := $remote as RemoteTransform2D
@@ -16,6 +17,7 @@ var knockback_vector:= Vector2.ZERO
    
 func _physics_process(delta: float) -> void:
 	
+	"""
 	if ray_direita.is_colliding():
 		Global.vida -= 1
 		tomar_dano(Vector2(-200, -200))
@@ -24,6 +26,7 @@ func _physics_process(delta: float) -> void:
 		Global.vida -= 1
 		tomar_dano(Vector2(200, -200))
 		som_dano.play()
+	"""
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -37,20 +40,20 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		jumpCount = 0
 	if jumpCount < 1:
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not Global.controles_pausados:
 			velocity.y = JUMP_VELOCITY
 			som_pulo.play()
-		if Input.is_action_just_pressed("ui_accept") and not is_on_floor():
+		if Input.is_action_just_pressed("ui_accept") and not is_on_floor() and not Global.controles_pausados:
 			velocity.y = JUMP_VELOCITY
 			jumpCount +=1
 			som_pulo.play()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-		animador.scale.x = direction
+	self.direc_jogador = Input.get_axis("ui_left", "ui_right")
+	if self.direc_jogador and not Global.controles_pausados:
+		velocity.x = self.direc_jogador * SPEED
+		animador.scale.x = self.direc_jogador
 		if is_on_floor():
 			animador.play("run")
 	else:
@@ -59,7 +62,7 @@ func _physics_process(delta: float) -> void:
 			animador.play("idle")
 			
 	if knockback_vector != Vector2.ZERO:
-		velocity = knockback_vector 
+		velocity = knockback_vector
 
 	move_and_slide()
 	
@@ -85,3 +88,13 @@ func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25):
 		knockback_tween.tween_property(self, "knockback_vector", Vector2.ZERO, duracao)
 		animador.modulate = Color(1,0,0,1) 
 		knockback_tween.tween_property(animador, "modulate", Color(1,1,1,1), duracao)
+		Global.vida -= 1
+
+func _on_hurtbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("inimigos"):
+		
+		if self.direc_jogador == 1:
+			tomar_dano(Vector2(-400, -200))
+		else:
+			tomar_dano(Vector2(400, -200))
+		som_dano.play()
