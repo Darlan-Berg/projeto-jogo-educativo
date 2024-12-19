@@ -1,9 +1,12 @@
 extends Node2D
 
 
-func _enter_tree():
+'func _enter_tree():
 	if Checkpoint.ultima_posicao:
-		%jogador.global_position = Checkpoint.ultima_posicao
+		%jogador.position = Checkpoint.ultima_posicao
+	else:
+		%jogador.position.x = Checkpoint.posicao_inicial_player[0]
+		%jogador.position.y = Checkpoint.posicao_inicial_player[1]'
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,10 +17,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Global.game_over:
 		Global.game_over = false
-		get_tree().reload_current_scene()
-		Global.pedacos_foto = 0
-		%jogador.position.x = 602
-		%jogador.position.y = 1
-
-
-	
+		if Checkpoint.ultima_posicao:
+			%jogador.position = Checkpoint.ultima_posicao
+		else:
+			%jogador.position.x = Checkpoint.posicao_inicial_player[0]
+			%jogador.position.y = Checkpoint.posicao_inicial_player[1]

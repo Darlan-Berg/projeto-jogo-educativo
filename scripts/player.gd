@@ -69,14 +69,21 @@ func _physics_process(delta: float) -> void:
 
 func _on_agua_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	Global.vida -= 1
-	get_tree().reload_current_scene()
+	if Checkpoint.ultima_posicao:
+		position = Checkpoint.ultima_posicao
+	else:
+		position.x = Checkpoint.posicao_inicial_player[0]
+		position.y = Checkpoint.posicao_inicial_player[1]
 
 func _on_agua_2_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	Global.vida -= 1
-	get_tree().reload_current_scene()
+	if Checkpoint.ultima_posicao:
+		position = Checkpoint.ultima_posicao
+	else:
+		position.x = Checkpoint.posicao_inicial_player[0]
+		position.y = Checkpoint.posicao_inicial_player[1]
 
-func _on_espinhos_body_entered(body: Node2D) -> void:
-	Global.vida -= 1
+func _on_espinhos_1_body_entered(body: Node2D) -> void:
 	tomar_dano(Vector2(0, -1000))
 	
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25): 
@@ -93,8 +100,12 @@ func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25):
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("inimigos"):
 		
-		if self.direc_jogador == 1:
+		if body.velocity.x > 0 and self.velocity.x > 0:
 			tomar_dano(Vector2(-400, -200))
-		else:
+		elif body.velocity.x < 0 and self.velocity.x < 0:
 			tomar_dano(Vector2(400, -200))
+		elif body.velocity.x > 0:
+			tomar_dano(Vector2(400, -200))
+		elif body.velocity.x < 0:
+			tomar_dano(Vector2(-400, -200))
 		som_dano.play()

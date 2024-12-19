@@ -126,3 +126,4 @@ func _process(delta: float) -> void:
 		Global.vida = 3
 	if Global.quantidade_vidas == 0:
 		get_tree().change_scene_to_file("res://cenas/tela_inicial.tscn")
+		Global.quantidade_vidas = 3

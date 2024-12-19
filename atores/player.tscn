@@ -169,6 +169,7 @@ shape = SubResource("RectangleShape2D_op652")
 position = Vector2(77.5, -29)
 zoom = Vector2(4, 4)
 limit_top = -160
+limit_right = 3450
 limit_bottom = 700
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
