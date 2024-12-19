@@ -42,11 +42,11 @@ func _physics_process(delta: float) -> void:
 	if jumpCount < 1:
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor() and not Global.controles_pausados:
 			velocity.y = JUMP_VELOCITY
-			som_pulo.play()
+			#som_pulo.play()
 		if Input.is_action_just_pressed("ui_accept") and not is_on_floor() and not Global.controles_pausados:
 			velocity.y = JUMP_VELOCITY
 			jumpCount +=1
-			som_pulo.play()
+			#som_pulo.play()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

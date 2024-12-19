@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func tomar_dano(forca_knockback := Vector2.ZERO, duracao := 0.25):
-	print("O besouro tomou dano")
 	#colisor.disabled = true
 	#colisor_hitbox.disabled = true
 	textura.flip_v = true
