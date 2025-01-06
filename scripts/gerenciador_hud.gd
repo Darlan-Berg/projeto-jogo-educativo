@@ -22,6 +22,7 @@ signal game_over
 
 @onready var foto: TextureRect = $container/container_foto/foto
 
+@export var ft: Texture
 var fim_dialogo = false
 var timeline
 
@@ -31,6 +32,7 @@ func _ready() -> void:
 	contador_diamantes.text = str("%04d" % Global.diamantes)
 	contador_score.text = str("%06d" % Global.score)
 	contador_vidas.text = str("%02d" % Global.quantidade_vidas)
+	foto.texture = ft
 	foto.visible = false
 
 
@@ -91,8 +93,12 @@ func _process(delta: float) -> void:
 			pedaco_4.visible = true
 			foto.visible = true
 			if not fim_dialogo:
-				timeline = Dialogic.start("foto")
-				fim_dialogo = true
+				if Global.fase_em_execucao != 5:
+					timeline = Dialogic.start("foto")
+					fim_dialogo = true
+				else:
+					timeline = Dialogic.start("foto_chico_mendes")
+					fim_dialogo = true
 			if Dialogic.current_timeline == timeline:
 				foto.visible = false
 		else:

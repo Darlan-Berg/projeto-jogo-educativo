@@ -71,6 +71,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lmjui")
+ft = ExtResource("17_gf7fo")
 
 [node name="container" type="MarginContainer" parent="control"]
 layout_mode = 1
@@ -137,7 +138,6 @@ layout_mode = 2
 texture = ExtResource("6_h60p2")
 
 [node name="container_foto" type="HBoxContainer" parent="control/container"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -145,6 +145,8 @@ alignment = 1
 
 [node name="foto" type="TextureRect" parent="control/container/container_foto"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("17_gf7fo")
 
 [node name="container_vida" type="HBoxContainer" parent="control/container"]

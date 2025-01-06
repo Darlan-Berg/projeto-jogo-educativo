@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=91 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="1_uolk4"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b2hdfvdtmqvax" path="res://assets/tecla_espaco.png" id="29_i7ait"]
 [ext_resource type="PackedScene" uid="uid://chrid8wi5dd8a" path="res://cenas/seringueiras/seringueira2.tscn" id="29_rafmf"]
 [ext_resource type="Texture2D" uid="uid://dfpc1lgf2bbm4" path="res://npc/idle-2.png.png" id="31_k0h34"]
+[ext_resource type="Texture2D" uid="uid://dhb5ht78fyf0a" path="res://assets/placas.png" id="32_hflaj"]
 [ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="34_62an6"]
 [ext_resource type="PackedScene" uid="uid://dhlothrokti4v" path="res://cenas/final.tscn" id="45_61g3f"]
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="46_2dmab"]
@@ -1161,7 +1162,6 @@ script = ExtResource("1_sn7h5")
 
 [node name="TileMap" type="TileMap" parent="."]
 physics_interpolation_mode = 1
-visible = false
 z_index = -1
 position = Vector2(-38, 41)
 tile_set = SubResource("TileSet_lbgne")
@@ -1233,7 +1233,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(5893, -181)
+position = Vector2(1186, -103)
 collision_mask = 1
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1664,6 +1664,13 @@ shape = SubResource("RectangleShape2D_7k5nl")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="espinhos"]
 position = Vector2(2594, 33)
 shape = SubResource("RectangleShape2D_7k5nl")
+
+[node name="PlacaFim" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(7762, 71)
+scale = Vector2(0.375, 0.34375)
+texture = ExtResource("32_hflaj")
+vframes = 2
 
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
 [connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]
