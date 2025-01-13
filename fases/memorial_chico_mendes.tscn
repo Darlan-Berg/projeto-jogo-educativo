@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr7mtqn0b6k1"]
+[gd_scene load_steps=9 format=3 uid="uid://53g25coevc7q"]
 
 [ext_resource type="Texture2D" uid="uid://b55a6evctsjtr" path="res://assets/memorial chico mendes/room/tile_room.png" id="1_0nkkd"]
 [ext_resource type="Texture2D" uid="uid://chgpi1njtn3rg" path="res://assets/memorial chico mendes/room/tile_wall.png" id="2_gr7x0"]

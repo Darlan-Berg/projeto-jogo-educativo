@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bt1xpjsabocba"]
+[gd_scene load_steps=37 format=3 uid="uid://bt1xpjsabocba"]
 
 [ext_resource type="Script" path="res://scripts/fase_5.gd" id="1_cdfhq"]
 [ext_resource type="Texture2D" uid="uid://dp3mtyyqfwb4h" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_putqf"]
@@ -18,7 +18,9 @@
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="12_0o527"]
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="13_tdisc"]
 [ext_resource type="PackedScene" uid="uid://7rmlai54133i" path="res://cenas/hud.tscn" id="15_y30r2"]
-[ext_resource type="PackedScene" uid="uid://dsufqngh4ejch" path="res://atores/besouro.tscn" id="16_3ug3y"]
+[ext_resource type="PackedScene" path="res://atores/besouro.tscn" id="16_3ug3y"]
+[ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/acionar_minigame.gd" id="19_ag4mu"]
+[ext_resource type="Texture2D" uid="uid://cwrdscathhidg" path="res://minigame-jogo-da-memoria/sprites/skull-crossed-bones.png" id="20_qli6l"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3hv0"]
 tile_data = PackedInt32Array(0, 458755, 4, 65536, 786435, 18, 1, 851971, 17, 65537, 393219, 3)
@@ -1539,6 +1541,9 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(0, 0.572722, 0.221403, 1)
 shader_parameter/line_color_b = Color(0, 0.983832, 0.546728, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kalvh"]
+radius = 256.265
+
 [node name="fase_5" type="Node2D"]
 position = Vector2(-4043, 231)
 script = ExtResource("1_cdfhq")
@@ -1789,8 +1794,20 @@ metadata/_edit_use_anchors_ = true
 [node name="HUD" parent="." instance=ExtResource("15_y30r2")]
 visible = false
 
+[node name="acionador_minigame_1" type="Area2D" parent="."]
+position = Vector2(941, 38)
+scale = Vector2(0.1, 0.1)
+collision_mask = 2
+script = ExtResource("19_ag4mu")
+
+[node name="Sprite2D" type="Sprite2D" parent="acionador_minigame_1"]
+texture = ExtResource("20_qli6l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="acionador_minigame_1"]
+shape = SubResource("CircleShape2D_kalvh")
+
 [node name="jogador" parent="." instance=ExtResource("3_qerua")]
-position = Vector2(2003, 6)
+position = Vector2(575, -81)
 
 [connection signal="area_shape_entered" from="placas/placa1/Area2D" to="placas/placa1/Area2D" method="_on_area_shape_entered"]
 [connection signal="area_shape_exited" from="placas/placa1/Area2D" to="placas/placa1/Area2D" method="_on_area_shape_exited"]
@@ -1800,3 +1817,5 @@ position = Vector2(2003, 6)
 [connection signal="body_entered" from="obstaculos/espinhos2" to="jogador" method="_on_espinhos_1_body_entered"]
 [connection signal="body_entered" from="obstaculos/espinhos3" to="jogador" method="_on_espinhos_body_entered"]
 [connection signal="body_entered" from="obstaculos/espinhos3" to="jogador" method="_on_espinhos_1_body_entered"]
+[connection signal="body_entered" from="acionador_minigame_1" to="." method="_on_acionador_minigame_1_body_entered"]
+[connection signal="body_exited" from="acionador_minigame_1" to="." method="_on_acionador_minigame_1_body_exited"]
