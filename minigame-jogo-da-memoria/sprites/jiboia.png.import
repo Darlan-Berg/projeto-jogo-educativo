@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cof1o1s8veh2v"
-path="res://.godot/imported/BackgroundRed.png-d50fecc7e2212253d6692507fd120166.ctex"
+uid="uid://bp31efheue1ue"
+path="res://.godot/imported/jiboia.png-eeca1b5c510daa0b8605a600a5e4e3cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundRed.png"
-dest_files=["res://.godot/imported/BackgroundRed.png-d50fecc7e2212253d6692507fd120166.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/jiboia.png"
+dest_files=["res://.godot/imported/jiboia.png-eeca1b5c510daa0b8605a600a5e4e3cc.ctex"]
 
 [params]
 

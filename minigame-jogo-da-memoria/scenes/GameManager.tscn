@@ -1,193 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0ighc5qhf814"]
+[gd_scene load_steps=10 format=3 uid="uid://d0ighc5qhf814"]
 
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card.gd" id="1_exw22"]
 [ext_resource type="Texture2D" uid="uid://gv27yx1hha6m" path="res://minigame-jogo-da-memoria/sprites/dandelion-flower.png" id="1_gkuv8"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/game_manager.gd" id="1_ktchr"]
+[ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_one_name.gd" id="4_ibiui"]
+[ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_two_name.gd" id="5_ml10i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1ehb"]
 size = Vector2(512, 512)
 
-[node name="Camera2D" type="Camera2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_tkt3a"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_1upi5"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_6hnqc"]
+font_size = 24
+
+[node name="Node2D" type="Camera2D"]
 position = Vector2(686, 386)
-
-[node name="GameManager" type="Node2D" parent="."]
-script = ExtResource("1_ktchr")
-
-[node name="Card1" type="Area2D" parent="GameManager"]
-position = Vector2(-250, -263)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card1"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card1"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card2" type="Area2D" parent="GameManager"]
-position = Vector2(-67, -251)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card2"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card2"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card3" type="Area2D" parent="GameManager"]
-position = Vector2(110, -233)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card3"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card3"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card4" type="Area2D" parent="GameManager"]
-position = Vector2(298, -245)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card4"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card4"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card5" type="Area2D" parent="GameManager"]
-position = Vector2(-253, -119)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card5"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card5"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card6" type="Area2D" parent="GameManager"]
-position = Vector2(-97, -98)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card6"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card6"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card7" type="Area2D" parent="GameManager"]
-position = Vector2(83, -95)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card7"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card7"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card8" type="Area2D" parent="GameManager"]
-position = Vector2(235, -95)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card8"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card8"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card9" type="Area2D" parent="GameManager"]
-position = Vector2(-256, 25)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card9"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card9"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card10" type="Area2D" parent="GameManager"]
-position = Vector2(-100, 52)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card10"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card10"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card11" type="Area2D" parent="GameManager"]
-position = Vector2(68, 55)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card11"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card11"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card12" type="Area2D" parent="GameManager"]
-position = Vector2(238, 67)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card12"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card12"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card13" type="Area2D" parent="GameManager"]
-position = Vector2(-262, 189)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card13"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card13"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card14" type="Area2D" parent="GameManager"]
-position = Vector2(-100, 192)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card14"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card14"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card15" type="Area2D" parent="GameManager"]
-position = Vector2(74, 201)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card15"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card15"]
-shape = SubResource("RectangleShape2D_a1ehb")
-
-[node name="Card16" type="Area2D" parent="GameManager"]
-position = Vector2(250, 210)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_exw22")
-
-[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card16"]
-texture = ExtResource("1_gkuv8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card16"]
-shape = SubResource("RectangleShape2D_a1ehb")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 z_index = -5
@@ -200,3 +32,221 @@ offset_right = 686.0
 offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameManager" type="Node2D" parent="."]
+z_index = 5
+script = ExtResource("1_ktchr")
+
+[node name="Card1" type="Area2D" parent="GameManager"]
+position = Vector2(-254, -130)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card1"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card1"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card2" type="Area2D" parent="GameManager"]
+position = Vector2(298, -130)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card2"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card2"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card3" type="Area2D" parent="GameManager"]
+position = Vector2(114, -274)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card3"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card3"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card4" type="Area2D" parent="GameManager"]
+position = Vector2(-254, 14)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card4"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card4"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card5" type="Area2D" parent="GameManager"]
+position = Vector2(-254, 158)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card5"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card5"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card6" type="Area2D" parent="GameManager"]
+position = Vector2(-70, -130)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card6"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card6"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card7" type="Area2D" parent="GameManager"]
+position = Vector2(298, -274)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card7"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card7"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card8" type="Area2D" parent="GameManager"]
+position = Vector2(114, 158)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card8"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card8"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card9" type="Area2D" parent="GameManager"]
+position = Vector2(-70.0001, 158)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card9"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card9"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card10" type="Area2D" parent="GameManager"]
+position = Vector2(-70, 14)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card10"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card10"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card11" type="Area2D" parent="GameManager"]
+position = Vector2(-70, -274)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card11"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card11"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card12" type="Area2D" parent="GameManager"]
+position = Vector2(298, 158)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card12"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card12"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card13" type="Area2D" parent="GameManager"]
+position = Vector2(298, 14)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card13"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card13"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card14" type="Area2D" parent="GameManager"]
+position = Vector2(-254, -274)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card14"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card14"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card15" type="Area2D" parent="GameManager"]
+position = Vector2(114, 14)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card15"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card15"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="Card16" type="Area2D" parent="GameManager"]
+position = Vector2(114, -130)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_exw22")
+
+[node name="Sprite2D" type="Sprite2D" parent="GameManager/Card16"]
+texture = ExtResource("1_gkuv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameManager/Card16"]
+shape = SubResource("RectangleShape2D_a1ehb")
+
+[node name="CardOneName" type="Label" parent="GameManager"]
+offset_left = -302.0
+offset_top = 254.0
+offset_right = -46.0
+offset_bottom = 350.0
+text = "Card 1"
+label_settings = SubResource("LabelSettings_tkt3a")
+horizontal_alignment = 2
+script = ExtResource("4_ibiui")
+
+[node name="CardTwoName" type="Label" parent="GameManager"]
+offset_left = 82.0
+offset_top = 254.0
+offset_right = 338.0
+offset_bottom = 350.0
+text = "Card 2"
+label_settings = SubResource("LabelSettings_1upi5")
+script = ExtResource("5_ml10i")
+
+[node name="CheckBox" type="Label" parent="GameManager"]
+offset_left = -6.0
+offset_top = 254.0
+offset_right = 58.0
+offset_bottom = 318.0
+text = "?"
+label_settings = SubResource("LabelSettings_6hnqc")
+horizontal_alignment = 1
+
+[node name="Quit" type="Button" parent="GameManager"]
+offset_left = -574.0
+offset_top = -106.0
+offset_right = -410.0
+offset_bottom = -12.0
+text = "voltar"
+
+[connection signal="button_down" from="GameManager/Quit" to="GameManager" method="_on_quit_button_down"]

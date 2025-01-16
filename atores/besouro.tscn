@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsufqngh4ejch"]
+[gd_scene load_steps=9 format=3 uid="uid://be2cr8hill7du"]
 
 [ext_resource type="Texture2D" uid="uid://cm1a0vleqd4mn" path="res://assets/Animated insect enemy assets/BeetleMove.png" id="1_2knw2"]
 [ext_resource type="Script" path="res://scripts/besouro.gd" id="1_xvawh"]

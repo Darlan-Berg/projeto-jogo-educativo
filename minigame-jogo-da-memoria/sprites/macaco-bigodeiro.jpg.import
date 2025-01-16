@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4nmcqwps6kp"
-path="res://.godot/imported/BackgroundGrayBlue.png-9dd6f3cc9a0794ebbc7f46de45717932.ctex"
+uid="uid://dhafma3t341e6"
+path="res://.godot/imported/macaco-bigodeiro.jpg-d0e7b90d77aca8c6b95b09b0e786b31f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundGrayBlue.png"
-dest_files=["res://.godot/imported/BackgroundGrayBlue.png-9dd6f3cc9a0794ebbc7f46de45717932.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/macaco-bigodeiro.jpg"
+dest_files=["res://.godot/imported/macaco-bigodeiro.jpg-d0e7b90d77aca8c6b95b09b0e786b31f.ctex"]
 
 [params]
 

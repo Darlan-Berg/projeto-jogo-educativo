@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxsfqqdem4jkf"
-path="res://.godot/imported/BackgroundBlack.png-c97666409b745a85e916190825ef057c.ctex"
+uid="uid://b25pcg8ica2j3"
+path="res://.godot/imported/ponto-de-interrogacao.png-22fa4652c271181b28db5d42780c288e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundBlack.png"
-dest_files=["res://.godot/imported/BackgroundBlack.png-c97666409b745a85e916190825ef057c.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/ponto-de-interrogacao.png"
+dest_files=["res://.godot/imported/ponto-de-interrogacao.png-22fa4652c271181b28db5d42780c288e.ctex"]
 
 [params]
 

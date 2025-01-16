@@ -27,13 +27,15 @@ func on_click():
 			get_parent().last_try_was_pair = false
 			get_parent()._reset_card_name_strings_and_check_box()
 		click_enabled = false
-		get_node("Sprite").texture = card_face
+		get_node("Sprite2D").texture = card_face
 		
 		# PRIMEIRO LANCE
 		# se essa condicao for verdadeira significa que a primeira
 		# carta para formar um novo par ainda nao foi virada
 		if (get_parent().get_node("CardOneName").text == "Card 1"):
 			get_parent().get_node("CardOneName").text = card_name
+			# essa linha serve para se conhecer a primeira carta que foi virada para formar o par
+			# com isso o script de game_manager.gd podera saber qual carta desvirar caso nao seja formado um par
 			get_parent().card_one_checked_if_pairing = name
 		
 		# SEGUNDO LANCE

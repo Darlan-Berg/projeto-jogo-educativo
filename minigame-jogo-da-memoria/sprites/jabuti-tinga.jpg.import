@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ihiy1odmcbbg"
-path="res://.godot/imported/BackgroundGray.png-25e7fdfea290a66c2f346de2301ebd61.ctex"
+uid="uid://b4bwxf1wdsn7n"
+path="res://.godot/imported/jabuti-tinga.jpg-ecd809671faa026ffde8e4436dc01c38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundGray.png"
-dest_files=["res://.godot/imported/BackgroundGray.png-25e7fdfea290a66c2f346de2301ebd61.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/jabuti-tinga.jpg"
+dest_files=["res://.godot/imported/jabuti-tinga.jpg-ecd809671faa026ffde8e4436dc01c38.ctex"]
 
 [params]
 

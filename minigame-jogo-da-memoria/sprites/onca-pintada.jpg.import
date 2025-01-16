@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3w6xfs8lo5d7"
-path="res://.godot/imported/BackgroundDarkGreen.png-a9f3d81e15b83920ad5f3b8b9f1444c2.ctex"
+uid="uid://dexrd6panx2ii"
+path="res://.godot/imported/onca-pintada.jpg-cfea7e65f2dbee3b78a7c7fcd7b1ff24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundDarkGreen.png"
-dest_files=["res://.godot/imported/BackgroundDarkGreen.png-a9f3d81e15b83920ad5f3b8b9f1444c2.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/onca-pintada.jpg"
+dest_files=["res://.godot/imported/onca-pintada.jpg-cfea7e65f2dbee3b78a7c7fcd7b1ff24.ctex"]
 
 [params]
 

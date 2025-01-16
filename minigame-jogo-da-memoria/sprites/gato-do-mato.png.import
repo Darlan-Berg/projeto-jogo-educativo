@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr3pds8qmo5tv"
-path="res://.godot/imported/BackgroundYellow.png-10fd7adc681e88905896e2069840596e.ctex"
+uid="uid://0tadwe7w5i65"
+path="res://.godot/imported/gato-do-mato.png-4809f956913fcfe7cd67a41df0b87059.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundYellow.png"
-dest_files=["res://.godot/imported/BackgroundYellow.png-10fd7adc681e88905896e2069840596e.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/gato-do-mato.png"
+dest_files=["res://.godot/imported/gato-do-mato.png-4809f956913fcfe7cd67a41df0b87059.ctex"]
 
 [params]
 

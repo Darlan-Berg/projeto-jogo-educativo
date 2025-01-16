@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chl53ptbyuiaq"
-path="res://.godot/imported/BackgroundPurple.png-2f6bfec84e4faf49ee426dc08132969b.ctex"
+uid="uid://d1d68ls11gxlh"
+path="res://.godot/imported/anta.png-17e09c0ff92e45810926a62f28d9250c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundPurple.png"
-dest_files=["res://.godot/imported/BackgroundPurple.png-2f6bfec84e4faf49ee426dc08132969b.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/anta.png"
+dest_files=["res://.godot/imported/anta.png-17e09c0ff92e45810926a62f28d9250c.ctex"]
 
 [params]
 

@@ -29,29 +29,29 @@ var card_two_str
 var all_remaining_cards = []
 var random_card
 var card_number
+var pares_encontrados = 0
 
 func _ready():
-	number_of_matches = 0
 	card_one_str = "Card 1"
 	card_two_str = "Card 2"
 	last_try_was_pair = false
 	default_image = preload("res://minigame-jogo-da-memoria/sprites/dandelion-flower.png")
-	image1 = preload("res://minigame-jogo-da-memoria/sprites/chess-knight.png")
-	name_image1 = "Chess Knight"
-	image2 = preload("res://minigame-jogo-da-memoria/sprites/plastic-duck.png")
-	name_image2 = "Rubber Duck"
-	image3 = preload("res://minigame-jogo-da-memoria/sprites/eight-ball.png")
-	name_image3 = "Eight Ball"
-	image4 = preload("res://minigame-jogo-da-memoria/sprites/cycling.png")
-	name_image4 = "Bicycle"
-	image5 = preload("res://minigame-jogo-da-memoria/sprites/pc.png")
-	name_image5 = "PC"
-	image6 = preload("res://minigame-jogo-da-memoria/sprites/pie-slice.png")
-	name_image6 = "Pie"
-	image7 = preload("res://minigame-jogo-da-memoria/sprites/coffee-cup.png")
-	name_image7 = "Coffee"
-	image8 = preload("res://minigame-jogo-da-memoria/sprites/tic-tac-toe.png")
-	name_image8 = "Tic-Tac-Toe"
+	image1 = preload("res://minigame-jogo-da-memoria/sprites/anta.png")
+	name_image1 = "Anta"
+	image2 = preload("res://minigame-jogo-da-memoria/sprites/gato-do-mato.png")
+	name_image2 = "Gato-do-mato"
+	image3 = preload("res://minigame-jogo-da-memoria/sprites/onca-pintada.jpg")
+	name_image3 = "Onça-pintada"
+	image4 = preload("res://minigame-jogo-da-memoria/sprites/arara-caninde.png")
+	name_image4 = "Arara-canindé"
+	image5 = preload("res://minigame-jogo-da-memoria/sprites/tucano.jpg")
+	name_image5 = "Tucano"
+	image6 = preload("res://minigame-jogo-da-memoria/sprites/jabuti-tinga.jpg")
+	name_image6 = "Jabuti-tinga"
+	image7 = preload("res://minigame-jogo-da-memoria/sprites/macaco-bigodeiro.jpg")
+	name_image7 = "Macaco-bigodeiro"
+	image8 = preload("res://minigame-jogo-da-memoria/sprites/jiboia.png")
+	name_image8 = "Jiboia"
 	# isso faz com que as funcoes aleatorias, a cada execucao do jogo,
 	# gerem numeros realmente aleatorios
 	randomize()
@@ -60,6 +60,17 @@ func _ready():
 func _process(_delta):
 	if !init:
 		_shuffle_cards()
+	
+	if pares_encontrados == 8:
+		GlobalFase5.qtd_minigames_concluidos += 1
+		GlobalFase5.retorno_minigame = true
+		var waiting_timer = Timer.new()
+		waiting_timer.set_wait_time(2)
+		waiting_timer.set_one_shot(true)
+		self.add_child(waiting_timer)
+		waiting_timer.start()
+		await(waiting_timer.timeout)
+		get_tree().change_scene_to_file("res://fases/fase_5.tscn")
 
 func _shuffle_cards():
 	all_remaining_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
@@ -197,8 +208,7 @@ func _check_if_pair():
 	if get_node("CardOneName").text == get_node("CardTwoName").text:
 		get_node("CheckBox").text = "="
 		last_try_was_pair = true
-		number_of_matches += 1
-		get_node("NumberOfMatches").text = "Number of Matches: " + str(number_of_matches)
+		pares_encontrados += 1
 	
 	# se CardOneName e CardTwoName sao diferentes de "Card 1" e "Card 2"
 	# significa que duas cartas foram viradas
@@ -223,8 +233,8 @@ func _reset_card_name_strings_and_check_box():
 	get_node("CheckBox").text = "?"
 
 func _turn_around_cards():
-	get_node(str(card_one_checked_if_pairing)).get_node("Sprite").texture = default_image
-	get_node(str(card_two_checked_if_pairing)).get_node("Sprite").texture = default_image
+	get_node(str(card_one_checked_if_pairing)).get_node("Sprite2D").texture = default_image
+	get_node(str(card_two_checked_if_pairing)).get_node("Sprite2D").texture = default_image
 
 func _disable_all_cards_clicks():
 	get_node("Card1").click_enabled = false
@@ -245,38 +255,39 @@ func _disable_all_cards_clicks():
 	get_node("Card16").click_enabled = false
 
 func _enable_all_cards_clicks():
-	if get_node("Card1").get_node("Sprite").texture == default_image:
+	if get_node("Card1").get_node("Sprite2D").texture == default_image:
 		get_node("Card1").click_enabled = true
-	if get_node("Card2").get_node("Sprite").texture == default_image:
+	if get_node("Card2").get_node("Sprite2D").texture == default_image:
 		get_node("Card2").click_enabled = true
-	if get_node("Card3").get_node("Sprite").texture == default_image:
+	if get_node("Card3").get_node("Sprite2D").texture == default_image:
 		get_node("Card3").click_enabled = true
-	if get_node("Card4").get_node("Sprite").texture == default_image:
+	if get_node("Card4").get_node("Sprite2D").texture == default_image:
 		get_node("Card4").click_enabled = true
-	if get_node("Card5").get_node("Sprite").texture == default_image:
+	if get_node("Card5").get_node("Sprite2D").texture == default_image:
 		get_node("Card5").click_enabled = true
-	if get_node("Card6").get_node("Sprite").texture == default_image:
+	if get_node("Card6").get_node("Sprite2D").texture == default_image:
 		get_node("Card6").click_enabled = true
-	if get_node("Card7").get_node("Sprite").texture == default_image:
+	if get_node("Card7").get_node("Sprite2D").texture == default_image:
 		get_node("Card7").click_enabled = true
-	if get_node("Card8").get_node("Sprite").texture == default_image:
+	if get_node("Card8").get_node("Sprite2D").texture == default_image:
 		get_node("Card8").click_enabled = true
-	if get_node("Card9").get_node("Sprite").texture == default_image:
+	if get_node("Card9").get_node("Sprite2D").texture == default_image:
 		get_node("Card9").click_enabled = true
-	if get_node("Card10").get_node("Sprite").texture == default_image:
+	if get_node("Card10").get_node("Sprite2D").texture == default_image:
 		get_node("Card10").click_enabled = true
-	if get_node("Card11").get_node("Sprite").texture == default_image:
+	if get_node("Card11").get_node("Sprite2D").texture == default_image:
 		get_node("Card11").click_enabled = true
-	if get_node("Card12").get_node("Sprite").texture == default_image:
+	if get_node("Card12").get_node("Sprite2D").texture == default_image:
 		get_node("Card12").click_enabled = true
-	if get_node("Card13").get_node("Sprite").texture == default_image:
+	if get_node("Card13").get_node("Sprite2D").texture == default_image:
 		get_node("Card13").click_enabled = true
-	if get_node("Card14").get_node("Sprite").texture == default_image:
+	if get_node("Card14").get_node("Sprite2D").texture == default_image:
 		get_node("Card14").click_enabled = true
-	if get_node("Card15").get_node("Sprite").texture == default_image:
+	if get_node("Card15").get_node("Sprite2D").texture == default_image:
 		get_node("Card15").click_enabled = true
-	if get_node("Card16").get_node("Sprite").texture == default_image:
+	if get_node("Card16").get_node("Sprite2D").texture == default_image:
 		get_node("Card16").click_enabled = true
 
-func _on_BackToMenuButton_button_down():
-	get_tree().reload_current_scene()
+func _on_quit_button_down() -> void:
+	GlobalFase5.retorno_minigame = true
+	get_tree().change_scene_to_file("res://fases/fase_5.tscn")

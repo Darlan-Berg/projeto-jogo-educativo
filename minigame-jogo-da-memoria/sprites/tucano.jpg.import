@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkcr7vbnv6wop"
-path="res://.godot/imported/BackgroundBlue.png-95fe9d425ae7ee10eb4dbc7490532227.ctex"
+uid="uid://b2bikgjcxwn5y"
+path="res://.godot/imported/tucano.jpg-0d6e058478cb3f850810fd98c76afc94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://minigame-jogo-da-memoria/sprites/BackgroundBlue.png"
-dest_files=["res://.godot/imported/BackgroundBlue.png-95fe9d425ae7ee10eb4dbc7490532227.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/tucano.jpg"
+dest_files=["res://.godot/imported/tucano.jpg-0d6e058478cb3f850810fd98c76afc94.ctex"]
 
 [params]
 
