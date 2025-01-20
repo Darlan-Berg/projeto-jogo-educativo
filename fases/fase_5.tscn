@@ -1916,7 +1916,7 @@ texture = ExtResource("20_qli6l")
 shape = SubResource("CircleShape2D_kalvh")
 
 [node name="jogador" parent="." instance=ExtResource("3_qerua")]
-position = Vector2(4816, -40)
+position = Vector2(498, -97)
 
 [connection signal="area_shape_entered" from="placas/placa1/Area2D" to="placas/placa1/Area2D" method="_on_area_shape_entered"]
 [connection signal="area_shape_exited" from="placas/placa1/Area2D" to="placas/placa1/Area2D" method="_on_area_shape_exited"]

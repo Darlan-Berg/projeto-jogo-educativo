@@ -24,7 +24,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if pode_iniciar_minigame and Input.is_action_just_pressed("acessar_minigame"):
 		GlobalFase5.posicao_jogador = jogador.position
-		GlobalFase5.minigame_finalizado = 
+		#GlobalFase5.minigame_finalizado = 
 		get_tree().change_scene_to_file("res://minigame-jogo-da-memoria/scenes/GameManager.tscn")
 	
 	if ir_para_memorial and Input.is_action_just_pressed("acessar_minigame"):

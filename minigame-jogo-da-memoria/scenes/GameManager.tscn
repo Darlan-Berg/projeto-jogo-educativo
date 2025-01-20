@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0ighc5qhf814"]
+[gd_scene load_steps=12 format=3 uid="uid://d0ighc5qhf814"]
 
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card.gd" id="1_exw22"]
 [ext_resource type="Texture2D" uid="uid://gv27yx1hha6m" path="res://minigame-jogo-da-memoria/sprites/dandelion-flower.png" id="1_gkuv8"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/game_manager.gd" id="1_ktchr"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_one_name.gd" id="4_ibiui"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_two_name.gd" id="5_ml10i"]
+[ext_resource type="Texture2D" uid="uid://cdg2ymbjiev7a" path="res://assets/entrada_pacm.jpg" id="6_lrhdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1ehb"]
 size = Vector2(512, 512)
@@ -18,8 +19,25 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_6hnqc"]
 font_size = 24
 
+[sub_resource type="LabelSettings" id="LabelSettings_vgtdg"]
+
 [node name="Node2D" type="Camera2D"]
 position = Vector2(686, 386)
+
+[node name="backdrop" type="PanelContainer" parent="."]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 z_index = -5
@@ -248,5 +266,27 @@ offset_top = -106.0
 offset_right = -410.0
 offset_bottom = -12.0
 text = "voltar"
+
+[node name="foto_e_legenda" type="VBoxContainer" parent="."]
+offset_left = 1026.0
+offset_top = -387.0
+offset_right = 1794.0
+offset_bottom = 285.0
+
+[node name="MarginContainer" type="MarginContainer" parent="foto_e_legenda"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="TextureRect" type="TextureRect" parent="foto_e_legenda/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_lrhdh")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="foto_e_legenda"]
+layout_mode = 2
+text = "O Parque Ambiental Chico Mendes promove ações de conscientização e educação ambiental. Dessa forma, preservação da natureza e educação andam lado a lado colaborando na disseminação de conhecimentos."
+label_settings = SubResource("LabelSettings_vgtdg")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="button_down" from="GameManager/Quit" to="GameManager" method="_on_quit_button_down"]

@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var panel_container: PanelContainer = $"../PanelContainer"
+@onready var jogo_da_memoria: Node2D = $"."
+@onready var foto_e_legenda: VBoxContainer = $"../foto_e_legenda"
+
 var card_face
 var card_back
 var init
@@ -30,8 +34,11 @@ var all_remaining_cards = []
 var random_card
 var card_number
 var pares_encontrados = 0
+var tween_comecou
+var sair_cena_minigame
 
 func _ready():
+	sair_cena_minigame = false
 	card_one_str = "Card 1"
 	card_two_str = "Card 2"
 	last_try_was_pair = false
@@ -61,7 +68,8 @@ func _process(_delta):
 	if !init:
 		_shuffle_cards()
 	
-	if pares_encontrados == 8:
+	if pares_encontrados == 8 and !tween_comecou:
+		tween_comecou = true
 		GlobalFase5.qtd_minigames_concluidos += 1
 		GlobalFase5.retorno_minigame = true
 		var waiting_timer = Timer.new()
@@ -70,7 +78,21 @@ func _process(_delta):
 		self.add_child(waiting_timer)
 		waiting_timer.start()
 		await(waiting_timer.timeout)
+		
+		mostrar_foto_legenda()
+	
+	if pares_encontrados == 8 and sair_cena_minigame and Input.is_action_just_pressed("ui_accept"):
 		get_tree().change_scene_to_file("res://fases/fase_5.tscn")
+
+func mostrar_foto_legenda():
+	var tween = create_tween()
+	# limpar que esta na tela
+	tween.tween_property(jogo_da_memoria, "position", Vector2(jogo_da_memoria.position.x, jogo_da_memoria.position.y + 1000), 1)
+	tween.tween_property(panel_container, "position", Vector2(panel_container.position.x, panel_container.position.y + 1000), 1)
+	# trazer a imagem com a legenda
+	tween.tween_property(foto_e_legenda, "position", Vector2(-386, -387), 1)
+	
+	sair_cena_minigame = true
 
 func _shuffle_cards():
 	all_remaining_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
