@@ -35,10 +35,10 @@ var random_card
 var card_number
 var pares_encontrados = 0
 var tween_comecou
-var sair_cena_minigame
+var pode_sair_cena_minigame
 
 func _ready():
-	sair_cena_minigame = false
+	pode_sair_cena_minigame = false
 	card_one_str = "Card 1"
 	card_two_str = "Card 2"
 	last_try_was_pair = false
@@ -70,8 +70,8 @@ func _process(_delta):
 	
 	if pares_encontrados == 8 and !tween_comecou:
 		tween_comecou = true
-		GlobalFase5.qtd_minigames_concluidos += 1
-		GlobalFase5.retorno_minigame = true
+		Global.qtd_minigames_concluidos += 1
+		Global.retorno_minigame = true
 		var waiting_timer = Timer.new()
 		waiting_timer.set_wait_time(2)
 		waiting_timer.set_one_shot(true)
@@ -81,7 +81,13 @@ func _process(_delta):
 		
 		mostrar_foto_legenda()
 	
-	if pares_encontrados == 8 and sair_cena_minigame and Input.is_action_just_pressed("ui_accept"):
+	if pares_encontrados == 8 and pode_sair_cena_minigame and Input.is_action_just_pressed("enter"):
+		Global.minigames_concluidos[Global.minigame_em_execucao] = true
+		#print("Global.minigames_concluidos[Global.minigame_em_execucao] = " + str(Global.minigames_concluidos[str(Global.minigame_em_execucao)]) + "\n")
+		#print(Global.minigames_concluidos)
+		#print("Global.minigames_concluidos[\"acionador_minigame_1\"] = " + str(Global.minigames_concluidos["acionador_minigame_1"]))
+		#print("Global.minigames_concluidos[\"acionador_minigame_2\"] = " + str(Global.minigames_concluidos["acionador_minigame_2"]))
+		#print("Global.minigames_concluidos[\"acionador_minigame_3\"] = " + str(Global.minigames_concluidos["acionador_minigame_3"]))
 		get_tree().change_scene_to_file("res://fases/fase_5.tscn")
 
 func mostrar_foto_legenda():
@@ -92,7 +98,7 @@ func mostrar_foto_legenda():
 	# trazer a imagem com a legenda
 	tween.tween_property(foto_e_legenda, "position", Vector2(-386, -387), 1)
 	
-	sair_cena_minigame = true
+	pode_sair_cena_minigame = true
 
 func _shuffle_cards():
 	all_remaining_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
@@ -311,5 +317,5 @@ func _enable_all_cards_clicks():
 		get_node("Card16").click_enabled = true
 
 func _on_quit_button_down() -> void:
-	GlobalFase5.retorno_minigame = true
+	Global.retorno_minigame = true
 	get_tree().change_scene_to_file("res://fases/fase_5.tscn")

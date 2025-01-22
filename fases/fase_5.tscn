@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bt1xpjsabocba"]
+[gd_scene load_steps=38 format=3 uid="uid://bt1xpjsabocba"]
 
 [ext_resource type="Script" path="res://scripts/fase_5.gd" id="1_cdfhq"]
 [ext_resource type="Texture2D" uid="uid://dp3mtyyqfwb4h" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_putqf"]
@@ -19,7 +19,9 @@
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="13_tdisc"]
 [ext_resource type="PackedScene" uid="uid://7rmlai54133i" path="res://cenas/hud.tscn" id="15_y30r2"]
 [ext_resource type="PackedScene" uid="uid://be2cr8hill7du" path="res://atores/besouro.tscn" id="16_3ug3y"]
+[ext_resource type="Script" path="res://scripts/acionador_minigame.gd" id="19_l6s4t"]
 [ext_resource type="Texture2D" uid="uid://cwrdscathhidg" path="res://minigame-jogo-da-memoria/sprites/skull-crossed-bones.png" id="20_qli6l"]
+[ext_resource type="PackedScene" uid="uid://7b8x57bof5rq" path="res://cenas/diamante.tscn" id="21_sdyyb"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3hv0"]
 tile_data = PackedInt32Array(0, 458755, 4, 65536, 786435, 18, 1, 851971, 17, 65537, 393219, 3)
@@ -1540,20 +1542,6 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(0, 0.572722, 0.221403, 1)
 shader_parameter/line_color_b = Color(0, 0.983832, 0.546728, 1)
 
-[sub_resource type="GDScript" id="GDScript_8hyyj"]
-script/source = "extends Area2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_kalvh"]
 radius = 256.265
 
@@ -1883,7 +1871,7 @@ visible = false
 position = Vector2(-1983, 467)
 scale = Vector2(0.1, 0.1)
 collision_mask = 2
-script = SubResource("GDScript_8hyyj")
+script = ExtResource("19_l6s4t")
 
 [node name="Sprite2D" type="Sprite2D" parent="acionadores/acionador_minigame_1"]
 texture = ExtResource("20_qli6l")
@@ -1892,10 +1880,10 @@ texture = ExtResource("20_qli6l")
 shape = SubResource("CircleShape2D_kalvh")
 
 [node name="acionador_minigame_2" type="Area2D" parent="acionadores"]
-position = Vector2(-596, 418)
+position = Vector2(-597, 417)
 scale = Vector2(0.1, 0.1)
 collision_mask = 2
-script = SubResource("GDScript_8hyyj")
+script = ExtResource("19_l6s4t")
 
 [node name="Sprite2D" type="Sprite2D" parent="acionadores/acionador_minigame_2"]
 texture = ExtResource("20_qli6l")
@@ -1904,10 +1892,10 @@ texture = ExtResource("20_qli6l")
 shape = SubResource("CircleShape2D_kalvh")
 
 [node name="acionador_minigame_3" type="Area2D" parent="acionadores"]
-position = Vector2(1676, 253)
+position = Vector2(1675, 253)
 scale = Vector2(0.1, 0.1)
 collision_mask = 2
-script = SubResource("GDScript_8hyyj")
+script = ExtResource("19_l6s4t")
 
 [node name="Sprite2D" type="Sprite2D" parent="acionadores/acionador_minigame_3"]
 texture = ExtResource("20_qli6l")
@@ -1915,8 +1903,46 @@ texture = ExtResource("20_qli6l")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="acionadores/acionador_minigame_3"]
 shape = SubResource("CircleShape2D_kalvh")
 
+[node name="diamantes" type="Node" parent="."]
+
+[node name="diamante" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-3207, 237)
+
+[node name="diamante2" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-3182, 237)
+
+[node name="diamante3" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-3154, 237)
+
+[node name="diamante4" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-3126, 284)
+
+[node name="diamante5" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-3101, 284)
+
+[node name="diamante6" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-3075, 284)
+
+[node name="diamante7" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-2488, 333)
+
+[node name="diamante8" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-2460, 333)
+
+[node name="diamante9" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-2433, 333)
+
+[node name="diamante10" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-2344, 332)
+
+[node name="diamante11" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-2317, 332)
+
+[node name="diamante12" parent="diamantes" instance=ExtResource("21_sdyyb")]
+position = Vector2(-2288, 332)
+
 [node name="jogador" parent="." instance=ExtResource("3_qerua")]
-position = Vector2(498, -97)
+position = Vector2(1755, 254)
 
 [connection signal="area_shape_entered" from="placas/placa1/Area2D" to="placas/placa1/Area2D" method="_on_area_shape_entered"]
 [connection signal="area_shape_exited" from="placas/placa1/Area2D" to="placas/placa1/Area2D" method="_on_area_shape_exited"]
@@ -1928,9 +1954,10 @@ position = Vector2(498, -97)
 [connection signal="body_entered" from="obstaculos/espinhos3" to="jogador" method="_on_espinhos_1_body_entered"]
 [connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
 [connection signal="body_exited" from="final" to="." method="_on_final_body_exited"]
-[connection signal="body_entered" from="acionadores/acionador_minigame_1" to="." method="_on_acionador_minigame_1_body_entered"]
-[connection signal="body_exited" from="acionadores/acionador_minigame_1" to="." method="_on_acionador_minigame_1_body_exited"]
-[connection signal="body_entered" from="acionadores/acionador_minigame_2" to="." method="_on_acionador_minigame_1_body_entered"]
-[connection signal="body_exited" from="acionadores/acionador_minigame_2" to="." method="_on_acionador_minigame_1_body_exited"]
-[connection signal="body_entered" from="acionadores/acionador_minigame_3" to="." method="_on_acionador_minigame_1_body_entered"]
-[connection signal="body_exited" from="acionadores/acionador_minigame_3" to="." method="_on_acionador_minigame_1_body_exited"]
+[connection signal="body_entered" from="acionadores/acionador_minigame_1" to="acionadores/acionador_minigame_1" method="_on_body_entered"]
+[connection signal="body_exited" from="acionadores/acionador_minigame_1" to="acionadores/acionador_minigame_1" method="_on_body_exited"]
+[connection signal="body_entered" from="acionadores/acionador_minigame_2" to="acionadores/acionador_minigame_2" method="_on_body_entered"]
+[connection signal="body_exited" from="acionadores/acionador_minigame_2" to="acionadores/acionador_minigame_2" method="_on_body_exited"]
+[connection signal="body_entered" from="acionadores/acionador_minigame_3" to="acionadores/acionador_minigame_3" method="_on_body_entered"]
+[connection signal="body_exited" from="acionadores/acionador_minigame_3" to="acionadores/acionador_minigame_3" method="_on_body_exited"]
+[connection signal="body_entered" from="diamantes/diamante" to="." method="_on_diamante_body_entered"]

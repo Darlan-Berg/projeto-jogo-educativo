@@ -10,3 +10,4 @@ var minigames_concluidos = {
 }
 var inimigos_derrotados = []
 var minigame_finalizado = null
+var diamantes_coletados = []
