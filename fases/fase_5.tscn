@@ -9,11 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c1jm2x1y88wqp" path="res://assets/parque chico mendes/pacm-3.png" id="4_q377b"]
 [ext_resource type="Texture2D" uid="uid://t0pjox5cawhx" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="5_sehmj"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="6_1bbj1"]
-[ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="6_vqn4v"]
 [ext_resource type="Texture2D" uid="uid://bbvascvdockix" path="res://assets/16-bit-spike-Sheet.png" id="7_khehd"]
 [ext_resource type="Texture2D" uid="uid://d2vib20a668lh" path="res://assets/parque chico mendes/pacm-4.png" id="8_3jkgy"]
 [ext_resource type="Texture2D" uid="uid://dhb5ht78fyf0a" path="res://assets/placas.png" id="9_y6151"]
-[ext_resource type="PackedScene" uid="uid://dhlothrokti4v" path="res://cenas/final.tscn" id="10_eb75v"]
 [ext_resource type="Texture2D" uid="uid://scib5fhgrojr" path="res://assets/memorial chico mendes/tile_village_house.png" id="11_8jeu8"]
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="12_0o527"]
 [ext_resource type="Script" path="res://scripts/color_rect.gd" id="13_tdisc"]
@@ -1545,6 +1543,22 @@ shader_parameter/line_color_b = Color(0, 0.983832, 0.546728, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kalvh"]
 radius = 256.265
 
+[sub_resource type="GDScript" id="GDScript_acbc6"]
+resource_name = "memorial_fase_5"
+script/source = "extends Area2D
+
+
+func _on_body_entered(body: Node2D) -> void:
+	Global.ir_para_memorial = true
+
+
+func _on_body_exited(body: Node2D) -> void:
+	Global.ir_para_memorial = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mclvd"]
+size = Vector2(24, 92)
+
 [node name="fase_5" type="Node2D"]
 position = Vector2(-4043, 231)
 script = ExtResource("1_cdfhq")
@@ -1603,20 +1617,6 @@ layer_1/tile_data = PackedInt32Array(1704324, 5, 12, 1769860, 5, 13, 1835396, 5,
 layer_2/name = "Layer2"
 layer_2/z_index = -1
 layer_2/tile_data = PackedInt32Array(1900934, 917509, 13, 1966470, 917509, 14, 2032006, 917509, 15, 2097542, 917509, 13, 2163078, 917509, 14, 2228614, 917509, 15, 1900935, 983045, 13, 1966471, 983045, 14, 2032007, 983045, 15, 2097543, 983045, 13, 2163079, 983045, 14, 2228615, 983045, 15, 1900936, 917509, 13, 1966472, 917509, 14, 2032008, 917509, 15, 2097544, 917509, 13, 2163080, 917509, 14, 2228616, 917509, 15, 1900937, 983045, 13, 1966473, 983045, 14, 2032009, 983045, 15, 2097545, 983045, 13, 2163081, 983045, 14, 2228617, 983045, 15, 1900938, 917509, 13, 1966474, 917509, 14, 2032010, 917509, 15, 2097546, 917509, 13, 2163082, 917509, 14, 2228618, 917509, 15, 1900939, 983045, 13, 1966475, 983045, 14, 2032011, 983045, 15, 2097547, 983045, 13, 2163083, 983045, 14, 2228619, 983045, 15, 1900940, 917509, 13, 1966476, 917509, 14, 2032012, 917509, 15, 2097548, 917509, 13, 2163084, 917509, 14, 2228620, 917509, 15, 1900941, 983045, 13, 1966477, 983045, 14, 2032013, 983045, 15, 2097549, 983045, 13, 2163085, 983045, 14, 2228621, 983045, 15, 1900942, 917509, 13, 1966478, 917509, 14, 2032014, 917509, 15, 2097550, 917509, 13, 2163086, 917509, 14, 2228622, 917509, 15)
-
-[node name="pedacos_fotos" type="Node" parent="."]
-
-[node name="pedaco_foto1" parent="pedacos_fotos" instance=ExtResource("6_vqn4v")]
-position = Vector2(-1885, 469)
-
-[node name="pedaco_foto2" parent="pedacos_fotos" instance=ExtResource("6_vqn4v")]
-position = Vector2(-601, 265)
-
-[node name="pedaco_foto3" parent="pedacos_fotos" instance=ExtResource("6_vqn4v")]
-position = Vector2(616, 421)
-
-[node name="pedaco_foto4" parent="pedacos_fotos" instance=ExtResource("6_vqn4v")]
-position = Vector2(1601, 244)
 
 [node name="paredes_invisíveis" type="Node" parent="."]
 
@@ -1841,10 +1841,6 @@ position = Vector2(-547, 58)
 [node name="besouro11" parent="inimigos" groups=["inimigos"] instance=ExtResource("16_3ug3y")]
 position = Vector2(1035, 155)
 
-[node name="final" parent="." instance=ExtResource("10_eb75v")]
-position = Vector2(6246, -221)
-next_level = "res://cenas/final da fase 5/cena1.tscn"
-
 [node name="transicao" type="CanvasLayer" parent="."]
 
 [node name="color_rect" type="ColorRect" parent="transicao"]
@@ -1941,6 +1937,13 @@ position = Vector2(-2317, 332)
 [node name="diamante12" parent="diamantes" instance=ExtResource("21_sdyyb")]
 position = Vector2(-2288, 332)
 
+[node name="final" type="Area2D" parent="."]
+position = Vector2(6090, -169)
+script = SubResource("GDScript_acbc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="final"]
+shape = SubResource("RectangleShape2D_mclvd")
+
 [node name="jogador" parent="." instance=ExtResource("3_qerua")]
 position = Vector2(1755, 254)
 
@@ -1952,8 +1955,6 @@ position = Vector2(1755, 254)
 [connection signal="body_entered" from="obstaculos/espinhos2" to="jogador" method="_on_espinhos_1_body_entered"]
 [connection signal="body_entered" from="obstaculos/espinhos3" to="jogador" method="_on_espinhos_body_entered"]
 [connection signal="body_entered" from="obstaculos/espinhos3" to="jogador" method="_on_espinhos_1_body_entered"]
-[connection signal="body_entered" from="final" to="." method="_on_final_body_entered"]
-[connection signal="body_exited" from="final" to="." method="_on_final_body_exited"]
 [connection signal="body_entered" from="acionadores/acionador_minigame_1" to="acionadores/acionador_minigame_1" method="_on_body_entered"]
 [connection signal="body_exited" from="acionadores/acionador_minigame_1" to="acionadores/acionador_minigame_1" method="_on_body_exited"]
 [connection signal="body_entered" from="acionadores/acionador_minigame_2" to="acionadores/acionador_minigame_2" method="_on_body_entered"]
@@ -1961,3 +1962,5 @@ position = Vector2(1755, 254)
 [connection signal="body_entered" from="acionadores/acionador_minigame_3" to="acionadores/acionador_minigame_3" method="_on_body_entered"]
 [connection signal="body_exited" from="acionadores/acionador_minigame_3" to="acionadores/acionador_minigame_3" method="_on_body_exited"]
 [connection signal="body_entered" from="diamantes/diamante" to="." method="_on_diamante_body_entered"]
+[connection signal="body_entered" from="final" to="final" method="_on_body_entered"]
+[connection signal="body_exited" from="final" to="final" method="_on_body_exited"]

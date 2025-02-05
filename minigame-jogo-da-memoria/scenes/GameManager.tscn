@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0ighc5qhf814"]
+[gd_scene load_steps=11 format=3 uid="uid://d0ighc5qhf814"]
 
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card.gd" id="1_exw22"]
 [ext_resource type="Texture2D" uid="uid://gv27yx1hha6m" path="res://minigame-jogo-da-memoria/sprites/dandelion-flower.png" id="1_gkuv8"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/game_manager.gd" id="1_ktchr"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_one_name.gd" id="4_ibiui"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_two_name.gd" id="5_ml10i"]
-[ext_resource type="Texture2D" uid="uid://cdg2ymbjiev7a" path="res://assets/entrada_pacm.jpg" id="6_lrhdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1ehb"]
 size = Vector2(512, 512)
@@ -270,19 +269,21 @@ text = "voltar"
 [node name="foto_e_legenda" type="VBoxContainer" parent="."]
 offset_left = 1026.0
 offset_top = -387.0
-offset_right = 1794.0
+offset_right = 1976.0
 offset_bottom = 285.0
 
 [node name="MarginContainer" type="MarginContainer" parent="foto_e_legenda"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 24
 
-[node name="TextureRect" type="TextureRect" parent="foto_e_legenda/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="foto_e_legenda/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("6_lrhdh")
+
+[node name="imagem" type="TextureRect" parent="foto_e_legenda/MarginContainer/CenterContainer"]
+layout_mode = 2
 stretch_mode = 2
 
-[node name="Label" type="Label" parent="foto_e_legenda"]
+[node name="legenda" type="Label" parent="foto_e_legenda"]
 layout_mode = 2
 text = "O Parque Ambiental Chico Mendes promove ações de conscientização e educação ambiental. Dessa forma, preservação da natureza e educação andam lado a lado colaborando na disseminação de conhecimentos."
 label_settings = SubResource("LabelSettings_vgtdg")

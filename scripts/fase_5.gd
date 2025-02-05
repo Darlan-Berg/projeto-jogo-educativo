@@ -3,8 +3,6 @@ extends Node2D
 @onready var jogador: CharacterBody2D = $jogador
 @onready var camera_jogador: Camera2D = $jogador/camera
 
-var ir_para_memorial = false
-
 
 func _ready() -> void:
 	
@@ -35,15 +33,5 @@ func _physics_process(delta: float) -> void:
 		#Global.minigame_finalizado = 
 		get_tree().change_scene_to_file("res://minigame-jogo-da-memoria/scenes/GameManager.tscn")
 	
-	if ir_para_memorial and Input.is_action_just_pressed("acessar_minigame"):
+	if Global.ir_para_memorial and Input.is_action_just_pressed("enter"):
 		get_tree().change_scene_to_file("res://fases/memorial_chico_mendes.tscn")
-
-
-func _on_final_body_entered(body: Node2D) -> void:
-	if body.name == "jogador":
-		ir_para_memorial = true
-
-
-func _on_final_body_exited(body: Node2D) -> void:
-	if body.name == "jogador":
-		ir_para_memorial = false

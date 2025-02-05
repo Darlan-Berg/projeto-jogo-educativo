@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdg2ymbjiev7a"
-path="res://.godot/imported/entrada_pacm.jpg-d4404ff9e6896b6dfc1f0355900eac79.ctex"
+uid="uid://ceab34mcmdqyd"
+path="res://.godot/imported/entrada_pacm.jpg-72afa0e6b27234e8597f54b4942c5d48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/entrada_pacm.jpg"
-dest_files=["res://.godot/imported/entrada_pacm.jpg-d4404ff9e6896b6dfc1f0355900eac79.ctex"]
+source_file="res://minigame-jogo-da-memoria/sprites/entrada_pacm.jpg"
+dest_files=["res://.godot/imported/entrada_pacm.jpg-72afa0e6b27234e8597f54b4942c5d48.ctex"]
 
 [params]
 

@@ -3,6 +3,8 @@ extends Node2D
 @onready var panel_container: PanelContainer = $"../PanelContainer"
 @onready var jogo_da_memoria: Node2D = $"."
 @onready var foto_e_legenda: VBoxContainer = $"../foto_e_legenda"
+@onready var imagem: TextureRect = $"../foto_e_legenda/MarginContainer/CenterContainer/imagem"
+@onready var legenda: Label = $"../foto_e_legenda/legenda"
 
 var card_face
 var card_back
@@ -36,12 +38,31 @@ var card_number
 var pares_encontrados = 0
 var tween_comecou
 var pode_sair_cena_minigame
+var legendas = [
+	"O Parque Ambiental Chico Mendes promove ações de conscientização e educação ambiental. Dessa forma, preservação da natureza e educação andam lado a lado colaborando na disseminação de conhecimentos.",
+	"O parque conta com um zoológico que abriga uma ampla variedade de espécies da fauna local. Todos o animais ficaram impossibilitados de retornar a natureza por terem sido vítimas de acidentes, do tráfico ou de posse ilegal, mas foram resgatados e encontraram um novo lar.",
+	"O parque contempla uma área de 57 hectares de Floresta Amazônica. Nela estão presentes diversas espécies da flora local que oferecem comida e abrigo para os animais silvestres. Sendo assim, esse espaço é uma importante fonte para pesquisas científicas que visam a preservação da fauna e flora locais."
+]
 
 func _ready():
+	# selecionar imagem e legenda a serem mostradas
+	if Global.minigame_em_execucao == "acionador_minigame_1":
+		imagem.texture = preload("res://minigame-jogo-da-memoria/sprites/entrada_pacm.jpg")
+		legenda.text = legendas[0]
+	elif Global.minigame_em_execucao == "acionador_minigame_2":
+		imagem.texture = preload("res://minigame-jogo-da-memoria/sprites/oncas.jpg")
+		imagem.scale = Vector2(1.2, 1.2)
+		legenda.text = legendas[1]
+	elif Global.minigame_em_execucao == "acionador_minigame_3":
+		imagem.texture = preload("res://minigame-jogo-da-memoria/sprites/praca-jardim-pacm.jpg")
+		imagem.scale = Vector2(1.1, 1.1)
+		legenda.text = legendas[2]
+	
 	pode_sair_cena_minigame = false
 	card_one_str = "Card 1"
 	card_two_str = "Card 2"
 	last_try_was_pair = false
+	
 	default_image = preload("res://minigame-jogo-da-memoria/sprites/dandelion-flower.png")
 	image1 = preload("res://minigame-jogo-da-memoria/sprites/anta.png")
 	name_image1 = "Anta"

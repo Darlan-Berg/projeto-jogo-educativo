@@ -24,3 +24,5 @@ var inimigos_derrotados = []
 var diamantes_coletados = []
 var minigame_em_execucao
 var pode_iniciar_minigame = false
+var ir_para_memorial = false
+var interagir = false
