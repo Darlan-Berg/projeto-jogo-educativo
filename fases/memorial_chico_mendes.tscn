@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://53g25coevc7q"]
+[gd_scene load_steps=19 format=3 uid="uid://53g25coevc7q"]
 
 [ext_resource type="Texture2D" uid="uid://b55a6evctsjtr" path="res://assets/memorial chico mendes/room/tile_room.png" id="1_0nkkd"]
 [ext_resource type="Script" path="res://scripts/memorial_chico_mendes.gd" id="1_hudwo"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://atores/player.tscn" id="4_mrm6s"]
 [ext_resource type="Texture2D" uid="uid://7sxgxpasv6i5" path="res://assets/molduras/moldura_128x128.png" id="6_fhs6y"]
 [ext_resource type="Script" path="res://scripts/banner.gd" id="6_qjwnx"]
-[ext_resource type="PackedScene" uid="uid://7b8x57bof5rq" path="res://cenas/diamante.tscn" id="8_nmyjr"]
 [ext_resource type="Script" path="res://scripts/quadro_chico_mendes.gd" id="9_flqdu"]
 [ext_resource type="Texture2D" uid="uid://cdg74ni4hx4qx" path="res://assets/chico_mendes.jpg" id="9_l60n6"]
+[ext_resource type="Texture2D" uid="uid://h3htpo1w8apw" path="res://assets/chico-mendes-discurssando.jpg" id="10_xfpcj"]
+[ext_resource type="Texture2D" uid="uid://c0w3mnj3uqexf" path="res://assets/chico-mendes-no-sindicato.png" id="11_8vxu0"]
+[ext_resource type="Texture2D" uid="uid://jw1vqk0j7c3s" path="res://assets/chico-mendes-reconhecimento-inte.jpg" id="12_7lwnu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_muus8"]
 texture = ExtResource("1_0nkkd")
@@ -501,7 +503,7 @@ layer_4/tile_data = PackedInt32Array(-458761, 917505, 12, -393225, 917505, 13, -
 
 [node name="jogador" parent="." instance=ExtResource("4_mrm6s")]
 z_index = 5
-position = Vector2(1411, -69)
+position = Vector2(-153, -9)
 
 [node name="banner" type="Area2D" parent="."]
 position = Vector2(3, -61)
@@ -515,56 +517,6 @@ texture = ExtResource("6_fhs6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="banner"]
 shape = SubResource("RectangleShape2D_6ubpd")
-
-[node name="diamantes" type="Node" parent="."]
-
-[node name="diamante" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(992, 136)
-
-[node name="diamante2" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1016, 136)
-
-[node name="diamante3" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1040, 104)
-
-[node name="diamante4" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1064, 104)
-
-[node name="diamante5" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1088, 72)
-
-[node name="diamante6" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1112, 72)
-
-[node name="diamante7" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1138, 40)
-
-[node name="diamante8" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1175, 41)
-
-[node name="diamante9" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1209, 40)
-
-[node name="diamante10" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1241, 40)
-
-[node name="diamante11" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1273, 40)
-
-[node name="diamante12" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1304, 72)
-
-[node name="diamante13" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(1328, 72)
-
-[node name="diamante14" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(928, -16)
-
-[node name="diamante15" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(944, -32)
-
-[node name="diamante16" parent="diamantes" instance=ExtResource("8_nmyjr")]
-position = Vector2(976, -48)
 
 [node name="quadro_chico_mendes" type="Area2D" parent="."]
 position = Vector2(1683, -109)
@@ -586,9 +538,44 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
 
-[node name="TextureRect" type="TextureRect" parent="quadro_chico_mendes/PanelContainer"]
+[node name="imagem" type="TextureRect" parent="quadro_chico_mendes/PanelContainer"]
 layout_mode = 2
 texture = ExtResource("9_l60n6")
+
+[node name="quadros" type="Node" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="quadros"]
+offset_left = 454.0
+offset_top = 55.0
+offset_right = 776.0
+offset_bottom = 244.0
+scale = Vector2(0.35, 0.35)
+
+[node name="TextureRect" type="TextureRect" parent="quadros/PanelContainer"]
+layout_mode = 2
+texture = ExtResource("10_xfpcj")
+
+[node name="PanelContainer2" type="PanelContainer" parent="quadros"]
+offset_left = 778.0
+offset_top = 83.0
+offset_right = 1086.0
+offset_bottom = 295.0
+scale = Vector2(0.32, 0.32)
+
+[node name="TextureRect" type="TextureRect" parent="quadros/PanelContainer2"]
+layout_mode = 2
+texture = ExtResource("11_8vxu0")
+
+[node name="PanelContainer3" type="PanelContainer" parent="quadros"]
+offset_left = 1482.0
+offset_top = 46.0
+offset_right = 1784.0
+offset_bottom = 266.0
+scale = Vector2(0.3, 0.3)
+
+[node name="TextureRect" type="TextureRect" parent="quadros/PanelContainer3"]
+layout_mode = 2
+texture = ExtResource("12_7lwnu")
 
 [connection signal="body_entered" from="banner" to="banner" method="_on_body_entered"]
 [connection signal="body_exited" from="banner" to="banner" method="_on_body_exited"]

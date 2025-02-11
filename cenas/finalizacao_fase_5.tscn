@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfgd37xgjwjls"]
+[gd_scene load_steps=4 format=3 uid="uid://cfgd37xgjwjls"]
 
 [ext_resource type="Script" path="res://scripts/finalizacao_fase_5.gd" id="1_50jrw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wm7xk"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_sw68p"]
+font_size = 64
 
 [node name="finalizacao_fase_5" type="Camera2D"]
 zoom = Vector2(1.2, 1.2)
@@ -21,11 +24,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = -200.0
+offset_left = -257.0
 offset_top = 463.0
-offset_right = 204.0
+offset_right = 260.0
 offset_bottom = 2959.0
-text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+text = "Chico Mendes foi um importante personagem na luta pela preservação das florestas e das populações extrativistas. Seu engajamento em prol da causa ambiental trouxe grandes conquistas que beneficiam não só fauna e flora, mas também as pessoas. Seus esforços juntamente com seus companheiros trouxeram como frutos a criação do Conselho Nacional das Populações Extrativistas (CNS), responsável por organizar e garantir os direitos das populações extrativistas da Amazônia, e também o Instituto Chico Mendes de Conservação da Biodiversidade (ICMBio), responsável por monitorar e proteger 340 Unidades de Conservação Federais (UC) existentes em todo o país. Mesmo após a morte suas ideias ainda vivem e continuam a preservar e proteger o meio ambiente."
 label_settings = SubResource("LabelSettings_wm7xk")
 horizontal_alignment = 3
 autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -2000.0
+offset_top = -54.0
+offset_right = -1203.0
+offset_bottom = 40.0
+text = "Obrigado por jogar!"
+label_settings = SubResource("LabelSettings_sw68p")

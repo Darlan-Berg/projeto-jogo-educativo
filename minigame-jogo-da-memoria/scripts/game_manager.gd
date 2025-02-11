@@ -124,7 +124,6 @@ func mostrar_foto_legenda():
 func _shuffle_cards():
 	all_remaining_cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 	
-	#prints (all_remaining_cards.size())
 	random_card = randi()% all_remaining_cards.size()
 	card_number = all_remaining_cards[random_card]
 	all_remaining_cards.remove_at(random_card)
