@@ -22,6 +22,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 Checkpoint="*res://scripts/checkpoint.gd"
 GlobalFase5="*res://scripts/scripts_globais/global_fase_5.gd"
+MusicaDeFundo="*res://cenas/musica_de_fundo.tscn"
 
 [dialogic]
 

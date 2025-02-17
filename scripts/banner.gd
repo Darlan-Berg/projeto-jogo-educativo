@@ -1,3 +1,4 @@
+"""
 extends Area2D
 
 var esta_na_area = false
@@ -26,3 +27,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	esta_na_area = false
 	fim_dialogo = false
+"""

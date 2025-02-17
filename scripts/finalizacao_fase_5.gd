@@ -4,8 +4,9 @@ extends Camera2D
 @onready var label_2: Label = $Label2
 
 func _ready() -> void:
+	Global.fase_em_execucao = 6
 	var tween = create_tween()
-	tween.tween_property(label, "position", Vector2(label.position.x, label.position.y - 3000), 5)
+	tween.tween_property(label, "position", Vector2(label.position.x, label.position.y - 3000), 60)
 	tween.finished.connect(_agradecimento)
 
 
