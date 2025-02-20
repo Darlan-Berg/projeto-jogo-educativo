@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c48i4ry0oy1y2"]
+
+[ext_resource type="Script" path="res://moving_platform.gd" id="1_2pxow"]
+[ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="2_3ixc5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eohtv"]
+size = Vector2(99.5, 13.5)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_2pxow")
+
+[node name="platform" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+
+[node name="sprite_platform" type="Sprite2D" parent="platform"]
+position = Vector2(-5.75, -5)
+scale = Vector2(1.69167, 1.33333)
+texture = ExtResource("2_3ixc5")
+region_enabled = true
+region_rect = Rect2(336, 144, 60, 12)
+
+[node name="collision" type="CollisionShape2D" parent="platform"]
+position = Vector2(-6, -5)
+shape = SubResource("RectangleShape2D_eohtv")

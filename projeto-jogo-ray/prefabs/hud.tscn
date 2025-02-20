@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4a6gwt74fwc4"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_p83kd"]
+[ext_resource type="Texture2D" uid="uid://c4h0mvdf0jhok" path="res://assets/Blue Diamond/01.png" id="2_mj05y"]
+[ext_resource type="Texture2D" uid="uid://dv38bg45pnvbx" path="res://assets/Blue Diamond/02.png" id="3_5t5l6"]
+[ext_resource type="Texture2D" uid="uid://bamha5tghfyej" path="res://assets/Blue Diamond/03.png" id="4_0tkt3"]
+[ext_resource type="Texture2D" uid="uid://cjb28hsk0w5v8" path="res://assets/Blue Diamond/04.png" id="5_jcmuq"]
+[ext_resource type="FontFile" uid="uid://de6ui10yov57w" path="res://RevMiniPixel.ttf" id="6_uog1s"]
+[ext_resource type="Texture2D" uid="uid://bj8m1pq614krd" path="res://assets/16x16 RPG Item Pack 2 deszipado/16x16 RPG Item Pack 2/Item_64.png" id="7_xdl62"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_c8o3r"]
+frames = 4
+speed_scale = 3.0
+frame_0/texture = ExtResource("2_mj05y")
+frame_1/texture = ExtResource("3_5t5l6")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_0tkt3")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_jcmuq")
+frame_3/duration = 1.0
+
+[node name="hud" type="CanvasLayer"]
+scale = Vector2(1.685, 1.685)
+transform = Transform2D(1.685, 0, 0, 1.685, 0, 0)
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p83kd")
+
+[node name="container" type="MarginContainer" parent="control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="container_diamantes" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="diamond_icon" type="TextureRect" parent="control/container/container_diamantes"]
+layout_mode = 2
+texture = SubResource("AnimatedTexture_c8o3r")
+
+[node name="diamond_counter" type="Label" parent="control/container/container_diamantes"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_uog1s")
+theme_override_font_sizes/font_size = 16
+text = "000000
+"
+
+[node name="container_latexs" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="latex_icon" type="TextureRect" parent="control/container/container_latexs"]
+layout_mode = 2
+texture = ExtResource("7_xdl62")
+
+[node name="latex_counter" type="Label" parent="control/container/container_latexs"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_uog1s")
+theme_override_font_sizes/font_size = 16
+text = "0
+"

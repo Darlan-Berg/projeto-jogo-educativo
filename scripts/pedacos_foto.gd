@@ -1,6 +1,5 @@
 extends Area2D
 
-"""
 @onready var som_coletado := $som_coletado as AudioStreamPlayer
 var coletado = false
 
@@ -15,5 +14,4 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	
 func _on_anim_animation_finished() -> void:
-	queue_free() # Exluir o diamante assim que a animação "coletado" for terminada
-"""
+	queue_free() # Exluir o diamante assim que a animação "coletado" for terminado

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bohpqq5yt328j"]
 
-[ext_resource type="Texture2D" uid="uid://bq7a68awdyke6" path="res://assets/jungle tileset/parallax background/plx-1.png" id="1_aj7ew"]
+[ext_resource type="Texture2D" uid="uid://bq7a68awdyke6" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-1.png" id="1_aj7ew"]
 [ext_resource type="Script" path="res://scripts/tela_inicial.gd" id="1_nf88s"]
-[ext_resource type="Texture2D" uid="uid://dgm33j5coff1d" path="res://assets/jungle tileset/parallax background/plx-2.png" id="2_h0yfg"]
-[ext_resource type="Texture2D" uid="uid://cmnogwwy48l4v" path="res://assets/jungle tileset/parallax background/plx-3.png" id="3_1bpdq"]
-[ext_resource type="Texture2D" uid="uid://tfvhstf3bkao" path="res://assets/jungle tileset/parallax background/plx-4.png" id="4_w2ygo"]
-[ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://assets/jungle tileset/parallax background/plx-5.png" id="5_byq2j"]
+[ext_resource type="Texture2D" uid="uid://dgm33j5coff1d" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-2.png" id="2_h0yfg"]
+[ext_resource type="Texture2D" uid="uid://cmnogwwy48l4v" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-3.png" id="3_1bpdq"]
+[ext_resource type="Texture2D" uid="uid://tfvhstf3bkao" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-4.png" id="4_w2ygo"]
+[ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-5.png" id="5_byq2j"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -136,4 +136,5 @@ text = "Fase 5"
 
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/Button" to="Camera2D/CanvasLayer" method="_on_quit_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button" to="Camera2D/CanvasLayer" method="_on_button1_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button2" to="Camera2D/CanvasLayer" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button5" to="Camera2D/CanvasLayer" method="_on_button5_pressed"]

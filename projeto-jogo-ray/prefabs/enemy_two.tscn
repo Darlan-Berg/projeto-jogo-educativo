@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1fhpc7po72tb"]
+
+[ext_resource type="Script" path="res://projeto-jogo-ray/enemy_two.gd" id="1_h2exm"]
+[ext_resource type="Texture2D" uid="uid://du7c5idy8h0j5" path="res://projeto-jogo-ray/assets/Crow.png" id="3_qbh6m"]
+[ext_resource type="PackedScene" uid="uid://bpdu60p7y7m52" path="res://projeto-jogo-ray/prefabs/hitbox2.tscn" id="3_t6spc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2vak"]
+size = Vector2(18, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj54b"]
+atlas = ExtResource("3_qbh6m")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd2lk"]
+atlas = ExtResource("3_qbh6m")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a46tt"]
+atlas = ExtResource("3_qbh6m")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oengi"]
+atlas = ExtResource("3_qbh6m")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va3d8"]
+atlas = ExtResource("3_qbh6m")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74cue"]
+atlas = ExtResource("3_qbh6m")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cirmi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj54b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd2lk")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a46tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oengi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va3d8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74cue")
+}],
+"loop": true,
+"name": &"running",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yj73"]
+size = Vector2(13, 1)
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 8
+collision_mask = 34
+script = ExtResource("1_h2exm")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -6)
+shape = SubResource("RectangleShape2D_b2vak")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.75, -6)
+scale = Vector2(0.427083, 0.666667)
+sprite_frames = SubResource("SpriteFrames_cirmi")
+animation = &"running"
+autoplay = "running"
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+z_index = -1
+position = Vector2(-6, -4)
+rotation = 0.00421995
+target_position = Vector2(14, -0.038)
+collision_mask = 42
+
+[node name="hitbox2" parent="." instance=ExtResource("3_t6spc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox2"]
+position = Vector2(-6, -12.5)
+shape = SubResource("RectangleShape2D_8yj73")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

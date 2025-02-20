@@ -1,0 +1,70 @@
+[gd_scene load_steps=13 format=3 uid="uid://duym4p2cfirv5"]
+
+[ext_resource type="Texture2D" uid="uid://c4h0mvdf0jhok" path="res://projeto-jogo-ray/assets/Blue Diamond/01.png" id="1_5dvsj"]
+[ext_resource type="Script" path="res://projeto-jogo-ray/diamond.gd" id="1_sjs8p"]
+[ext_resource type="Texture2D" uid="uid://dv38bg45pnvbx" path="res://projeto-jogo-ray/assets/Blue Diamond/02.png" id="2_m1q0g"]
+[ext_resource type="Texture2D" uid="uid://ws4mvmxgjlu" path="res://projeto-jogo-ray/assets/Diamond Effect/01.png" id="2_pa1dt"]
+[ext_resource type="Texture2D" uid="uid://bodwc0ont3euj" path="res://projeto-jogo-ray/assets/Diamond Effect/02.png" id="3_kl5ap"]
+[ext_resource type="Texture2D" uid="uid://bamha5tghfyej" path="res://projeto-jogo-ray/assets/Blue Diamond/03.png" id="3_n1nv8"]
+[ext_resource type="Texture2D" uid="uid://cjb28hsk0w5v8" path="res://projeto-jogo-ray/assets/Blue Diamond/04.png" id="4_gqhi5"]
+[ext_resource type="Texture2D" uid="uid://qgrtpblp2cfl" path="res://projeto-jogo-ray/assets/Diamond Effect/03.png" id="4_nd21j"]
+[ext_resource type="Texture2D" uid="uid://bp68ixhdyyc1v" path="res://projeto-jogo-ray/assets/Diamond Effect/04.png" id="5_pwfnu"]
+[ext_resource type="AudioStream" uid="uid://desm531xte1ob" path="res://projeto-jogo-ray/assets/efeitos_sonoros/coin-recieved-230517.mp3" id="10_e5etw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhcdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pa1dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kl5ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nd21j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pwfnu")
+}],
+"loop": false,
+"name": &"coletado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5dvsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m1q0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n1nv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gqhi5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ixmi"]
+radius = 8.06226
+
+[node name="diamond" type="Area2D"]
+collision_layer = 512
+script = ExtResource("1_sjs8p")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qhcdx")
+animation = &"coletado"
+autoplay = "idle"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7ixmi")
+
+[node name="som_coleta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_e5etw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

@@ -1,0 +1,103 @@
+[gd_scene load_steps=13 format=3 uid="uid://thslj4fomh8n"]
+
+[ext_resource type="Script" path="res://projeto-jogo-ray/latex.gd" id="1_r6lm0"]
+[ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://projeto-jogo-ray/assets/Mobile Buttons/2.png" id="5_g2osm"]
+[ext_resource type="FontFile" uid="uid://de6ui10yov57w" path="res://projeto-jogo-ray/RevMiniPixel.ttf" id="8_r6f5d"]
+[ext_resource type="Texture2D" uid="uid://disjehns6hp4y" path="res://projeto-jogo-ray/assets/teclas_teclado/S.png" id="8_rifa8"]
+[ext_resource type="Texture2D" uid="uid://j8ma4x1es0i7" path="res://projeto-jogo-ray/assets/teclas_teclado/G.png" id="9_g26to"]
+[ext_resource type="Texture2D" uid="uid://gyyl7vsmoacb" path="res://projeto-jogo-ray/assets/teclas_teclado/4.png" id="12_34vlv"]
+[ext_resource type="Texture2D" uid="uid://cllkimih3b0vq" path="res://projeto-jogo-ray/assets/teclas_teclado/1.png" id="13_4apvt"]
+[ext_resource type="Texture2D" uid="uid://cgln6ws4j02q7" path="res://projeto-jogo-ray/assets/barra_timer_2.png" id="14_1fxiq"]
+[ext_resource type="Texture2D" uid="uid://i1cclpe5o81q" path="res://projeto-jogo-ray/assets/teclas_teclado/T.png" id="15_3shpm"]
+[ext_resource type="AudioStream" uid="uid://bsnnkrqsouiy1" path="res://projeto-jogo-ray/assets/efeitos_sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="16_38yfh"]
+[ext_resource type="AudioStream" uid="uid://c51lwk5cux6e" path="res://projeto-jogo-ray/assets/efeitos_sonoros/8-bit-kit-boop_C.wav" id="17_ftx17"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8xkx"]
+radius = 18.0567
+height = 148.0
+
+[node name="latex" type="Area2D"]
+z_index = -2
+rotation = -0.00713707
+collision_layer = 2
+script = ExtResource("1_r6lm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(-1, -8)
+shape = SubResource("CapsuleShape2D_v8xkx")
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -45.0
+offset_top = -47.0
+offset_right = 40.0
+offset_bottom = -17.0
+
+[node name="container_botoes" type="MarginContainer" parent="control"]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="control/container_botoes"]
+layout_mode = 2
+
+[node name="container_sequencia_botoes" type="HBoxContainer" parent="control/container_botoes/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="letra_g" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+icon = ExtResource("9_g26to")
+
+[node name="number_one" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+icon = ExtResource("13_4apvt")
+
+[node name="letra_s" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+icon = ExtResource("8_rifa8")
+
+[node name="number_four" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+icon = ExtResource("12_34vlv")
+
+[node name="cima" type="Button" parent="control/container_botoes/VBoxContainer/container_sequencia_botoes"]
+layout_mode = 2
+icon = ExtResource("5_g2osm")
+
+[node name="barra_timer" type="TextureProgressBar" parent="control/container_botoes/VBoxContainer"]
+visible = false
+layout_mode = 2
+max_value = 6.0
+step = 0.01
+value = 6.0
+texture_progress = ExtResource("14_1fxiq")
+
+[node name="botao_iniciar" type="Button" parent="control/container_botoes"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_r6f5d")
+theme_override_font_sizes/font_size = 16
+text = "INICIAR"
+icon = ExtResource("15_3shpm")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 6.0
+
+[node name="som_acerto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_38yfh")
+
+[node name="som_erro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ftx17")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/letra_g" to="." method="_on_baixo_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/number_one" to="." method="_on_letra_m_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/letra_s" to="." method="_on_esquerda_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/number_four" to="." method="_on_number_seven_pressed"]
+[connection signal="pressed" from="control/container_botoes/VBoxContainer/container_sequencia_botoes/cima" to="." method="_on_letra_r_pressed"]
+[connection signal="pressed" from="control/container_botoes/botao_iniciar" to="." method="_on_button_start_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
