@@ -137,4 +137,5 @@ text = "Fase 5"
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer/HBoxContainer/Button" to="Camera2D/CanvasLayer" method="_on_quit_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button" to="Camera2D/CanvasLayer" method="_on_button1_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button2" to="Camera2D/CanvasLayer" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button3" to="Camera2D/CanvasLayer" method="_on_button_3_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/PanelContainer/VBoxContainer/MarginContainer3/GridContainer/Button5" to="Camera2D/CanvasLayer" method="_on_button5_pressed"]

@@ -1,19 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://sh086iq1x73d"]
 
-[ext_resource type="PackedScene" uid="uid://bp2q18f20tlrp" path="res://cenas/mundo.tscn" id="1_81bgd"]
+[ext_resource type="PackedScene" uid="uid://bp2q18f20tlrp" path="res://projeto-jogo-ray/fase2.tscn" id="1_81bgd"]
 
 [node name="mundo" instance=ExtResource("1_81bgd")]
 
-[node name="jogador" parent="." index="2"]
-position = Vector2(-2480, 97)
-
-[node name="control" type="Control" parent="seringueira" index="1"]
-layout_mode = 3
-anchors_preset = 0
+[node name="seringueira_control#conatiner_botoes" type="MarginContainer" parent="." index="0"]
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="conatiner_botoes" type="MarginContainer" parent="seringueira/control" index="0"]
-layout_mode = 0
+[node name="seringueira#control" type="Control" parent="." index="2"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

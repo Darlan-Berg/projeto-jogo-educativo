@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcqklx5y7ta2m"]
+
+[ext_resource type="Script" path="res://scripts/paper.gd" id="1_lsh8f"]
+[ext_resource type="Texture2D" uid="uid://br0p73m2ibl30" path="res://assets/Items and UI/paper.png" id="1_q51qw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf6wg"]
+atlas = ExtResource("1_q51qw")
+region = Rect2(0, 0, 1184, 1184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sg8xr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf6wg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qy1l0"]
+
+[node name="paper" type="Area2D"]
+script = ExtResource("1_lsh8f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.0217483, 0.0178421)
+sprite_frames = SubResource("SpriteFrames_sg8xr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qy1l0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

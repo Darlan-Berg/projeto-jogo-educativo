@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=64 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="1_5d7xw"]
 [ext_resource type="Script" path="res://projeto-jogo-ray/fase2.gd" id="1_ja1y4"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://b4a6gwt74fwc4" path="res://projeto-jogo-ray/prefabs/hud.tscn" id="17_0uuro"]
 [ext_resource type="PackedScene" uid="uid://b1fhpc7po72tb" path="res://projeto-jogo-ray/prefabs/enemy_two.tscn" id="18_f5abs"]
 [ext_resource type="PackedScene" uid="uid://7rmlai54133i" path="res://cenas/hud.tscn" id="20_24cm1"]
+[ext_resource type="PackedScene" uid="uid://bcl3ckgon06l0" path="res://cenas/npc.tscn" id="21_1lj5p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pc2nd"]
 
@@ -1376,7 +1377,7 @@ script = ExtResource("1_ja1y4")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 z_index = 3
-position = Vector2(1498, 14)
+position = Vector2(1111, 0)
 collision_mask = 94
 script = ExtResource("2_1d5qv")
 
@@ -1605,14 +1606,6 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(3957, -44)
 shape = SubResource("SegmentShape2D_tsdpr")
-
-[node name="checkpoint" parent="." instance=ExtResource("15_xqh7m")]
-position = Vector2(2637, -90)
-script = null
-
-[node name="checkpoint2" parent="." instance=ExtResource("15_xqh7m")]
-position = Vector2(4560, -140)
-script = null
 
 [node name="diamonds" type="Node2D" parent="."]
 
@@ -1900,21 +1893,14 @@ visible = false
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy2" parent="enemies" instance=ExtResource("11_4vlkk")]
-position = Vector2(4031, 12)
+[node name="enemy3" parent="enemies" instance=ExtResource("11_4vlkk")]
+position = Vector2(2380, -49)
 
-[node name="enemy" parent="enemies" instance=ExtResource("11_4vlkk")]
-position = Vector2(2372, -47)
-script = null
+[node name="enemy6" parent="enemies" instance=ExtResource("11_4vlkk")]
+position = Vector2(3084, -111)
 
-[node name="enemy4" parent="enemies" instance=ExtResource("11_4vlkk")]
-z_index = 3
-position = Vector2(3083, -108)
-script = null
-
-[node name="enemy5" parent="enemies" instance=ExtResource("18_f5abs")]
-position = Vector2(5859, 2)
-script = null
+[node name="enemy7" parent="enemies" instance=ExtResource("11_4vlkk")]
+position = Vector2(3997, 18)
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(2741, -86)
@@ -1952,10 +1938,6 @@ collision_mask = 0
 position = Vector2(-4, 2)
 shape = SubResource("SegmentShape2D_ddpfa")
 
-[node name="checkpoint3" parent="." instance=ExtResource("15_xqh7m")]
-position = Vector2(6134, 17)
-script = null
-
 [node name="latex" parent="." instance=ExtResource("15_lxpw8")]
 position = Vector2(1554, -88)
 
@@ -1970,8 +1952,24 @@ position = Vector2(5281, -216)
 [node name="diamond" parent="." instance=ExtResource("16_lcywx")]
 position = Vector2(4184, -67)
 
-[node name="enemy" parent="." instance=ExtResource("18_f5abs")]
-position = Vector2(2752, -55)
-script = null
+[node name="enemy3" parent="." instance=ExtResource("18_f5abs")]
+position = Vector2(2752, -57)
+
+[node name="enemy4" parent="." instance=ExtResource("18_f5abs")]
+position = Vector2(5857, -2)
+
+[node name="checkpoint" parent="." instance=ExtResource("15_xqh7m")]
+position = Vector2(2635, -88)
+
+[node name="checkpoint4" parent="." instance=ExtResource("15_xqh7m")]
+position = Vector2(4409, -135)
+
+[node name="checkpoint5" parent="." instance=ExtResource("15_xqh7m")]
+position = Vector2(6072, 9)
+
+[node name="npc2" parent="." instance=ExtResource("21_1lj5p")]
+position = Vector2(6755, 27)
+timeline = "dialogo_one"
 
 [connection signal="body_entered" from="Player/hurtbox" to="Player" method="_on_hurtbox_body_entered"]
+[connection signal="body_exited" from="npc2" to="." method="_on_npc_2_body_exited"]

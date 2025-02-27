@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://chrid8wi5dd8a"]
 
 [ext_resource type="Script" path="res://scripts/seringueiras/seringueira2.gd" id="1_vvif7"]
-[ext_resource type="Texture2D" uid="uid://jk087mip0cg8" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/1.png" id="2_33gm4"]
-[ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="3_xkfgn"]
-[ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="4_ypa3b"]
-[ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/2.png" id="5_a3c6u"]
+[ext_resource type="Texture2D" uid="uid://jk087mip0cg8" path="res://projeto-jogo-ray/assets/1.png" id="2_33gm4"]
+[ext_resource type="Texture2D" uid="uid://ct8s5vhe6sjdm" path="res://projeto-jogo-ray/assets/Mobile Buttons/4.png" id="3_xkfgn"]
+[ext_resource type="Texture2D" uid="uid://bj8ja613awalk" path="res://projeto-jogo-ray/assets/Mobile Buttons/3.png" id="4_ypa3b"]
+[ext_resource type="Texture2D" uid="uid://cq33raeuekvvg" path="res://projeto-jogo-ray/assets/Mobile Buttons/2.png" id="5_a3c6u"]
 [ext_resource type="Texture2D" uid="uid://bxg6ravo20esu" path="res://barra_timer_2.png" id="6_8vulj"]
-[ext_resource type="Texture2D" uid="uid://yofnk3o1cten" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="7_008we"]
+[ext_resource type="Texture2D" uid="uid://tkynv6131bxw" path="res://assets/teclas_teclado/ENTER-1.png.png" id="7_oqdvo"]
 [ext_resource type="AudioStream" uid="uid://nev5qcu65nm2" path="res://assets/Musica e Efeitos Sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="8_1483b"]
 [ext_resource type="AudioStream" uid="uid://d0f1nowd8ks7b" path="res://assets/Musica e Efeitos Sonoros/8-bit-kit-boop_C.wav" id="9_v3l8f"]
 
@@ -89,7 +89,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 action_mode = 0
 text = "INICIAR"
-icon = ExtResource("7_008we")
+icon = ExtResource("7_oqdvo")
 
 [node name="som_acerto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_1483b")

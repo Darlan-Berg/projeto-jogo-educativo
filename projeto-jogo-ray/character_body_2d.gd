@@ -31,9 +31,9 @@ func _physics_process(delta: float) -> void:
 			animador.play("jump")
 
 	# Handle jump.
-	if is_on_floor():
+	if is_on_floor() and not Global.controles_pausados:
 		jumpCount = 0
-	if jumpCount < 1:
+	if jumpCount < 1 and not Global.controles_pausados:
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		if Input.is_action_just_pressed("ui_accept") and not is_on_floor():
@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction and not Global.controles_pausados:
 		velocity.x = direction * SPEED
 		animador.scale.x = direction
 		if is_on_floor():
@@ -59,9 +59,16 @@ func _physics_process(delta: float) -> void:
 	if ray_bottom.is_colliding():
 		if Global.current_checkpoint == null:
 			get_tree().reload_current_scene()
+			Global.vida -= 1
 		else:
-			player.position = Global.current_checkpoint
+			player.position.x = Global.current_checkpoint[0]
+			player.position.y = Global.current_checkpoint[1]
+			Global.vida -= 1
 	
+	if Global.vida == 0:
+		Global.quantidade_vidas -= 1
+		Global.vida = 3
+		get_tree().reload_current_scene()
 	
 	move_and_slide()
 
@@ -84,3 +91,4 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 		animador.modulate = Color(1,0,0,1)
 		knockback_tween.parallel().tween_property(animador, "modulate", Color(1,1,1,1), duration)
+		Global.vida -= 1

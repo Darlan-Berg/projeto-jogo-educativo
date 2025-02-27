@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://caarqbiv1dd4t"]
 
 [ext_resource type="Script" path="res://scripts/cobra.gd" id="1_32igo"]
-[ext_resource type="Texture2D" uid="uid://b8t8ouj26b50n" path="res://assets/Cobra Sprite Sheet.png" id="1_rg3pi"]
+[ext_resource type="Texture2D" uid="uid://b8t8ouj26b50n" path="res://chico-mendes (Cópia)/assets/Cobra Sprite Sheet.png" id="1_rg3pi"]
 [ext_resource type="PackedScene" uid="uid://c0owlna6jrqmg" path="res://cenas/hitbox.tscn" id="3_vww14"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f2765"]

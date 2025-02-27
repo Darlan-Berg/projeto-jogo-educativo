@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://7r27o4rd5vrn"]
+
+[ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="1_8tosg"]
+[ext_resource type="Script" path="res://chico-mendes (Cópia)/prefabs/moving_platform.gd" id="1_xwjgw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7jim"]
+size = Vector2(80, 13)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_xwjgw")
+
+[node name="platform" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="platform"]
+texture = ExtResource("1_8tosg")
+region_enabled = true
+region_rect = Rect2(528, 112, 80, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_b7jim")

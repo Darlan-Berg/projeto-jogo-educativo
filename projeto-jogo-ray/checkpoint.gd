@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var player: CharacterBody2D = $"../Player"
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var fim_animacao = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,4 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	Global.current_checkpoint = player.global_position
+	Global.current_checkpoint = player.position
+	if not fim_animacao:
+		animated_sprite_2d.play("rising")
+		fim_animacao = true

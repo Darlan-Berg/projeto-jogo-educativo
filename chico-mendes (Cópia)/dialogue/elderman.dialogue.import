@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cgt44qr0d7ffq"
+path="res://.godot/imported/elderman.dialogue-f88cac9df502bbb8b764db9415a6870b.tres"
+
+[deps]
+
+source_file="res://dialogue/elderman.dialogue"
+dest_files=["res://.godot/imported/elderman.dialogue-f88cac9df502bbb8b764db9415a6870b.tres"]
+
+[params]
+
+defaults=true

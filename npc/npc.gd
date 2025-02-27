@@ -24,3 +24,11 @@ func pausar_controles():
 	
 func liberar_controles():
 	Global.controles_pausados = false
+
+
+func _on_body_entered(body: Node2D) -> void:
+	esta_na_area = true # Replace with function body.
+	
+
+func _on_body_exited(body: Node2D) -> void:
+	esta_na_area = false

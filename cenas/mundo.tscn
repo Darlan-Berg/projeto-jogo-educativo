@@ -1,8 +1,8 @@
-[gd_scene load_steps=91 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=92 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="1_uolk4"]
-[ext_resource type="Texture2D" uid="uid://0vskkd151mw4" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="2_grt5x"]
+[ext_resource type="Texture2D" uid="uid://0vskkd151mw4" path="res://chico-mendes (Cópia)/assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="2_grt5x"]
 [ext_resource type="Texture2D" uid="uid://b24cm01j5m6mw" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/Assets.png" id="3_xg643"]
 [ext_resource type="Texture2D" uid="uid://cxjyan2xhw7lb" path="res://bush.png" id="4_4cf22"]
 [ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://atores/player.tscn" id="5_p1yjk"]
@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://7b8x57bof5rq" path="res://cenas/diamante.tscn" id="10_f6j5i"]
 [ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-5.png" id="10_xuprd"]
 [ext_resource type="PackedScene" uid="uid://7rmlai54133i" path="res://cenas/hud.tscn" id="13_s8pwb"]
-[ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="19_6ion7"]
-[ext_resource type="PackedScene" uid="uid://0nlnis04kjd2" path="res://projeto-jogo-ray/prefabs/moving_platform.tscn" id="19_wve8b"]
+[ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="16_wuba0"]
+[ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://chico-mendes (Cópia)/atores/cobra.tscn" id="19_6ion7"]
 [ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="23_qv6qi"]
 [ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueiras/seringueira.tscn" id="24_faiik"]
 [ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://chrid8wi5dd8a" path="res://cenas/seringueiras/seringueira2.tscn" id="29_rafmf"]
 [ext_resource type="Texture2D" uid="uid://dfpc1lgf2bbm4" path="res://npc/idle-2.png.png" id="31_k0h34"]
 [ext_resource type="Texture2D" uid="uid://dhb5ht78fyf0a" path="res://assets/placas.png" id="32_hflaj"]
+[ext_resource type="PackedScene" uid="uid://0nlnis04kjd2" path="res://projeto-jogo-ray/prefabs/moving_platform.tscn" id="33_1uhnv"]
 [ext_resource type="PackedScene" uid="uid://c1i6cqbwv0t4w" path="res://cenas/pedaco_foto.tscn" id="34_62an6"]
 [ext_resource type="PackedScene" uid="uid://dhlothrokti4v" path="res://cenas/final.tscn" id="45_61g3f"]
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="46_2dmab"]
@@ -1233,7 +1234,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(1997, -142)
+position = Vector2(4211, -3)
 collision_mask = 9
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1492,27 +1493,11 @@ position = Vector2(4402, 17)
 [node name="cobra5" parent="inimigos" instance=ExtResource("19_6ion7")]
 position = Vector2(5861, -39)
 
-[node name="cobra6" parent="inimigos" instance=ExtResource("19_6ion7")]
-position = Vector2(4250, 41)
+[node name="cobra8" parent="inimigos" instance=ExtResource("16_wuba0")]
+position = Vector2(4216, 39)
 
-[node name="moving_platform" parent="." instance=ExtResource("19_wve8b")]
-position = Vector2(4989, 170)
-script = null
-
-[node name="moving_platform2" parent="." instance=ExtResource("19_wve8b")]
-position = Vector2(5104, 51)
-script = null
-
-[node name="moving_platform3" parent="." instance=ExtResource("19_wve8b")]
+[node name="moving_platform3" parent="." instance=ExtResource("33_1uhnv")]
 position = Vector2(5230, 50)
-script = null
-
-[node name="moving_platform4" parent="." instance=ExtResource("19_wve8b")]
-position = Vector2(5347, 50)
-script = null
-
-[node name="moving_platform5" parent="." instance=ExtResource("19_wve8b")]
-position = Vector2(5555, 47)
 script = null
 
 [node name="musica_de_fundo" type="AudioStreamPlayer" parent="."]
@@ -1576,11 +1561,11 @@ grow_vertical = 2
 script = ExtResource("47_8q8ln")
 
 [node name="npc" parent="." instance=ExtResource("26_a8fwu")]
-position = Vector2(3043, -86)
+position = Vector2(3043, -92.955)
 timeline = "timeline2"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
-position = Vector2(0, -4)
+position = Vector2(0, 3.37)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_lfe7c")
 animation = &"idle"
@@ -1661,6 +1646,25 @@ position = Vector2(7762, 71)
 scale = Vector2(0.375, 0.34375)
 texture = ExtResource("32_hflaj")
 vframes = 2
+
+[node name="moving_platform6" parent="." instance=ExtResource("33_1uhnv")]
+position = Vector2(4987, 51)
+distance = -100
+move_horizontal = false
+
+[node name="moving_platform7" parent="." instance=ExtResource("33_1uhnv")]
+position = Vector2(5110, 177)
+distance = 120
+move_horizontal = false
+
+[node name="moving_platform8" parent="." instance=ExtResource("33_1uhnv")]
+position = Vector2(5345, 49)
+distance = 80
+
+[node name="moving_platform9" parent="." instance=ExtResource("33_1uhnv")]
+position = Vector2(5560, 48)
+distance = 100
+move_horizontal = false
 
 [connection signal="area_shape_entered" from="agua" to="jogador" method="_on_agua_area_shape_entered"]
 [connection signal="body_entered" from="agua" to="jogador" method="_on_agua_body_entered"]
