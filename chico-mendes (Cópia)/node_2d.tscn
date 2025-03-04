@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://i2v2c3ikptxe"]
+[gd_scene load_steps=52 format=3 uid="uid://i2v2c3ikptxe"]
 
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="1_7cbsp"]
 [ext_resource type="Texture2D" uid="uid://bt6jbsfq0e7uc" path="res://projeto-jogo-ray/assets/player/idle (2).png" id="1_la8lq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://nka8nrib3oyv" path="res://projeto-jogo-ray/assets/player/run(1).png" id="6_yw8lr"]
 [ext_resource type="Texture2D" uid="uid://bq7a68awdyke6" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-1.png" id="7_l47vx"]
 [ext_resource type="Texture2D" uid="uid://dgm33j5coff1d" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-2.png" id="8_34twa"]
+[ext_resource type="AudioStream" uid="uid://dhsfmobwpfpts" path="res://assets/Musica e Efeitos Sonoros/jump_10.wav" id="9_jxa8a"]
 [ext_resource type="Texture2D" uid="uid://cmnogwwy48l4v" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-3.png" id="9_kebwe"]
 [ext_resource type="Texture2D" uid="uid://tfvhstf3bkao" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-4.png" id="10_c7r6m"]
 [ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-5.png" id="11_2mm5x"]
@@ -665,6 +666,10 @@ animation = &"jump"
 frame_progress = 0.309059
 
 [node name="animator" type="AnimationPlayer" parent="player"]
+
+[node name="som_pulo" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource("9_jxa8a")
+volume_db = -20.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

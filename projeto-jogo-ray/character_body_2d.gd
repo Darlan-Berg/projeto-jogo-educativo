@@ -9,6 +9,7 @@ const JUMP_VELOCITY = -300.0
 @onready var ray_right: RayCast2D = $ray_right
 @onready var ray_left: RayCast2D = $ray_left
 @onready var ray_bottom: RayCast2D = $ray_bottom
+@onready var som_pulo: AudioStreamPlayer = $som_pulo
 
 var jumpCount = 0
 var knockback_vector = Vector2.ZERO
@@ -36,9 +37,11 @@ func _physics_process(delta: float) -> void:
 	if jumpCount < 1 and not Global.controles_pausados:
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			som_pulo.play()
 		if Input.is_action_just_pressed("ui_accept") and not is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			jumpCount +=1
+			som_pulo.play()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bp2q18f20tlrp"]
+[gd_scene load_steps=91 format=3 uid="uid://bp2q18f20tlrp"]
 
 [ext_resource type="Script" path="res://scripts/mundo.gd" id="1_sn7h5"]
 [ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="1_uolk4"]
@@ -14,8 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://7b8x57bof5rq" path="res://cenas/diamante.tscn" id="10_f6j5i"]
 [ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-5.png" id="10_xuprd"]
 [ext_resource type="PackedScene" uid="uid://7rmlai54133i" path="res://cenas/hud.tscn" id="13_s8pwb"]
-[ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://atores/cobra.tscn" id="16_wuba0"]
-[ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://chico-mendes (Cópia)/atores/cobra.tscn" id="19_6ion7"]
+[ext_resource type="PackedScene" uid="uid://caarqbiv1dd4t" path="res://chico-mendes (Cópia)/atores/cobra.tscn" id="16_wuba0"]
 [ext_resource type="AudioStream" uid="uid://6a42ypj86xg2" path="res://assets/Musica e Efeitos Sonoros/Songs of the Sea.wav" id="23_qv6qi"]
 [ext_resource type="PackedScene" uid="uid://uqni08hg33ul" path="res://cenas/seringueiras/seringueira.tscn" id="24_faiik"]
 [ext_resource type="Script" path="res://scripts/agua.gd" id="24_rdv0x"]
@@ -1234,7 +1233,7 @@ centered = false
 
 [node name="jogador" parent="." instance=ExtResource("5_p1yjk")]
 unique_name_in_owner = true
-position = Vector2(4211, -3)
+position = Vector2(369, -11)
 collision_mask = 9
 
 [node name="diamantes" type="Node2D" parent="."]
@@ -1475,22 +1474,22 @@ shape = SubResource("RectangleShape2D_efp24")
 
 [node name="inimigos" type="Node2D" parent="."]
 
-[node name="cobra" parent="inimigos" instance=ExtResource("19_6ion7")]
+[node name="cobra" parent="inimigos" instance=ExtResource("16_wuba0")]
 position = Vector2(1838, -34)
 
-[node name="cobra7" parent="inimigos" instance=ExtResource("19_6ion7")]
+[node name="cobra7" parent="inimigos" instance=ExtResource("16_wuba0")]
 position = Vector2(636, -33)
 
-[node name="cobra2" parent="inimigos" instance=ExtResource("19_6ion7")]
+[node name="cobra2" parent="inimigos" instance=ExtResource("16_wuba0")]
 position = Vector2(2754, -23)
 
-[node name="cobra3" parent="inimigos" instance=ExtResource("19_6ion7")]
+[node name="cobra3" parent="inimigos" instance=ExtResource("16_wuba0")]
 position = Vector2(3098, -95)
 
-[node name="cobra4" parent="inimigos" instance=ExtResource("19_6ion7")]
+[node name="cobra4" parent="inimigos" instance=ExtResource("16_wuba0")]
 position = Vector2(4402, 17)
 
-[node name="cobra5" parent="inimigos" instance=ExtResource("19_6ion7")]
+[node name="cobra5" parent="inimigos" instance=ExtResource("16_wuba0")]
 position = Vector2(5861, -39)
 
 [node name="cobra8" parent="inimigos" instance=ExtResource("16_wuba0")]
@@ -1503,6 +1502,7 @@ script = null
 [node name="musica_de_fundo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_qv6qi")
 volume_db = -13.277
+autoplay = true
 
 [node name="agua" type="Area2D" parent="."]
 collision_mask = 3

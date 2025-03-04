@@ -5,10 +5,10 @@
 [ext_resource type="FontFile" uid="uid://de6ui10yov57w" path="res://projeto-jogo-ray/RevMiniPixel.ttf" id="8_r6f5d"]
 [ext_resource type="Texture2D" uid="uid://disjehns6hp4y" path="res://projeto-jogo-ray/assets/teclas_teclado/S.png" id="8_rifa8"]
 [ext_resource type="Texture2D" uid="uid://j8ma4x1es0i7" path="res://projeto-jogo-ray/assets/teclas_teclado/G.png" id="9_g26to"]
+[ext_resource type="Texture2D" uid="uid://tkynv6131bxw" path="res://assets/teclas_teclado/ENTER-1.png.png" id="9_u74g1"]
 [ext_resource type="Texture2D" uid="uid://gyyl7vsmoacb" path="res://projeto-jogo-ray/assets/teclas_teclado/4.png" id="12_34vlv"]
 [ext_resource type="Texture2D" uid="uid://cllkimih3b0vq" path="res://projeto-jogo-ray/assets/teclas_teclado/1.png" id="13_4apvt"]
 [ext_resource type="Texture2D" uid="uid://cgln6ws4j02q7" path="res://projeto-jogo-ray/assets/barra_timer_2.png" id="14_1fxiq"]
-[ext_resource type="Texture2D" uid="uid://i1cclpe5o81q" path="res://projeto-jogo-ray/assets/teclas_teclado/T.png" id="15_3shpm"]
 [ext_resource type="AudioStream" uid="uid://bsnnkrqsouiy1" path="res://projeto-jogo-ray/assets/efeitos_sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="16_38yfh"]
 [ext_resource type="AudioStream" uid="uid://c51lwk5cux6e" path="res://projeto-jogo-ray/assets/efeitos_sonoros/8-bit-kit-boop_C.wav" id="17_ftx17"]
 
@@ -81,7 +81,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_r6f5d")
 theme_override_font_sizes/font_size = 16
 text = "INICIAR"
-icon = ExtResource("15_3shpm")
+icon = ExtResource("9_u74g1")
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 6.0

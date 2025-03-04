@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://jk087mip0cg8" path="res://projeto-jogo-ray/assets/1.png" id="6_y2ldp"]
 [ext_resource type="Texture2D" uid="uid://cgln6ws4j02q7" path="res://projeto-jogo-ray/assets/barra_timer_2.png" id="7_eggmb"]
 [ext_resource type="FontFile" uid="uid://de6ui10yov57w" path="res://projeto-jogo-ray/RevMiniPixel.ttf" id="8_rg13f"]
-[ext_resource type="Texture2D" uid="uid://i1cclpe5o81q" path="res://projeto-jogo-ray/assets/teclas_teclado/T.png" id="9_jwnwu"]
+[ext_resource type="Texture2D" uid="uid://tkynv6131bxw" path="res://assets/teclas_teclado/ENTER-1.png.png" id="9_dih3g"]
 [ext_resource type="AudioStream" uid="uid://bsnnkrqsouiy1" path="res://projeto-jogo-ray/assets/efeitos_sonoros/success_02-68338-[AudioTrimmer.com].mp3" id="10_3r6gn"]
 [ext_resource type="AudioStream" uid="uid://c51lwk5cux6e" path="res://projeto-jogo-ray/assets/efeitos_sonoros/8-bit-kit-boop_C.wav" id="11_b8283"]
 
@@ -82,7 +82,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("8_rg13f")
 theme_override_font_sizes/font_size = 16
 text = "INICIAR"
-icon = ExtResource("9_jwnwu")
+icon = ExtResource("9_dih3g")
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 6.0
