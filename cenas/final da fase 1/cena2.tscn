@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bylqstj06qq1j"]
 
 [ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="1_umyiw"]
-[ext_resource type="Theme" uid="uid://cvu616kig33uq" path="res://assets/joystix.tres" id="2_cauid"]
+[ext_resource type="Theme" uid="uid://cf5620wyr00y4" path="res://assets/joystix.tres" id="2_cauid"]
 
 [sub_resource type="GDScript" id="GDScript_obb3c"]
 resource_name = "cena2"
@@ -40,6 +40,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_cauid")
+theme_type_variation = &"PanelContainerComFundo"
 script = SubResource("GDScript_obb3c")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

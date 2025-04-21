@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cdg74ni4hx4qx" path="res://assets/chico_mendes.jpg" id="1_nvghk"]
 [ext_resource type="FontFile" uid="uid://ph6ahtmifmvp" path="res://assets/joystix/joystix monospace.otf" id="1_td635"]
-[ext_resource type="Theme" uid="uid://cvu616kig33uq" path="res://assets/joystix.tres" id="2_7gy6l"]
+[ext_resource type="Theme" uid="uid://cf5620wyr00y4" path="res://assets/joystix.tres" id="2_7gy6l"]
 
 [sub_resource type="GDScript" id="GDScript_kxggu"]
 resource_name = "cena3"
@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_7gy6l")
+theme_type_variation = &"PanelContainerComFundo"
 script = SubResource("GDScript_kxggu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]

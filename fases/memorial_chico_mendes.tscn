@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://53g25coevc7q"]
+[gd_scene load_steps=18 format=3 uid="uid://53g25coevc7q"]
 
 [ext_resource type="Texture2D" uid="uid://b55a6evctsjtr" path="res://assets/memorial chico mendes/room/tile_room.png" id="1_0nkkd"]
 [ext_resource type="Script" path="res://scripts/memorial_chico_mendes.gd" id="1_hudwo"]
 [ext_resource type="Texture2D" uid="uid://chgpi1njtn3rg" path="res://assets/memorial chico mendes/room/tile_wall.png" id="2_gr7x0"]
 [ext_resource type="Texture2D" uid="uid://g853vk871q6b" path="res://assets/memorial chico mendes/room/obj_indoors.png" id="3_gsaok"]
 [ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://atores/player.tscn" id="4_mrm6s"]
+[ext_resource type="Theme" uid="uid://cf5620wyr00y4" path="res://assets/joystix.tres" id="7_odwrf"]
 [ext_resource type="Script" path="res://scripts/quadro_chico_mendes.gd" id="9_flqdu"]
 [ext_resource type="Texture2D" uid="uid://cdg74ni4hx4qx" path="res://assets/chico_mendes.jpg" id="9_l60n6"]
 [ext_resource type="Texture2D" uid="uid://h3htpo1w8apw" path="res://assets/chico-mendes-discurssando.jpg" id="10_xfpcj"]
@@ -522,6 +523,7 @@ offset_bottom = 176.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("7_odwrf")
 
 [node name="imagem" type="TextureRect" parent="quadro_chico_mendes/PanelContainer"]
 layout_mode = 2
@@ -535,6 +537,7 @@ offset_top = 67.0
 offset_right = 777.0
 offset_bottom = 256.0
 scale = Vector2(0.35, 0.35)
+theme = ExtResource("7_odwrf")
 
 [node name="TextureRect" type="TextureRect" parent="quadros/PanelContainer"]
 layout_mode = 2
@@ -546,6 +549,7 @@ offset_top = 92.0
 offset_right = 1086.0
 offset_bottom = 304.0
 scale = Vector2(0.32, 0.32)
+theme = ExtResource("7_odwrf")
 
 [node name="TextureRect" type="TextureRect" parent="quadros/PanelContainer2"]
 layout_mode = 2
@@ -557,6 +561,7 @@ offset_top = 46.0
 offset_right = 1784.0
 offset_bottom = 266.0
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("7_odwrf")
 
 [node name="TextureRect" type="TextureRect" parent="quadros/PanelContainer3"]
 layout_mode = 2
@@ -568,6 +573,8 @@ offset_top = 104.0
 offset_right = 503.0
 offset_bottom = 293.0
 scale = Vector2(0.3, 0.3)
+theme = ExtResource("7_odwrf")
+theme_type_variation = &"PanelContainerComFundo"
 
 [node name="Label" type="Label" parent="quadros/PanelContainer4"]
 layout_mode = 2

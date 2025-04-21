@@ -1,16 +1,16 @@
-[gd_scene load_steps=37 format=3 uid="uid://bt1xpjsabocba"]
+[gd_scene load_steps=38 format=3 uid="uid://bt1xpjsabocba"]
 
 [ext_resource type="Script" path="res://scripts/fase_5.gd" id="1_cdfhq"]
-[ext_resource type="Texture2D" uid="uid://bq7a68awdyke6" path="res://assets/jungle tileset/parallax background/plx-1.png" id="2_l2ctj"]
-[ext_resource type="Texture2D" uid="uid://dp3mtyyqfwb4h" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_putqf"]
-[ext_resource type="Texture2D" uid="uid://dgm33j5coff1d" path="res://assets/jungle tileset/parallax background/plx-2.png" id="3_hj2sb"]
-[ext_resource type="Texture2D" uid="uid://0vskkd151mw4" path="res://assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_nxkbe"]
+[ext_resource type="Texture2D" uid="uid://bq7a68awdyke6" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-1.png" id="2_l2ctj"]
+[ext_resource type="Texture2D" uid="uid://dp3mtyyqfwb4h" path="res://chico-mendes (Cópia)/assets/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_putqf"]
+[ext_resource type="Texture2D" uid="uid://dgm33j5coff1d" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-2.png" id="3_hj2sb"]
+[ext_resource type="Texture2D" uid="uid://0vskkd151mw4" path="res://chico-mendes (Cópia)/assets/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_nxkbe"]
 [ext_resource type="PackedScene" uid="uid://gbbqgh66pej4" path="res://atores/player.tscn" id="3_qerua"]
-[ext_resource type="Texture2D" uid="uid://cmnogwwy48l4v" path="res://assets/jungle tileset/parallax background/plx-3.png" id="4_oxg1o"]
-[ext_resource type="Texture2D" uid="uid://t0pjox5cawhx" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="5_sehmj"]
-[ext_resource type="Texture2D" uid="uid://tfvhstf3bkao" path="res://assets/jungle tileset/parallax background/plx-4.png" id="5_t0ub5"]
-[ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://assets/jungle tileset/jungle tileset.png" id="6_1bbj1"]
-[ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://assets/jungle tileset/parallax background/plx-5.png" id="6_sm60f"]
+[ext_resource type="Texture2D" uid="uid://cmnogwwy48l4v" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-3.png" id="4_oxg1o"]
+[ext_resource type="Texture2D" uid="uid://t0pjox5cawhx" path="res://chico-mendes (Cópia)/assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="5_sehmj"]
+[ext_resource type="Texture2D" uid="uid://tfvhstf3bkao" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-4.png" id="5_t0ub5"]
+[ext_resource type="Texture2D" uid="uid://bfda6g43x7523" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/player/jungle tileset.png" id="6_1bbj1"]
+[ext_resource type="Texture2D" uid="uid://b71l6sn681hn1" path="res://projeto-jogo-ray/assets/Legacy_Adventure_Pack/Assets/jungle tileset/parallax background/plx-5.png" id="6_sm60f"]
 [ext_resource type="Texture2D" uid="uid://bbvascvdockix" path="res://assets/16-bit-spike-Sheet.png" id="7_khehd"]
 [ext_resource type="Texture2D" uid="uid://scib5fhgrojr" path="res://assets/memorial chico mendes/tile_village_house.png" id="11_8jeu8"]
 [ext_resource type="Shader" path="res://assets/shaders/transicao.gdshader" id="12_0o527"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://be2cr8hill7du" path="res://atores/besouro.tscn" id="16_3ug3y"]
 [ext_resource type="Texture2D" uid="uid://ckqrv52i6hjei" path="res://assets/totem.png" id="17_v1ymf"]
 [ext_resource type="Script" path="res://scripts/acionador_minigame.gd" id="19_l6s4t"]
+[ext_resource type="Theme" uid="uid://cf5620wyr00y4" path="res://assets/joystix.tres" id="21_6r8md"]
 [ext_resource type="PackedScene" uid="uid://7b8x57bof5rq" path="res://cenas/diamante.tscn" id="21_sdyyb"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_s3hv0"]
@@ -1876,7 +1877,6 @@ position = Vector2(-186, 189)
 [node name="transicao" type="CanvasLayer" parent="."]
 
 [node name="color_rect" type="ColorRect" parent="transicao"]
-visible = false
 material = SubResource("ShaderMaterial_usbyq")
 anchors_preset = 15
 anchor_right = 1.0
@@ -2134,6 +2134,8 @@ offset_top = -191.0
 offset_right = 6464.0
 offset_bottom = -49.0
 scale = Vector2(0.35, 0.35)
+theme = ExtResource("21_6r8md")
+theme_type_variation = &"PanelContainerComFundo"
 
 [node name="MarginContainer" type="MarginContainer" parent="painel"]
 layout_mode = 2

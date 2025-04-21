@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfgd37xgjwjls"]
+[gd_scene load_steps=5 format=3 uid="uid://cfgd37xgjwjls"]
 
 [ext_resource type="Script" path="res://scripts/finalizacao_fase_5.gd" id="1_50jrw"]
+[ext_resource type="Theme" uid="uid://cf5620wyr00y4" path="res://assets/joystix.tres" id="2_2iba0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wm7xk"]
 font_size = 32
@@ -22,6 +23,8 @@ offset_right = 800.0
 offset_bottom = 450.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_2iba0")
+theme_type_variation = &"PanelContainerComFundo"
 
 [node name="Label" type="Label" parent="."]
 offset_left = -257.0

@@ -79,10 +79,6 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 obstaculo=""
 inimigos=""
 
-[gui]
-
-theme/custom="res://assets/joystix.tres"
-
 [input]
 
 ui_accept={

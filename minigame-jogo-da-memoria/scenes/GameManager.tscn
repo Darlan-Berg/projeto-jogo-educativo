@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0ighc5qhf814"]
+[gd_scene load_steps=12 format=3 uid="uid://d0ighc5qhf814"]
 
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card.gd" id="1_exw22"]
 [ext_resource type="Texture2D" uid="uid://gv27yx1hha6m" path="res://minigame-jogo-da-memoria/sprites/dandelion-flower.png" id="1_gkuv8"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/game_manager.gd" id="1_ktchr"]
+[ext_resource type="Theme" uid="uid://cf5620wyr00y4" path="res://assets/joystix.tres" id="1_ndegk"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_one_name.gd" id="4_ibiui"]
 [ext_resource type="Script" path="res://minigame-jogo-da-memoria/scripts/card_two_name.gd" id="5_ml10i"]
 
@@ -37,6 +38,8 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
+theme = ExtResource("1_ndegk")
+theme_type_variation = &"PanelContainerComFundo"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 z_index = -5
@@ -50,6 +53,7 @@ offset_bottom = 386.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_ndegk")
 
 [node name="GameManager" type="Node2D" parent="."]
 z_index = 5
